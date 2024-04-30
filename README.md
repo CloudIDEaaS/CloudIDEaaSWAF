@@ -102,6 +102,11 @@
 * CloudIDEaaS WAF Deployment - Implementing CloudIDEaaS WAF strengthens the security posture, preventing data breaches and ensuring regulatory compliance.
 * Results and Benefits - Services experience a significant reduction in security incidents, bolstering customer confidence and data protection measures.
 
-### Visit http://www.cloudideaas.com/WAFProtection
-### Contact: consulting@cloudideaas.com
+##### Visit http://www.cloudideaas.com/WAFProtection
+##### Contact: support@cloudideaas.com
 
+#### Credits to mguinness, the originator of this project: 
+
+Without his efforts and support, this project would not have been possible.
+Visit his repository for a clean, bare-bones implementation:
+https://github.com/mguinness/KestrelWAF
