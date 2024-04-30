@@ -1,16 +1,20 @@
-<img src="https://github.com/CloudIDEaaS/CloudIDEaaSWAF/blob/main/Images/WAFSplash.png?raw=true"  />
+<img src="Images/WAFSplash.png?raw=true"  />
+<p align="center">
+    <img src="Images/logo.png?raw=true" />
+</p>
 
 # Table of Contents
 1. [Understanding Web Application Firewalls](#whatisawaf)
 2. [WAF Features and Benefits](#featuresbenefits)
 3. [Case Studies and Testimonials](#casestudies)
 
+<a name="whatisawaf" />
 
-# What is a Web Application Firewall (WAF)?<a name="whatisawaf" />
+# What is a Web Application Firewall (WAF)?
 
 ## Advanced Threat Protection
 
-![Tiles1](Tiles1.png)
+![Tiles1](Images/Tiles1.png)
 
 * Real-time Threat Intelligence - CloudIDEaaS WAF integrates with threat intelligence sources to identify and block emerging web threats, ensuring proactive defense.
 * Bot Management - The WAF effectively manages bot traffic, distinguishing between legitimate bots and malicious bot activities, enhancing web security.
@@ -18,13 +22,15 @@
 
 ## Scalability and Integration
 
-![Tiles2](Tiles2.png)
+![Tiles2](Images/Tiles2.png)
 
 * Cloud-Native Architecture- CloudIDEaaS WAF is designed for seamless integration with cloud environments, providing scalable and elastic security for dynamic workloads.
 * API Security and Integration - The WAF offers robust API security, protecting web services and ensuring secure integration with third-party applications.
 * Multi-layered Defense - CloudIDEaaS WAF complements existing security measures, providing multi-layered defense against web attacks and data breaches.
 
-## Benefits/Features <a name="#featuresbenefits" />
+<a name="#featuresbenefits" />
+
+## Benefits/Features
 
 ### Geographic
 * IP Fencing - If you know a malicious request is coming from a specific IP address, deny them with WAF blacklisting or allow with whitelisting-only scenarios.
@@ -76,11 +82,13 @@
 *  In-process to your existing web server.
 *  Appliance - Order a pre-configure firm-ware version to eliminate server maintenance and also get full, dedicated workhorse.
 
-# Case Studies and Testimonials<a name="casestudies" />
+<a name="casestudies" />
+
+# Case Studies and Testimonials
 
 ## Banking and Financial: Securing E-commerce Transactions and Digital Strategy Solutions
 
-![Tiles2](Tiles3.png)
+![Tiles2](Images/Tiles3.png)
 
 * Challenges - Faces increasing web attacks targeting customer payment data, leading to compliance concerns and customer trust issues.
 * CloudIDEaaS WAF Implementation - By deploying CloudIDEaaS WAF, Business A achieved PCI DSS compliance and significantly reduced web attack incidents.
@@ -88,7 +96,7 @@
 
 ## Health Industry: Protecting Sensitive Customer Data
 
-![Tiles4](Tiles4.png)
+![Tiles4](Images/Tiles4.png)
 
 * Challenges - The industry struggles with data breaches and unauthorized access attempts, posing a threat to sensitive customer information.
 * CloudIDEaaS WAF Deployment - Implementing CloudIDEaaS WAF strengthens the security posture, preventing data breaches and ensuring regulatory compliance.
