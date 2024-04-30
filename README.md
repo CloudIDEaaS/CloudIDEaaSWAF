@@ -1,1 +1,1 @@
-# CloudIDEaaSWAF
+# CloudIDEaaSWAF Community Edition
