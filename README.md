@@ -1,5 +1,5 @@
-<img src="Images/WAFSplash.png?raw=true"  />
 <p align="center">
+    <img src="Images/WAFSplash.png?raw=true"  />
     <img src="Images/logo.png?raw=true" />
 </p>
 
