@@ -1,0 +1,16 @@
+$hydra-status-bar: #dcdcdc;
+$hydra-status-bar-10: lighten($hydra-status-bar, 10);
+$hydra-status-bar-20: lighten($hydra-status-bar, 20);
+
+.statusbar {
+  height: 25px;
+  display: block;
+  margin-bottom: 0px;
+  border-radius: 2px;
+  border-top: 1px solid gray;
+  background: linear-gradient(240deg, #{$hydra-status-bar} 0%, #{$hydra-status-bar-10} 48%, #{$hydra-status-bar-20} 100%);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+ 

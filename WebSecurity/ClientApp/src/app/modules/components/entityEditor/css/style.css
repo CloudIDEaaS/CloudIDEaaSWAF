@@ -1,0 +1,86 @@
+.wrapper {
+  margin: 40px 40px 40px 150px;
+  padding: 2px;
+  border: 1px solid #8c7777;
+  width: 1000px;
+}
+
+.propertyItem {
+  width: 1000px;
+}
+
+.datagridcontainer {
+  margin: 20px;
+  padding: 2px;
+  border: 1px solid #8c7777;
+  border-radius: 5px;
+  display: block;
+  background: #1e5799; /* Old browsers */
+  background: -moz-linear-gradient(left,  #1e5799 0%, #2989d8 32%, #7db9e8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #1e5799 0%,#2989d8 32%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #1e5799 0%,#2989d8 32%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+}
+
+.datagridheader {
+  margin: 5px 5px 10px 5px;
+  width: 100%;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.datagridcontainer table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.datagridcell {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.datagridcell.editable {
+  width: 150px;
+}
+
+.typesDropdown {
+  font-family: Arial;
+  font-size: 14px;  
+  margin: 0px;
+  display: inline;
+  border-width: 0px;
+}
+
+.datagridcell.overlay {
+  padding: 0px !important
+}
+
+.rowselector {
+  width: 25px;
+  min-width: 25px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ccc4c4;
+}
+
+.datagridcontainer tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.datagridcontainer tr:nth-child(odd) {
+  background-color: white;
+}
+
+.datagridcontainer th {
+  background-color: rgb(132, 128, 98);
+  color: whitesmoke;
+}
+
+.datagridcontainer tr.selected {
+    border: 1px dotted black;
+    color: #FFF;
+    background-color: #2989d8;
+}

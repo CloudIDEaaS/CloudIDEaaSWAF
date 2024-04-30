@@ -1,0 +1,14 @@
+POST https://localhost:65400/cloudideaas/hydra/services/eeab49801d55410c9457dee4d48dc2d7/api/About/about HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:65400
+Content-Type: application/xml
+Content-Length: 225
+
+<note>
+  <div id="in-page-channel-node-id" data-channel-name="in_page_channel_CMR0b1"/>
+  <script/>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Project</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <div class="register-logo">
+    <img src="assets/img/appicon.svg" alt="Ionic Logo">
+  </div> -->
+
+  <form class="formSingleColumn" [formGroup]="projectForm" (ngSubmit)="submit(projectForm)">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Project Name</ion-label>
+        <ion-input appSetFocus #projectName formControlName="projectName" name="projectName" type="text" (focusout)="onProjectNameFocusOut($event)">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="projectValidator.hasValidationErrors('projectName')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of projectValidator.getValidationErrors('projectName')">{{ error }}</li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Application Name</ion-label>
+        <ion-input  #applicationName formControlName="applicationName" name="applicationName" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="projectValidator.hasValidationErrors('applicationName')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of projectValidator.getValidationErrors('applicationName')">{{ error }}</li>
+        </ul>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button appDefaultCommand type="submit" expand="block" [disabled]="projectForm.invalid">Create</ion-button>
+    </div>
+  </form>
+
+</ion-content>

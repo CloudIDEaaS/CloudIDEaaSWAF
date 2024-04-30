@@ -1,0 +1,24 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+
+import { DevopsPage } from './devops.page';
+
+describe('DevopsPage', () => {
+  let component: DevopsPage;
+  let fixture: ComponentFixture<DevopsPage>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ DevopsPage ],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(DevopsPage);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

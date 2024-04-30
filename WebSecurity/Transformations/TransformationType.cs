@@ -1,0 +1,55 @@
+﻿namespace WebSecurity.Transformations;
+
+public enum TransformationType
+{
+    [Category("Invalid")]
+    None,
+    [Category("AntiEvasion")]
+    Lowercase,
+    [Category("AntiEvasion")]
+    NormalisePath,
+    [Category("AntiEvasion")]
+    RemoveNulls,
+    [Category("AntiEvasion")]
+    ReplaceComments,
+    [Category("AntiEvasion")]
+    CompressWhitespace,
+    [Category("Decoding")]
+    Base64Decode,
+    [Category("Decoding")]
+    HexDecode,
+    [Category("Decoding")]
+    JsDecode,
+    [Category("Decoding")]
+    UrlDecodeUni,
+    [Category("Encoding")]
+    Base64Encode,
+    [Category("Encoding")]
+    HexEncode,
+    [Category("Encoding")]
+    HtmlEntityDecode,
+    [Category("Encoding")]
+    UrlDecode,
+    [Category("Encoding")]
+    Utf8ToUnicode,
+    [Category("Encoding")]
+    NormalizePathWin,
+    [Category("Encoding")]
+    NormalizePath,
+    [Category("Encoding")]
+    RemoveWhitespace,
+    [Category("Encoding")]
+    RemoveCommentsChar,
+    [Category("Encoding")]
+    CssDecode,
+    [Category("Hashing")]
+    EscapeSeqDecode,
+    [Category("Hashing")]
+    Sha1,
+    [Category("Hashing")]
+    Md5,
+    [Category("General")]
+    Length,
+    [Category("General")]
+    CmdLine,
+}

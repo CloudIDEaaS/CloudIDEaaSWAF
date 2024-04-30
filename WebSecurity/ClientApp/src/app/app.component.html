@@ -1,0 +1,112 @@
+<ion-app [class.dark-theme]="dark">
+  <ion-split-pane [when]="getSplitPaneWhen()" contentId="main-content" #splitPane (ionSplitPaneVisible)="onSplitPaneChange($event)">
+
+    <ion-menu contentId="main-content">
+      <ion-content>
+        <div class="main-menu-title">
+          <div class="main-menu-inner">
+            <label class="main-menu-title">Menu</label>
+            <a class="expander-icon" (click)="setMenuAsCollapsible($event)">
+              <ion-icon #ionIcon name="caret-down-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+
+        <accordion [showArrows]="true" [closeOthers]="false" [expandAll]="true">
+          <accordion-group heading="Monitoring">
+            <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
+              <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+                <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+                <ion-label>
+                  {{p.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </accordion-group>
+
+          <accordion-group *ngIf="loggedIn" heading="Account">
+            <ion-menu-toggle autoHide="false">
+              <ion-item routerLink="/account" routerLinkActive="active" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="person"></ion-icon>
+                <ion-label>
+                  Account
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+            <ion-menu-toggle autoHide="false">
+              <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="help"></ion-icon>
+                <ion-label>
+                  Support
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+            <ion-menu-toggle autoHide="false">
+              <ion-item button (click)="logout()" detail="false">
+                <ion-icon slot="start" name="log-out"></ion-icon>
+                <ion-label>
+                  Logout
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+          </accordion-group>
+
+          <accordion-group *ngIf="!loggedIn" heading="Account">
+
+            <ion-menu-toggle autoHide="false">
+              <ion-item routerLink="/login" routerLinkActive="active" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="log-in"></ion-icon>
+                <ion-label>
+                  Login
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+            <!-- <ion-menu-toggle autoHide="false">
+              <ion-item routerLink="/register" routerLinkActive="active" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="person-add"></ion-icon>
+                <ion-label>
+                  Register
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle> -->
+
+            <ion-menu-toggle autoHide="false">
+              <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="help"></ion-icon>
+                <ion-label>
+                  Support
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+            <ion-item>
+              <ion-icon slot="start" name="moon-outline"></ion-icon>
+              <ion-label>
+                Dark Mode
+              </ion-label>
+              <ion-toggle [(ngModel)]="dark"></ion-toggle>
+            </ion-item>
+          </accordion-group>
+
+          <accordion-group heading="Tutorial">
+            <ion-menu-toggle autoHide="false">
+              <ion-item button (click)="openTutorial()" detail="false">
+                <ion-icon slot="start" name="hammer"></ion-icon>
+                <ion-label>Show Tutorial</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </accordion-group>
+
+        </accordion>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  </ion-split-pane>
+
+</ion-app>

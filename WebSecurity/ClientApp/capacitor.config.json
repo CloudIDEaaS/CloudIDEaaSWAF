@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "hydra",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

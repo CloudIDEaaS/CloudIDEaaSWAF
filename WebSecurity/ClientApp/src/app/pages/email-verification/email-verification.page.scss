@@ -1,0 +1,35 @@
+.content {
+}
+
+.verification-panel {
+  display: grid;
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 50px;
+}
+
+.verification-title-row {
+  grid-row: 1;
+  display: grid;
+  width: 550px;
+}
+
+.verification-link-image {
+  grid-column: 1;
+  margin: 10px 10px 0px 0px;
+}
+
+.verification-link-title {
+  grid-column: 2;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.verification-rule {
+  border-top: solid 1px #5883ba;
+  grid-row: 2;
+}
+
+.verification-link-text {
+  grid-row: 3;
+}

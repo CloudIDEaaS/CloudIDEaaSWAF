@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NHunspell</id>
+    <version>1.2.5554.16953</version>
+    <title>Crawler-Lib NHunspell: Spell Check, Hyphenation, Thesaurus</title>
+    <authors>Thomas Maierhofer</authors>
+    <owners>Thomas Maierhofer</owners>
+    <licenseUrl>http://www.crawler-lib.net/nhunspell/</licenseUrl>
+    <projectUrl>http://www.crawler-lib.net/nhunspell</projectUrl>
+    <iconUrl>http://download.crawler-lib.net/Logos/NHunspell-128.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Crawler-Lib NHunspell is a spell check, hyphenation, word stemming and thesaurus library based on the Open Office spell check library Hunspell. NHunspell can use the vast amount of OpenOffice dictionaries. It is an alternative to NetSpell, GNU Aspell, ISpell, PSpell and Enchant. It wraps the native libraries for Hunspell and Hyphen and contains a fully managed version of MyThes.
+          NHunspell is licensed under: GPL/LGPL/MPL. Free use in commercial applications is permitted according to the LGPL and MPL licenses. Your commercial application can link against the NHunspell DLLs.
+
+        IMPORTANT: Please visit the Project Site to get informations about Installation, Samples and Directories.</description>
+    <summary>NHunspell brings the Open Office spell checking, hyphenation and thesaurus libraries to the Microsoft® .NET Framework. IMPORTANT: Please visit the Project Site to get informations about Installation, Samples and Directories.</summary>
+    <releaseNotes>Added Add(), AddWithAffix(), Delete() to the SpellEngine
+
+      Version 1.2.5359.26126:
+      Native DLLs updated to
+      Hunspell Version: 1.3.3
+      Hyphen Version: 2.8.7
+      MyThes Version: managed implementation
+      Hunspell / Hyphen Patches up to: 2014-07-30</releaseNotes>
+    <copyright>Crawler-Lib / Thomas Maierhofer, Germany, and the Hunspell Authors</copyright>
+    <language>en-US</language>
+    <tags>Crawler-Lib NHunspell Hunspell spell check spell-check spell-checker spellchecker spellcheck hyphen hyphenation thesaurus dictionary suggestion</tags>
+    <references>
+      <reference file="NHunspell.dll" />
+    </references>
+  </metadata>
+</package>

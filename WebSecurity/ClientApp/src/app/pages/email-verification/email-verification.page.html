@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CloudIDEaaS Email Verification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <div *ngIf="!id" class="verification-panel">
+    <div class="verification-title-row">
+      <img class="verification-link-image" src="../../../assets/img/email-verification/VerificationLink.png">
+      <p class="verification-link-title">A verification link has been sent to your email account</p>
+    </div>
+    <div class="verification-rule"></div>
+    <p class="verification-link-text">Please click on the link that has just been sent to your email account to verify your email and continue the registration process.</p>
+  </div>
+  <div *ngIf="verified" class="verification-panel">
+    <div class="verification-title-row">
+      <img class="verification-link-image" src="../../../assets/img/email-verification/VerificationLink.png">
+      <p class="verification-link-title">Congratulations.  You email address has been verified successfully!</p>
+    </div>
+    <div class="verification-rule"></div>
+    <p class="verification-link-text">We are taking you to the log in page to continue your journey.  Please wait...</p>
+  </div>
+</ion-content>

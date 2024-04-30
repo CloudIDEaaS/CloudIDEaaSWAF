@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CloudIDEaaS WAF Management</title>
+
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="theme-color" content="#387ef5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <base href="/">
+  <script src="bootstrap.bundle.min.js" type="module"></script>
+  <link rel="icon" type="image/x-icon" href="assets/img/appicon.png">
+  <link rel="apple-touch-icon" href="assets/img/appicon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preload" as="font" href="../../../assets/fonts/Century gothic italic.woff" type="font/woff" crossorigin="anonymous">
+
+  <style>
+    @font-face {
+      font-family: 'HydraFont';
+      src: url('../../../assets/fonts/Century gothic italic.woff') format('woff'),
+    }
+
+    .splash-screen {
+      width: 800px;
+      height: 600px;
+      position: absolute;
+      z-index: 100;
+      top: 45%;
+      left: 50%;
+      background-color: white;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .splash-screen-hide {
+      animation: fadeOut .2s linear forwards;
+    }
+
+    .splash-layout {
+      padding: 50px;
+      box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+      border-radius: 8px;
+      border: 1px solid gray;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      grid: "header" auto "main" 1fr "footer" auto / 1fr;
+      gap: 3px;
+      animation: fadeIn .2s linear forwards;
+      background: linear-gradient(#b9a69b81, #ffffff);
+    }
+
+    .splash-title {
+      font-family: HydraFont;
+      color: #08615c;
+      font-size: 38px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      animation: fadeIn .2s linear forwards;
+      text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.38);
+    }
+
+    .splash-title>sub {
+      font-size: x-small;
+      font-style: italic;
+    }
+
+    splash-org>sub {
+      font-size: x-small;
+      font-style: italic;
+    }
+
+    .splash-layout.header {
+      grid-area: header;
+    }
+
+    .splash-layout.org-container {
+      grid-area: header;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .splash-layout.main {
+      align-self: center;
+      grid-area: main;
+    }
+
+    .splash-layout.footer {
+      grid-area: footer;
+    }
+  </style>
+</head>
+
+<body>
+  <app-root id="appRoot"></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <textarea id="cert-block" style="display: none;">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</textarea>
+  <div id="splash-screen" class="splash-screen">
+    <div id="splash-contents" class="splash-layout">
+      <div class="header">
+        <h1 class="splash-title">Welcome to WAF Management</h1>
+      </div>
+      <div class="org-container">
+        <h5 class="splash-org">by CloudIDEaaS<sub> &#169;</sub></h5>
+      </div>
+      <div class="main">
+        <img class=".register-logo" src="../../../assets/img/WAFSplash.png" alt="CloudIDEaaS Logo">
+      </div>
+      <div class="footer">
+        <p>
+          The use of this system will be monitored for security and administration purposes and accessing this system
+          constitutes consent to such monitoring. Any unauthorized access of this system or unauthorized use of the
+          information on this system by authorized users or others is prohibited and constitutes a violation of the
+          Terms
+          of Use, and may be subject to criminal and civil penalties under applicable laws.
+        </p>
+        <p>
+          If you do not agree to these conditions, do not proceed further and exit the app now.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

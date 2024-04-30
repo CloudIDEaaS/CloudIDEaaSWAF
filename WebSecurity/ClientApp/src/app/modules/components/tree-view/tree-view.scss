@@ -1,0 +1,67 @@
+.treeNodeArrowButton:active {
+  border-style: none;
+}
+
+tree-view {
+  .label {
+      margin: 0px;
+  }
+  .grid {
+      padding: 0;
+      margin: 0;
+      align-items: left;
+  }
+  .divitem {
+      padding: 0 0 0 15px;
+      margin: 0;
+      .item-block {
+          min-height: 1rem;
+      }
+  }
+  .treeNodeArrow {
+      max-width: 21px;
+      max-height: 20px;
+      padding: 0px;
+      margin-top: 0px;
+      vertical-align: middle;
+      .col {
+          margin: 0px;
+      }
+      button {
+          padding: 0px;
+          margin-top: 3px;
+          margin-right: 0px;
+          margin-left: 0px;
+          margin-bottom: 0px;
+          vertical-align: middle;
+          .item-inner {
+              padding-right: 0px !important;
+          }
+      }
+  }
+  .treeNodeIcon {
+      max-width: 20px;
+      max-height: 20px;
+      padding: 0px;
+      margin-top: 3px;
+      margin-bottom: 2px;
+  }
+  .treeNodeText {
+      max-height: 20px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 3px;
+      padding: 0px;
+      label {
+            padding-left: 3px;
+            padding-right: 3px;
+      }
+  }
+  .selected {
+      background-color: #cce8ff;
+      border: 1px solid #99d1ff;
+  }
+  .unselected {
+      border: 1px solid transparent;
+  }
+}

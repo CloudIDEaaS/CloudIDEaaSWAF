@@ -1,0 +1,7 @@
+{
+  "name": "hydra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

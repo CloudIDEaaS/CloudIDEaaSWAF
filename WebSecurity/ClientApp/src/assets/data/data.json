@@ -1,0 +1,102 @@
+{
+  "welcome":
+  [
+    {
+      "page":
+      {
+        "pageTitle": "hydra",
+        "metaDescription": "",
+        "metaKeywords": ""
+      },
+      "details":
+      {
+        "welcomeTitle": "Welcome to hydra",
+        "description": "Your personal socialization assistant.  This application takes the hard work out of basic socialization, remembering names, faces, capturing key information, and indexing your newly introduced contacts.",
+        "startAppUrlTitle": "Skip this intro and start utilizing the hydra right away",
+        "splashScreenAlt": "Splash screen for  hydra"
+      }
+    }
+  ],
+  "about":
+  [
+    {
+      "page":
+      {
+        "pageTitle": "About the hydra",
+        "metaDescription": "",
+        "metaKeywords": ""
+      },
+      "details":
+      {
+        "header":
+        {
+          "aboutBannerAlt": "Banner for the hydra",
+          "description": "Your personal socialization assistant.  This application takes the hard work out of basic socialization, remembering names, faces, capturing key information, and indexing your newly introduced contacts.",
+          "version": "$version"
+        },
+        "mainPageLinks":
+        [
+        ],
+        "socialLinks":
+        [
+        ],
+        "appStoreLinks":
+        [
+        ],
+        "tellOthers":
+        [
+        ],
+        "sidelLinks":
+        [
+        ]
+      }
+    }
+  ],
+  "api": [
+    {
+      "baseUrl": "http://localhost:65400"
+    }
+  ],
+  "license":
+  [
+    {
+      "page":
+      {
+        "pageTitle": "Licensing information for the hydra",
+        "metaDescription": "",
+        "metaKeywords": ""
+      },
+      "details":
+      {
+        "content": "",
+        "licenseUrl": "",
+        "licenseUrlTitle": "This is the EULA (end user license agreement) for using of hydra",
+        "questionsEmailAddress": "",
+        "questionsEmailAddressTitle": "You can submit email questions regarding the usage of hydra by clicking this link",
+        "questionsMailingAddress": ""
+      }
+    }
+  ],
+  "support":
+  [
+    {
+      "page":
+      {
+        "pageTitle": "Support information for the hydra",
+        "metaDescription": "",
+        "metaKeywords": ""
+      },
+      "details":
+      {
+        "content": "",
+        "supportUrl": "",
+        "supportUrlTitle": "This is the link for support details for usage of hydra",
+        "supportEmailAddress": "",
+        "supportEmailAddressTitle": "You can submit email questions to retrieve support for the hydra by clicking this link"
+      }
+    }
+  ],
+  "pages":
+  [
+  ]
+}

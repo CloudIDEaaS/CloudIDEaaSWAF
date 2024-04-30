@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <UseApiServices>False</UseApiServices>
+        <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(UseApiServices)'=='True'">
+        <DefineConstants>$(DefineConstants);USE_API_SERVICES</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="My Project\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="ApiServices" Condition="'$(UseApiServices)'=='True'">
+          <HintPath>..\..\ApiServices\bin\Debug\net8.0-windows\ApiServices.dll</HintPath>
+        </Reference>
+        <Reference Include="NHunspell, Version=0.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>Resources\NHunspell.dll</HintPath>
+        </Reference>
+        <Reference Include="Utils">
+          <HintPath>..\..\Utils\bin\Debug\net8.0-windows\Utils.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\en_US.aff" />
+      <None Remove="Resources\en_US_dic.dat" />
+      <None Remove="Resources\folder_go.png" />
+      <None Remove="Resources\Hunspellx64.dll" />
+      <None Remove="Resources\Hunspellx86.dll" />
+      <None Remove="Resources\NHunspell.dll" />
+      <None Remove="Resources\spellcheck.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="AddLanguage.cs" />
+      <Compile Include="AddLanguage.Designer.cs" />
+      <Compile Include="GetSentencesEventHandler.cs" />
+      <Compile Include="GrammarEdit.cs" />
+      <Compile Include="LanguageEditor.cs" />
+      <Compile Include="LanguageListBox.cs" />
+      <Compile Include="MyDialog.cs" />
+      <Compile Include="MyDialog.Designer.cs" />
+      <Compile Include="NHunspellTextBoxExtender.cs" />
+      <Compile Include="Properties\My.Resources.cs" />
+      <Compile Include="SpellCheckControl.cs" />
+      <Compile Include="SpellCheckForm.cs" />
+      <Compile Include="SpellCheckForm.Designer.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="AddLanguage.resx" />
+      <EmbeddedResource Include="MyDialog.resx" />
+      <EmbeddedResource Include="NHunspellTextBoxExtender.resx" />
+      <EmbeddedResource Include="Properties\Resources.resx" />
+      <EmbeddedResource Include="Resources\en_US.aff" />
+      <EmbeddedResource Include="Resources\en_US_dic.dat" />
+      <EmbeddedResource Include="Resources\folder_go.png" />
+      <EmbeddedResource Include="Resources\Hunspellx64.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Resources\Hunspellx86.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Resources\NHunspell.dll" />
+      <EmbeddedResource Include="Resources\spellcheck.png" />
+      <EmbeddedResource Include="SpellCheckForm.resx" />
+    </ItemGroup>
+
+</Project>

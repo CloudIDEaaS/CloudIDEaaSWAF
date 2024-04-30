@@ -1,0 +1,160 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+        <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+        <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <NoProjects>false</NoProjects>
+        <CompileClientApp>false</CompileClientApp>
+        <UserSecretsId>87648c2a-3202-4665-887b-64361f2dd866</UserSecretsId>
+        <SpaRoot>$(MSBuildThisFileDirectory)ClientApp</SpaRoot>
+        <BuildClientApp>true</BuildClientApp>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>$(DefineConstants);DISABLE_PLAYGROUND</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="ClientApp\**" />
+      <EmbeddedResource Remove="ClientApp\**" />
+      <None Remove="ClientApp\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Documentation\ExpressionBeforeDebugView.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Documentation\ExpressionBeforeDebugView.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MaxMind.Db" Version="4.1.0" />
+        <PackageReference Include="MaxMind.GeoIP2" Version="5.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.2" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.3.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Utils\Utils.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Update="wafruleset.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="DataFiles\iis-errors.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\java-classes.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\java-code-leakages.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\java-errors.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\lfi-os-files.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\php-config-directives.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\php-errors-pl2.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\php-errors.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\php-function-names-933150.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\php-function-names-933151.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\php-variables.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\restricted-files.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\restricted-upload.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\scanners-user-agents.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\sql-errors.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\ssrf.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\unix-shell.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\web-shells-php.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="DataFiles\windows-powershell-commands.data">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="wafruleset.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="wafsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="DataFiles\" />
+        <Folder Include="KestrelWAF\Controllers\" />
+    </ItemGroup>
+
+    <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)\node_modules') ">
+        <!-- Ensure Node.js is installed -->
+        <Exec Command="node --version" ContinueOnError="true">
+            <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+        </Exec>
+        <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+        <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+        <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    </Target>
+    <Target Name="BuildClientApp" AfterTargets="Build" Condition="'$(CompileClientApp)' == 'true'">
+        <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+        <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" Condition=" '$(Configuration)' == 'Debug' And '$(BuildClientApp)' == 'true' " />
+        <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:prod" Condition="'$(Configuration)' == 'Release' And '$(BuildClientApp)' == 'true' " />
+
+        <!-- Include the newly-built files in the publish output -->
+        <ItemGroup>
+            <DistFiles Include="$(SpaRoot)dist\**" />
+            <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+            <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+                <RelativePath>%(DistFiles.Identity)</RelativePath>
+                <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+                <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            </ResolvedFileToPublish>
+        </ItemGroup>
+    </Target>
+
+</Project>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="login-logo">
+    <img
+      class=".register-logo"
+      src="../../../assets/img/logo.png"
+      alt="CloudIDEaaS Logo" />
+  </div>
+  <form class="formSingleColumn" #loginForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked" color="primary">Username (email address)</ion-label>
+        <ion-input appSetFocus [(ngModel)]="login.userName" name="userName" type="text" #userName="ngModel" spellcheck="false" autocapitalize="off" required (input)='onUserNameInput($event.target.value)'>
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger">
+        <p [hidden]="userName.valid || submitted == false" class="ion-padding-start">
+          Username is required
+        </p>
+      </ion-text>
+      <ion-item>
+        <ion-label position="stacked" color="primary">Password</ion-label>
+        <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required (input)='onPasswordInput($event.target.value)'>
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger">
+        <p
+          [hidden]="password.valid || submitted == false" class="ion-padding-start"> Password is required
+        </p>
+      </ion-text>
+      <!-- { #if !DEBUG } -->
+        <!--- (auto added, do not remove)       <ion-item> --->
+        <!--- (auto added, do not remove)         <re-captcha class="re-captcha" name="recaptcha" ngModel (resolved)="checkCaptcha($event)" siteKey="6LcNc5MpAAAAAPB_5Rem8ovcTVXj6lKEPBXDobZ4"></re-captcha> --->
+        <!--- (auto added, do not remove)       </ion-item> --->
+      <!-- { #endif } -->
+    </ion-list>
+    <ion-row>
+      <ion-col>
+        <ion-button #submitButton [disabled]="!captchaResolved" name="submit" appDefaultCommand (click)="onLogin(loginForm)" type="submit" expand="block">Login</ion-button>
+      </ion-col>
+      <!-- <ion-col>
+        <ion-button name="register" (click)="onRegister()" color="light" expand="block">Register</ion-button>
+      </ion-col> -->
+    </ion-row>
+  </form>
+</ion-content>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?><doc><assembly><name>ActiproSoftware.Text.Addons.DotNet.Roslyn.WinForms</name></assembly><members><member name="T:ActiproSoftware.Text.Languages.DotNet.Reflection.Implementation.RoslynBinaryAssemblyLoader"><summary>
+            Loads data for a binary assembly using Roslyn.
+            </summary></member><member name="M:ActiproSoftware.Text.Languages.DotNet.Reflection.Implementation.RoslynBinaryAssemblyLoader.LoadFrom(System.String)"><summary>
+            Creates a new <see cref="T:ActiproSoftware.Text.Languages.DotNet.Reflection.IBinaryAssembly" /> instance from the <c>Assembly</c> at the specified path.
+            </summary><param name="path">The path to the <c>Assembly</c> file to load.</param><returns>The <see cref="T:ActiproSoftware.Text.Languages.DotNet.Reflection.IBinaryAssembly" /> that was created.</returns></member></members></doc>

@@ -1,0 +1,23 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { HyperLink } from './hyper-link';
+
+describe('HyperLinkComponent', () => {
+  let component: HyperLink;
+  let fixture: ComponentFixture<HyperLink>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ HyperLink ],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(HyperLink);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

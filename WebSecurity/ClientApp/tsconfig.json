@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "strict": false,
+    "target": "ES2020",
+    "module": "es2020",
+    "lib": ["es2018", "dom"],
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": false,
+    "typeRoots": ["node_modules/@types", "src/typings", "src/app/typings"],
+    "types": ["node"],
+    "useDefineForClassFields": false,
+    "strictPropertyInitialization": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+  },
+  "exclude": ["./test", "./wdio.conf.ts"]
+}

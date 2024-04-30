@@ -1,0 +1,463 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+NHunspellExtender
+</name>
+</assembly>
+<members>
+<member name="T:NHunspellExtender.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.en_US">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.en_US_dic">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.folder_go">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.Hunspellx64">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.Hunspellx86">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.NHunspell">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:NHunspellExtender.My.Resources.Resources.spellcheck">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox">
+ <summary>
+ This is the class that handles painting the wavy red lines.
+ 
+ It utilizes the NativeWindow to find out when it needs to draw
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox.WndProc(System.Windows.Forms.Message@)">
+ <summary>
+ This is called when the textbox is being redrawn.
+ When it is, for the textbox to get refreshed, call it's default
+ paint method and then call our method
+ </summary>
+ <param name="m">The windows message</param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox.CustomPaint">
+ <summary>
+ Gets the ranges of chars that represent the spelling errors and then draw a wavy red line underneath
+ them.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox.GetOffsets(System.Windows.Forms.TextBoxBase@,System.Int32,System.Int32,System.Windows.Forms.RichTextBox)">
+ <summary>
+ Determines the X and Y offsets to use based on font height last letter width
+ </summary>
+ <param name="curTextBox"></param>
+ <param name="startingIndex"></param>
+ <param name="endingIndex"></param>
+ <param name="tempRTB"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox.ForcePaint">
+ <summary>
+ The textbox is not redrawn much, so this will force the textbox to call the custom paint function.
+ Otherwise, text can be entered and no wavy red lines will appear
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox.DrawWave(System.Drawing.Pen,System.Drawing.Point,System.Drawing.Point)">
+ <summary>
+ Draws the wavy red line given a starting point and an ending point
+ </summary>
+ <param name="StartOfLine">A Point representing the starting point</param>
+ <param name="EndOfLine">A Point representing the ending point</param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox.TextBoxBase_HandleCreated(System.Object,System.EventArgs)">
+ <summary>
+ Reassign this classes handle and the graphics object anytime the textbox's handle is changed
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CustomPaintTextBox.TextBoxBase_ClientSizeChanged(System.Object,System.EventArgs)">
+ <summary>
+ When the TextBoxBase is resized, this will reset the objects that are used to draw
+ the wavy, red line.  Without this, anything outside of the original bounds will not
+ be drawn
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.CanExtend(System.Object)">
+ <summary>
+ Determines which items this extender can extend.  It is only objects that implement TextBoxBase
+ </summary>
+ <param name="extendee">The control being checked</param>
+ <returns>A boolean value indicating whether it can be extended</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.#ctor">
+ <summary>
+ We need to make sure that the dic and aff files are on the disk.  Then, we try to create
+ the Hunspell object.  After that, we set up the hashtables and tooltip
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.EnableTextBoxBase(System.Windows.Forms.TextBoxBase[])">
+ <summary>
+ Allows this class the be enabled programatically
+ </summary>
+ <param name="TextBoxesToEnable">
+ Allows the programmer to add as many TextBoxBases as they want at once.
+ </param>
+ <remarks>
+ Examples:
+ EnableTextBoxBase(TextBox1)
+ EnableTextBoxBase(RichTextBox1, RichTextBox2, TextBox1)
+ </remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.DisableTextBoxBase(System.Windows.Forms.TextBoxBase@)">
+ <summary>
+ Allows this class to be disabled programatically
+ </summary>
+ <param name="TextBoxToDisable"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.GetSpellCheckEnabled(System.Windows.Forms.Control)">
+ <summary>
+ This will return whether the spell checker is enabled for the requested textbox.
+ The default value is false, otherwise, the SetSpellCheckEnabled will never be called
+ and there will be no way to set up the event handlers
+ </summary>
+ <param name="extendee">The control being tested</param>
+ <returns>A boolean representing whether spell check is enabled</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.SetSpellCheckEnabled(System.Windows.Forms.Control,System.Boolean)">
+ <summary>
+ Sets whether the spellcheck is enabled.  This is only called if the requested value
+ is different from the default value (therefore if the spell check is enabled).
+ Once we set the enabled property, we then set up the event handlers
+ 
+ In case the spellchecker is disabled programatically, we include the options for 
+ removing the event handlers as well.
+ </summary>
+ <param name="extendee">The control associated with the enabled request</param>
+ <param name="Input">A boolean representing whether spell check is enabled</param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.TextBox_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ When the text changes, check all of the words in the text box.  If there is a spelling error
+ then inform the user of that error.
+ </summary>
+ <param name="sender">The textbox that is being typed in</param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.TextBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Handles the shortcuts (have to use KeyDown because KeyPress doesn't capture the function keys or delete)
+ </summary>
+ <param name="sender">The TextBox being typed in</param>
+ <param name="e">The key being pushed down</param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.TextBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+ <summary>
+ Handles the backspace and adding characters
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.ContextMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Controls all of the contextmenuitem clicks
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.ContextMenu_Closed(System.Object,System.Windows.Forms.ToolStripDropDownClosedEventArgs)">
+ <summary>
+ If it was closed by not clicking on an item, then we remove the items and reset them
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.ContextMenu_Opening(System.Object,System.ComponentModel.CancelEventArgs)">
+ <summary>
+ If we are spell checking as the user types, add items to the textbox's context menu
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.ReplaceWord(System.String,System.String)">
+ <summary>
+ Replaces the word that was clicked on with a word from the suggestions
+ </summary>
+ <param name="OriginalWord"></param>
+ <param name="NewWord"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.AddWordToDictionary(System.String)">
+ <summary>
+ Adds the word to the dictionary in memory and to a file on disk
+ </summary>
+ <param name="WordToAdd"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.IgnoreSelectedWord(System.String,System.Int32,System.Int32)">
+ <summary>
+ Ignores the selected word once
+ </summary>
+ <param name="callingTextBoxName"></param>
+ <param name="LeftLocation"></param>
+ <param name="TopLocation"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.NHunspellTextBoxExtender.IgnoreAllWord(System.String)">
+ <summary>
+ Ignore all instances of the word.  This will add the word to the dictionary in memory, but not on disk
+ </summary>
+ <param name="WordToIgnore"></param>
+ <remarks></remarks>
+</member>
+<member name="T:NHunspellExtender.SpellCheckControl">
+ <summary>
+ This class holds the text in the textbox, along with which words are spelling errors.
+ This class will also return the requested number of suggestions for misspelled words.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.AddText(System.String,System.Int64)">
+ <summary>
+ Adds a character directly after the selection start and checks the new word
+ for spelling errors
+ </summary>
+ <param name="Input">The character to be added</param>
+ <param name="SelectionStart">The position to add the character after</param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.RemoveText(System.Int32)">
+ <summary>
+ Removes the character after the selection start (which is 0-based)
+ </summary>
+ <param name="SelectionStart">The position directly before the character to be removed</param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.SetText(System.String)">
+ <summary>
+ Parse the input string into its separate words
+ </summary>
+ <param name="Input"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.FindFirstLetterOrDigitFromPosition(System.Int64)">
+ <summary>
+ Given a starting point, we're looking at the characters before it to find the
+ position of the first character in the word containing the starting point
+ </summary>
+ <param name="SelectionStart">0-based starting point</param>
+ <returns>0-based index of the first character in the word</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.FindLastLetterOrDigitFromPosition(System.Int64)">
+ <summary>
+ Given a starting position, this will return the 0-based index representing
+ the end of a word containing the character at the starting position
+ </summary>
+ <param name="SelectionStart">0-based index</param>
+ <returns>0-based index of the last character in the word</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.AddRangeToIgnore(System.Drawing.CharacterRange)">
+ <summary>
+ Add the range of a word to ignore.
+ </summary>
+ <param name="IgnoreRange"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.GetSpellingErrorRanges">
+ <summary>
+ Returns the ranges of characters associated with misspelled words.
+ This is used by the CustomPaint to know where to paint the squiggly lines
+ </summary>
+ <returns>CharacterRange</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.GetSpellingErrors">
+ <summary>
+ Return the words that are spelling errors
+ </summary>
+ <returns>Array of strings</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.GetSuggestions(System.String,System.Int32)">
+ <summary>
+ Returns the requested number of suggestions based on the inputted word
+ </summary>
+ <param name="Word">Word we need suggestions for</param>
+ <param name="NumberOfSuggestions">How many suggestions to return</param>
+ <returns>Array of strings with the suggestions</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.GetMisspelledWordAtPosition(System.Int32)">
+ <summary>
+ Given a 0-based char index, returns the misspelled word that that character is part of
+ </summary>
+ <param name="CharIndex">0-based Index</param>
+ <returns>Strings.String Type</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.HasSpellingErrors">
+ <summary>
+ Returns whether or not the text has any spelling errors
+ </summary>
+ <returns>A boolean representing whether there are spelling errors</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.IsPartOfSpellingError(System.Int32)">
+ <summary>
+ Given a 0-based character index, returns whether the item is part of a misspelled word
+ </summary>
+ <param name="CharIndex">0-based index</param>
+ <returns>Boolean</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckControl.SetSpellingErrorRanges">
+ <summary>
+ Sets the character ranges of the spelling errors
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.cmdAdd_Click(System.Object,System.EventArgs)">
+ <summary>
+ Given a misspelled word, this will add the word to the dictionary as a correctly spelled word.
+ This added word will be perpetuated on future program starts
+ </summary>
+ <param name="sender">The System.Windows.Forms.Button that was clicked</param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.cmdIgnoreOnce_Click(System.Object,System.EventArgs)">
+ <summary>
+ This will ignore the currently selected word one time.  This only lasts as long as the text is not
+ changed by the user.
+ Also serves as the Undo Edit button if the user types in the textbox
+ </summary>
+ <param name="sender">System.Windows.Forms.Button</param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.cmdIgnoreAll_Click(System.Object,System.EventArgs)">
+ <summary>
+ This will ignore all future instances of the word for the remainder of the time the calling form is open.
+ This is done by adding the word to the spellchecker dictionary in memory
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.cmdChange_Click(System.Object,System.EventArgs)">
+ <summary>
+ This will change one instance of the word.  It will either use the word selected from the listbox
+ or what the user types.  The user can change the whole sentence through this function.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.cmdChangeAll_Click(System.Object,System.EventArgs)">
+ <summary>
+ This will change all instances of the misspelled word.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.txtWord_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Handles if the user types in the textbox
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.NewText">
+ <summary>
+ Returns the new text for the control
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.SetSentenceBreaks">
+ <summary>
+ Goes through the text and finds any sentence breaks.  We only care about '.', '!' and '?"
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.IsSentenceEnding(System.Char)">
+ <summary>
+ See if the current character is a '.', '?' or '!'
+ </summary>
+ <param name="Input"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.SetNextWord">
+ <summary>
+ Refresh the textbox to show the next misspelled word
+ </summary>
+ <returns>A Boolean value indicating if there was another misspelled word.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:NHunspellExtender.SpellCheckForm.GetRTF">
+ <summary>
+ Returns the Rich Text Formatted text for RichTextBox controls.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

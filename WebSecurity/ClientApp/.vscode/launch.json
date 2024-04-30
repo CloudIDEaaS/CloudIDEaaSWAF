@@ -1,0 +1,107 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug WAFManager - From Server",
+      "sourceMaps": true,
+      "preLaunchTask": "npm: build - no background",
+      "url": "https://localhost",
+      "postDebugTask": "term-serve",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug WAFManager",
+      "sourceMaps": true,
+      "preLaunchTask": "npm: serve",
+      "postDebugTask": "term-serve",
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "pattern": "Angular Live Development Server is listening on localhost:([0-9]+)",
+        "uriFormat": "http://localhost:%s",
+        "killOnServerStop": true,
+        "webRoot": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "preLaunchTask": "announce-attach",
+      "request": "attach",
+      "sourceMaps": true,
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug WafManager - e2e:createProject",
+      "sourceMaps": true,
+      "preLaunchTask": "npm: e2e:createProject",
+      "serverReadyAction": {
+        "action": "startDebugging",
+        "pattern": "attach now",
+        "killOnServerStop": true,
+        "name": "Attach to Chrome"
+      }
+    },
+    {
+      "name": "Debug ng build",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "deleteNgCache",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "run-script",
+        "ng:build"
+      ],
+      "console": "integratedTerminal",
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+    },
+    {
+      "name": "Debug grunt",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "prep-environment:production"
+      ],
+      "console": "integratedTerminal",
+      "runtimeExecutable": "grunt"
+    },
+    {
+      "name": "Debug wdio",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/node_modules/@wdio/cli/bin/wdio.js",
+      "args": [
+        "env",
+        "TS_NODE_PROJECT=tsconfig.e2e.json",
+        "env",
+        "TS_NODE_TYPE_CHECK=true",
+        "env",
+        "DEBUG=true",
+        "wdio",
+        "run",
+        "wdio.conf.ts",
+        "--suite",
+        "createProject"
+      ]
+    }
+  ]
+}

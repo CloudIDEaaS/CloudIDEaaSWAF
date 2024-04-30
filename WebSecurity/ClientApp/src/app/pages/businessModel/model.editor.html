@@ -1,0 +1,74 @@
+<ion-content #editor>
+    <div id="edit-panel">
+      <label class="selected-node-group">Selected:</label>
+      <input type="text" #selectedTextInput id="selectedTextInput" readonly class="selected-node-group" [value]="[(selectedNodeText)]">
+      <label>Add:</label>
+      <ul id="new-nodelist">
+        <li><input #nodeNameTextInput type="text" class="new-node" [value]="[(nodeNameText)]"></li>
+      </ul>
+      <i class="fa fa-plus-circle btn-inputs" id="btn-add-input"></i>
+      <i class="fa fa-minus-circle btn-inputs" id="btn-remove-input"></i>
+      <select #levelTypeDropdown [(ngModel)]="selectedLevelType">
+        <option value="Undefined">Undefined</option>
+        <option value="Stakeholder">Stakeholder</option>
+        <option value="Department">Department</option>
+        <option value="Role">Role</option>
+        <option value="System">System</option>
+        <option value="Responsibility/Feature">Responsibility/Feature</option>
+        <option value="Task">Task</option>
+        <option value="Data Item">Data Item</option>
+      </select>
+      <span id="node-type-panel" class="radio-panel">
+        <input type="radio" [(checked)]="childChecked" (change)="childChecked = $event.target.checked" name="node-type" #childRadioButton value="Child"><label for="childRadioButton">Child</label>
+        <input type="radio" [(checked)]="siblingChecked" (change)="siblingChecked = $event.target.checked"  name="node-type" #siblingRadioButton value="Sibling"><label for="siblingRadioButton">Sibling</label>
+      </span>
+      <div class="tooltip">
+        <button type="button" class="disabled tooltip" disabled #addNodeButton id="addNodeButton">Add</button>
+        <span #addButtonTooltip class="tooltiptext" [(innerText)]="addButtonToolTip"></span>
+      </div>
+      <div class="tooltip">
+          <button type="button" class="disabled tooltip" disabled #deleteNodeButton id="deleteNodeButton">Delete</button>
+          <span #deleteButtonTooltip class="tooltiptext"[(innerText)]="deleteButtonToolTip"></span>
+      </div>
+      <div *ngIf="devMode" #devPanel id="dev-panel">
+        <button type="button" #saveToCacheButton (click)="saveToCache(); refreshNodes()">Save To Cache</button>
+        <button type="button" #saveToServerButton (click)="saveToServer()">Save To Server</button>
+        <button type="button" #saveRevisionToServerButton (click)="saveRevisionToServer()">Save Revison To Server</button>
+      </div>
+    </div>
+    <hierarchy #businessModel [nodes]="nodes"></hierarchy>
+    <div #legend class="floating-legend">
+      <ion-chip class="stakeholder" (click)="onLegendChipClick($event)">
+        <ion-icon name="flag"></ion-icon>
+        <ion-label>Stakeholder</ion-label>
+      </ion-chip>
+      <ion-chip class="department" (click)="onLegendChipClick($event)">
+        <ion-icon name="people"></ion-icon>
+        <ion-label>Department</ion-label>
+      </ion-chip>
+      <ion-chip class="role" (click)="onLegendChipClick($event)">
+        <ion-icon name="contact"></ion-icon>
+        <ion-label>Role</ion-label>
+      </ion-chip>
+      <ion-chip class="system" (click)="onLegendChipClick($event)">
+        <ion-icon name="calculator"></ion-icon>
+        <ion-label>System</ion-label>
+      </ion-chip>
+      <ion-chip class="responsibility" (click)="onLegendChipClick($event)">
+        <ion-icon name="briefcase"></ion-icon>
+        <ion-label>Responsibility / Feature</ion-label>
+      </ion-chip>
+      <ion-chip class="task" (click)="onLegendChipClick($event)">
+        <ion-icon name="create"></ion-icon>
+        <ion-label>Task</ion-label>
+      </ion-chip>
+      <ion-chip class="dataitem" (click)="onLegendChipClick($event)">
+        <ion-icon name="document"></ion-icon>
+        <ion-label>Data Item</ion-label>
+      </ion-chip>
+    </div>
+    <div *ngIf="devMode" class="status-bar" #statusBar id="status-bar">
+      <label [innerText]=[(statusBarText)]></label>
+    </div>
+  </ion-content>
+    

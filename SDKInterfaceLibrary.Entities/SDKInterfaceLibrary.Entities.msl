@@ -1,0 +1,1185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SDKInterfaceLibraryEntitiesStoreContainer" CdmEntityContainer="SdkInterfaceLibraryEntities">
+    <EntitySetMapping Name="tblCOFFObjects">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblCOFFObject">
+        <MappingFragment StoreEntitySet="tblCOFFObject">
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="ObjectFileName" ColumnName="ObjectFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCOFFToModules">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblCOFFToModule">
+        <MappingFragment StoreEntitySet="tblCOFFToModule">
+          <ScalarProperty Name="COFFToModuleId" ColumnName="COFFToModuleId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblComponents">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblComponent">
+        <MappingFragment StoreEntitySet="tblComponent">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ComponentType" ColumnName="ComponentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblComponentInterfaces">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblComponentInterface">
+        <MappingFragment StoreEntitySet="tblComponentInterface">
+          <ScalarProperty Name="ComponentToInterfaceId" ColumnName="ComponentToInterfaceId" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="InterfaceId" ColumnName="InterfaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInterfaces">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblInterface">
+        <MappingFragment StoreEntitySet="tblInterface">
+          <ScalarProperty Name="InterfaceId" ColumnName="InterfaceId" />
+          <ScalarProperty Name="InterfaceGuid" ColumnName="InterfaceGuid" />
+          <ScalarProperty Name="InterfaceName" ColumnName="InterfaceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLibraries">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblLibrary">
+        <MappingFragment StoreEntitySet="tblLibrary">
+          <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+          <ScalarProperty Name="LibraryName" ColumnName="LibraryName" />
+          <ScalarProperty Name="LibraryFileName" ColumnName="LibraryFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblModules">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblModule">
+        <MappingFragment StoreEntitySet="tblModule">
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleFileName" ColumnName="ModuleFileName" />
+          <ScalarProperty Name="IsClrModule" ColumnName="IsClrModule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblModuleSymbols">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblModuleSymbol">
+        <MappingFragment StoreEntitySet="tblModuleSymbol">
+          <ScalarProperty Name="ModuleSymbolId" ColumnName="ModuleSymbolId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="RVA" ColumnName="RVA" />
+          <ScalarProperty Name="Segment" ColumnName="Segment" />
+          <ScalarProperty Name="Offset" ColumnName="Offset" />
+          <ScalarProperty Name="Flags" ColumnName="Flags" />
+          <ScalarProperty Name="DecoratedSymbol" ColumnName="DecoratedSymbol" />
+          <ScalarProperty Name="UndecoratedSymbol" ColumnName="UndecoratedSymbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPackages">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblPackage">
+        <MappingFragment StoreEntitySet="tblPackage">
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="PackageGuid" ColumnName="PackageGuid" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderAccessSpecifierDecls">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderAccessSpecifierDecl">
+        <MappingFragment StoreEntitySet="tblSDKHeaderAccessSpecifierDecl">
+          <ScalarProperty Name="AccessSpecifierDeclId" ColumnName="AccessSpecifierDeclId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="OwningClassId" ColumnName="OwningClassId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderArrayTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderArrayType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderArrayType">
+          <ScalarProperty Name="ArrayTypeId" ColumnName="ArrayTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="ElementSize" ColumnName="ElementSize" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SizeType" ColumnName="SizeType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderAttributedTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderAttributedType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderAttributedType">
+          <ScalarProperty Name="AttributedTypeId" ColumnName="AttributedTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="EquivalentQualifiedTypeId" ColumnName="EquivalentQualifiedTypeId" />
+          <ScalarProperty Name="ModifiedQualifiedTypeId" ColumnName="ModifiedQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderBaseClassSpecifiers">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderBaseClassSpecifier">
+        <MappingFragment StoreEntitySet="tblSDKHeaderBaseClassSpecifier">
+          <ScalarProperty Name="BaseClassSpecifierId" ColumnName="BaseClassSpecifierId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningClassId" ColumnName="OwningClassId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Access" ColumnName="Access" />
+          <ScalarProperty Name="IsVirtual" ColumnName="IsVirtual" />
+          <ScalarProperty Name="Offset" ColumnName="Offset" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderBinaryOperators">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderBinaryOperator">
+        <MappingFragment StoreEntitySet="tblSDKHeaderBinaryOperator">
+          <ScalarProperty Name="BinaryOperatorId" ColumnName="BinaryOperatorId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="ExpressionId" ColumnName="ExpressionId" />
+          <ScalarProperty Name="LHSExpressionId" ColumnName="LHSExpressionId" />
+          <ScalarProperty Name="RHSExpressionId" ColumnName="RHSExpressionId" />
+          <ScalarProperty Name="OpCodeString" ColumnName="OpCodeString" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderBlockCommandComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderBlockCommandComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderBlockCommandComment">
+          <ScalarProperty Name="BlockCommandCommentId" ColumnName="BlockCommandCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="BlockContentCommentId" ColumnName="BlockContentCommentId" />
+          <ScalarProperty Name="ParagraphCommentId" ColumnName="ParagraphCommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderBlockCommandCommentArguments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderBlockCommandCommentArgument">
+        <MappingFragment StoreEntitySet="tblSDKHeaderBlockCommandCommentArgument">
+          <ScalarProperty Name="BlockCommandCommentArgumentId" ColumnName="BlockCommandCommentArgumentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningBlockCommandCommentId" ColumnName="OwningBlockCommandCommentId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderBlockContentComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderBlockContentComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderBlockContentComment">
+          <ScalarProperty Name="BlockContentCommentId" ColumnName="BlockContentCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="OwningCommentId" ColumnName="OwningCommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderBuiltinTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderBuiltinType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderBuiltinType">
+          <ScalarProperty Name="BuiltinTypeId" ColumnName="BuiltinTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderBuiltinTypeExpressions">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderBuiltinTypeExpression">
+        <MappingFragment StoreEntitySet="tblSDKHeaderBuiltinTypeExpression">
+          <ScalarProperty Name="BuiltinTypeExpressionId" ColumnName="BuiltinTypeExpressionId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="ExpressionId" ColumnName="ExpressionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderCallExprs">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderCallExpr">
+        <MappingFragment StoreEntitySet="tblSDKHeaderCallExpr">
+          <ScalarProperty Name="CallExprId" ColumnName="CallExprId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="ExpressionId" ColumnName="ExpressionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderClasses">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderClass">
+        <MappingFragment StoreEntitySet="tblSDKHeaderClass">
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationContextId" ColumnName="DeclarationContextId" />
+          <ScalarProperty Name="LayoutClassLayoutId" ColumnName="LayoutClassLayoutId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="HasNonTrivialCopyConstructor" ColumnName="HasNonTrivialCopyConstructor" />
+          <ScalarProperty Name="HasNonTrivialDefaultConstructor" ColumnName="HasNonTrivialDefaultConstructor" />
+          <ScalarProperty Name="HasNonTrivialDestructor" ColumnName="HasNonTrivialDestructor" />
+          <ScalarProperty Name="IsAbstract" ColumnName="IsAbstract" />
+          <ScalarProperty Name="IsDynamic" ColumnName="IsDynamic" />
+          <ScalarProperty Name="IsExternCContext" ColumnName="IsExternCContext" />
+          <ScalarProperty Name="IsPOD" ColumnName="IsPOD" />
+          <ScalarProperty Name="IsPolymorphic" ColumnName="IsPolymorphic" />
+          <ScalarProperty Name="IsUnion" ColumnName="IsUnion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderClassLayouts">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderClassLayout">
+        <MappingFragment StoreEntitySet="tblSDKHeaderClassLayout">
+          <ScalarProperty Name="ClassLayoutId" ColumnName="ClassLayoutId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="LayoutVTableLayoutId" ColumnName="LayoutVTableLayoutId" />
+          <ScalarProperty Name="ABI" ColumnName="ABI" />
+          <ScalarProperty Name="Alignment" ColumnName="Alignment" />
+          <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+          <ScalarProperty Name="HasOwnVFPtr" ColumnName="HasOwnVFPtr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderClassTemplates">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderClassTemplate">
+        <MappingFragment StoreEntitySet="tblSDKHeaderClassTemplate">
+          <ScalarProperty Name="ClassTemplateId" ColumnName="ClassTemplateId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderClassTemplatePartialSpecializations">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderClassTemplatePartialSpecialization">
+        <MappingFragment StoreEntitySet="tblSDKHeaderClassTemplatePartialSpecialization">
+          <ScalarProperty Name="ClassTemplatePartialSpecializationId" ColumnName="ClassTemplatePartialSpecializationId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="ClassTemplateSpecializationId" ColumnName="ClassTemplateSpecializationId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderClassTemplateSpecializations">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderClassTemplateSpecialization">
+        <MappingFragment StoreEntitySet="tblSDKHeaderClassTemplateSpecialization">
+          <ScalarProperty Name="ClassTemplateSpecializationId" ColumnName="ClassTemplateSpecializationId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="OwningClassTemplateId" ColumnName="OwningClassTemplateId" />
+          <ScalarProperty Name="TemplatedDeclClassTemplateId" ColumnName="TemplatedDeclClassTemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="SpecializationKind" ColumnName="SpecializationKind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderComment">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="ParentDeclarationId" ColumnName="ParentDeclarationId" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderCXXConstructExprs">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderCXXConstructExpr">
+        <MappingFragment StoreEntitySet="tblSDKHeaderCXXConstructExpr">
+          <ScalarProperty Name="CXXConstructExprId" ColumnName="CXXConstructExprId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="ExpressionId" ColumnName="ExpressionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderDecayedTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderDecayedType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderDecayedType">
+          <ScalarProperty Name="DecayedTypeId" ColumnName="DecayedTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="DecayedQualifiedTypeId" ColumnName="DecayedQualifiedTypeId" />
+          <ScalarProperty Name="OriginalQualifiedTypeId" ColumnName="OriginalQualifiedTypeId" />
+          <ScalarProperty Name="PointeeQualifiedTypeId" ColumnName="PointeeQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderDeclarations">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderDeclaration">
+        <MappingFragment StoreEntitySet="tblSDKHeaderDeclaration">
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningDeclarationId" ColumnName="OwningDeclarationId" />
+          <ScalarProperty Name="CompleteDeclarationId" ColumnName="CompleteDeclarationId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="DefinitionOrder" ColumnName="DefinitionOrder" />
+          <ScalarProperty Name="LineNumberStart" ColumnName="LineNumberStart" />
+          <ScalarProperty Name="LineNumberEnd" ColumnName="LineNumberEnd" />
+          <ScalarProperty Name="IsDependent" ColumnName="IsDependent" />
+          <ScalarProperty Name="IsImplicit" ColumnName="IsImplicit" />
+          <ScalarProperty Name="IsIncomplete" ColumnName="IsIncomplete" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="USR" ColumnName="USR" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderDeclarationContexts">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderDeclarationContext">
+        <MappingFragment StoreEntitySet="tblSDKHeaderDeclarationContext">
+          <ScalarProperty Name="DeclarationContextId" ColumnName="DeclarationContextId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="Access" ColumnName="Access" />
+          <ScalarProperty Name="DebugText" ColumnName="DebugText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderDependentNameTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderDependentNameType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderDependentNameType">
+          <ScalarProperty Name="DependentNameTypeId" ColumnName="DependentNameTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="DesugaredQualifiedTypeId" ColumnName="DesugaredQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderDependentTemplateSpecializationTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderDependentTemplateSpecializationType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderDependentTemplateSpecializationType">
+          <ScalarProperty Name="DependentTemplateSpecializationTypeId" ColumnName="DependentTemplateSpecializationTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="DesugaredQualifiedTypeId" ColumnName="DesugaredQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderEnumerations">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderEnumeration">
+        <MappingFragment StoreEntitySet="tblSDKHeaderEnumeration">
+          <ScalarProperty Name="EnumerationId" ColumnName="EnumerationId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationContextId" ColumnName="DeclarationContextId" />
+          <ScalarProperty Name="BuiltInTypeId" ColumnName="BuiltInTypeId" />
+          <ScalarProperty Name="EnumIndex" ColumnName="EnumIndex" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderEnumerationItems">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderEnumerationItem">
+        <MappingFragment StoreEntitySet="tblSDKHeaderEnumerationItem">
+          <ScalarProperty Name="EnumerationItemId" ColumnName="EnumerationItemId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="OwningEnumerationId" ColumnName="OwningEnumerationId" />
+          <ScalarProperty Name="ValueIntegerValueId" ColumnName="ValueIntegerValueId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="Expression" ColumnName="Expression" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderExpressions">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderExpression">
+        <MappingFragment StoreEntitySet="tblSDKHeaderExpression">
+          <ScalarProperty Name="ExpressionId" ColumnName="ExpressionId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="StatementId" ColumnName="StatementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFields">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderField">
+        <MappingFragment StoreEntitySet="tblSDKHeaderField">
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="OwningClassId" ColumnName="OwningClassId" />
+          <ScalarProperty Name="BitWidthIntegerValueId" ColumnName="BitWidthIntegerValueId" />
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="FieldIndex" ColumnName="FieldIndex" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="IsBitField" ColumnName="IsBitField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFiles">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderFile">
+        <MappingFragment StoreEntitySet="tblSDKHeaderFile">
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="VendorSdkId" ColumnName="VendorSdkId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="HeaderFileName" ColumnName="HeaderFileName" />
+          <ScalarProperty Name="ParsedSuccessfully" ColumnName="ParsedSuccessfully" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFriends">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderFriend">
+        <MappingFragment StoreEntitySet="tblSDKHeaderFriend">
+          <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="FriendDeclarationId" ColumnName="FriendDeclarationId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFullComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderFullComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderFullComment">
+          <ScalarProperty Name="FullCommentId" ColumnName="FullCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="OwningCommentId" ColumnName="OwningCommentId" />
+          <ScalarProperty Name="OwningRawCommentId" ColumnName="OwningRawCommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFunctions">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderFunction">
+        <MappingFragment StoreEntitySet="tblSDKHeaderFunction">
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="InstantiatedFromFunctionId" ColumnName="InstantiatedFromFunctionId" />
+          <ScalarProperty Name="ReturnTypeQualifiedTypeId" ColumnName="ReturnTypeQualifiedTypeId" />
+          <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+          <ScalarProperty Name="Access" ColumnName="Access" />
+          <ScalarProperty Name="CallingConvention" ColumnName="CallingConvention" />
+          <ScalarProperty Name="HasThisReturn" ColumnName="HasThisReturn" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsInline" ColumnName="IsInline" />
+          <ScalarProperty Name="IsPure" ColumnName="IsPure" />
+          <ScalarProperty Name="IsReturnIndirect" ColumnName="IsReturnIndirect" />
+          <ScalarProperty Name="IsVariadic" ColumnName="IsVariadic" />
+          <ScalarProperty Name="OperatorKind" ColumnName="OperatorKind" />
+          <ScalarProperty Name="Mangled" ColumnName="Mangled" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="DebugText" ColumnName="DebugText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFunctionTemplates">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderFunctionTemplate">
+        <MappingFragment StoreEntitySet="tblSDKHeaderFunctionTemplate">
+          <ScalarProperty Name="FunctionTemplateId" ColumnName="FunctionTemplateId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFunctionTemplateSpecializations">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderFunctionTemplateSpecialization">
+        <MappingFragment StoreEntitySet="tblSDKHeaderFunctionTemplateSpecialization">
+          <ScalarProperty Name="FunctionTemplateSpecializationId" ColumnName="FunctionTemplateSpecializationId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningFunctionTemplateId" ColumnName="OwningFunctionTemplateId" />
+          <ScalarProperty Name="SpecializedFunctionId" ColumnName="SpecializedFunctionId" />
+          <ScalarProperty Name="SpecializationKind" ColumnName="SpecializationKind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderFunctionTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderFunctionType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderFunctionType">
+          <ScalarProperty Name="FunctionTypeId" ColumnName="FunctionTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="ReturnTypeQualifiedTypeId" ColumnName="ReturnTypeQualifiedTypeId" />
+          <ScalarProperty Name="CallingConvention" ColumnName="CallingConvention" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderHeaders">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderHeader">
+        <MappingFragment StoreEntitySet="tblSDKHeaderHeader">
+          <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="NamespaceId" ColumnName="NamespaceId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderHTMLEndTagComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderHTMLEndTagComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderHTMLEndTagComment">
+          <ScalarProperty Name="HTMLEndTagCommentId" ColumnName="HTMLEndTagCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="HTMLTagCommentId" ColumnName="HTMLTagCommentId" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderHTMLStartTagComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderHTMLStartTagComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderHTMLStartTagComment">
+          <ScalarProperty Name="HTMLStartTagCommentId" ColumnName="HTMLStartTagCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="HTMLTagCommentId" ColumnName="HTMLTagCommentId" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderHTMLStartTagCommentAttributes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderHTMLStartTagCommentAttribute">
+        <MappingFragment StoreEntitySet="tblSDKHeaderHTMLStartTagCommentAttribute">
+          <ScalarProperty Name="HTMLStartTagCommentAttributeId" ColumnName="HTMLStartTagCommentAttributeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningHTMLStartTagCommentId" ColumnName="OwningHTMLStartTagCommentId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderHTMLTagComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderHTMLTagComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderHTMLTagComment">
+          <ScalarProperty Name="HTMLTagCommentId" ColumnName="HTMLTagCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="InlineContentCommentId" ColumnName="InlineContentCommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderInjectedClassNameTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderInjectedClassNameType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderInjectedClassNameType">
+          <ScalarProperty Name="InjectedClassNameTypeId" ColumnName="InjectedClassNameTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="InjectedSpecializationTypeQualifiedTypeId" ColumnName="InjectedSpecializationTypeQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderInlineCommandComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderInlineCommandComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderInlineCommandComment">
+          <ScalarProperty Name="InlineCommandCommentId" ColumnName="InlineCommandCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="InlineContentCommentId" ColumnName="InlineContentCommentId" />
+          <ScalarProperty Name="CommandIdIntegerValueId" ColumnName="CommandIdIntegerValueId" />
+          <ScalarProperty Name="CommentRenderKind" ColumnName="CommentRenderKind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderInlineCommandCommentArguments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderInlineCommandCommentArgument">
+        <MappingFragment StoreEntitySet="tblSDKHeaderInlineCommandCommentArgument">
+          <ScalarProperty Name="InlineCommandCommentArgumentId" ColumnName="InlineCommandCommentArgumentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningInlineCommandCommentId" ColumnName="OwningInlineCommandCommentId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderInlineContentComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderInlineContentComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderInlineContentComment">
+          <ScalarProperty Name="InlineContentCommentId" ColumnName="InlineContentCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="OwningCommentId" ColumnName="OwningCommentId" />
+          <ScalarProperty Name="HasTrailingNewline" ColumnName="HasTrailingNewline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderIntegerValues">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderIntegerValue">
+        <MappingFragment StoreEntitySet="tblSDKHeaderIntegerValue">
+          <ScalarProperty Name="IntegerValueId" ColumnName="IntegerValueId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="StringValue" ColumnName="StringValue" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderMacroDefinitions">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderMacroDefinition">
+        <MappingFragment StoreEntitySet="tblSDKHeaderMacroDefinition">
+          <ScalarProperty Name="MacroDefinitionId" ColumnName="MacroDefinitionId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="PreprocessedEntityId" ColumnName="PreprocessedEntityId" />
+          <ScalarProperty Name="Expression" ColumnName="Expression" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LineNumberStart" ColumnName="LineNumberStart" />
+          <ScalarProperty Name="LineNumberEnd" ColumnName="LineNumberEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderMacroExpansions">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderMacroExpansion">
+        <MappingFragment StoreEntitySet="tblSDKHeaderMacroExpansion">
+          <ScalarProperty Name="MacroExpansionId" ColumnName="MacroExpansionId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="PreprocessedEntityId" ColumnName="PreprocessedEntityId" />
+          <ScalarProperty Name="DefinitionMacroDefinitionId" ColumnName="DefinitionMacroDefinitionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderMemberPointerTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderMemberPointerType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderMemberPointerType">
+          <ScalarProperty Name="MemberPointerTypeId" ColumnName="MemberPointerTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="PointeeQualifiedTypeId" ColumnName="PointeeQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderMethods">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderMethod">
+        <MappingFragment StoreEntitySet="tblSDKHeaderMethod">
+          <ScalarProperty Name="MethodId" ColumnName="MethodId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+          <ScalarProperty Name="OwningClassId" ColumnName="OwningClassId" />
+          <ScalarProperty Name="ConversionTypeQualifiedTypeId" ColumnName="ConversionTypeQualifiedTypeId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="IsConst" ColumnName="IsConst" />
+          <ScalarProperty Name="IsCopyConstructor" ColumnName="IsCopyConstructor" />
+          <ScalarProperty Name="IsDefaultConstructor" ColumnName="IsDefaultConstructor" />
+          <ScalarProperty Name="IsExplicit" ColumnName="IsExplicit" />
+          <ScalarProperty Name="IsImplicit" ColumnName="IsImplicit" />
+          <ScalarProperty Name="IsMoveConstructor" ColumnName="IsMoveConstructor" />
+          <ScalarProperty Name="IsOverride" ColumnName="IsOverride" />
+          <ScalarProperty Name="IsPure" ColumnName="IsPure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderNamespaces">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderNamespace">
+        <MappingFragment StoreEntitySet="tblSDKHeaderNamespace">
+          <ScalarProperty Name="NamespaceId" ColumnName="NamespaceId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationContextId" ColumnName="DeclarationContextId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsInline" ColumnName="IsInline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderNonTypeTemplateParameters">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderNonTypeTemplateParameter">
+        <MappingFragment StoreEntitySet="tblSDKHeaderNonTypeTemplateParameter">
+          <ScalarProperty Name="NonTypeTemplateParameterId" ColumnName="NonTypeTemplateParameterId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TemplateParameterId" ColumnName="TemplateParameterId" />
+          <ScalarProperty Name="DefaultArgumentExpressionId" ColumnName="DefaultArgumentExpressionId" />
+          <ScalarProperty Name="PositionIntegerValueId" ColumnName="PositionIntegerValueId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="IsExpandedParameterPack" ColumnName="IsExpandedParameterPack" />
+          <ScalarProperty Name="IsPackExpansion" ColumnName="IsPackExpansion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderPackExpansionTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderPackExpansionType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderPackExpansionType">
+          <ScalarProperty Name="PackExpansionTypeId" ColumnName="PackExpansionTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderParagraphComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderParagraphComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderParagraphComment">
+          <ScalarProperty Name="ParagraphCommentId" ColumnName="ParagraphCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="BlockContentCommentId" ColumnName="BlockContentCommentId" />
+          <ScalarProperty Name="IsWhitespace" ColumnName="IsWhitespace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderParamCommandComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderParamCommandComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderParamCommandComment">
+          <ScalarProperty Name="ParamCommandCommentId" ColumnName="ParamCommandCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="BlockCommandCommentId" ColumnName="BlockCommandCommentId" />
+          <ScalarProperty Name="ParamIndexIntegerValueId" ColumnName="ParamIndexIntegerValueId" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderParameters">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderParameter">
+        <MappingFragment StoreEntitySet="tblSDKHeaderParameter">
+          <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="OwningFunctionTypeId" ColumnName="OwningFunctionTypeId" />
+          <ScalarProperty Name="OwningFunctionId" ColumnName="OwningFunctionId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="DebugText" ColumnName="DebugText" />
+          <ScalarProperty Name="Access" ColumnName="Access" />
+          <ScalarProperty Name="DefaultArgument" ColumnName="DefaultArgument" />
+          <ScalarProperty Name="IsIndirect" ColumnName="IsIndirect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderPointerTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderPointerType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderPointerType">
+          <ScalarProperty Name="PointerTypeId" ColumnName="PointerTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="QualifiedPointeeQualifiedTypeId" ColumnName="QualifiedPointeeQualifiedTypeId" />
+          <ScalarProperty Name="Modifier" ColumnName="Modifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderPreprocessedEntities">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderPreprocessedEntity">
+        <MappingFragment StoreEntitySet="tblSDKHeaderPreprocessedEntity">
+          <ScalarProperty Name="PreprocessedEntityId" ColumnName="PreprocessedEntityId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningDeclarationId" ColumnName="OwningDeclarationId" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="MacroLocation" ColumnName="MacroLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderQualifiedTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderQualifiedType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderQualifiedType">
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Qualifiers" ColumnName="Qualifiers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderRawComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderRawComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderRawComment">
+          <ScalarProperty Name="RawCommentId" ColumnName="RawCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="CommentBlockFullCommentId" ColumnName="CommentBlockFullCommentId" />
+          <ScalarProperty Name="BriefText" ColumnName="BriefText" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderStatements">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderStatement">
+        <MappingFragment StoreEntitySet="tblSDKHeaderStatement">
+          <ScalarProperty Name="StatementId" ColumnName="StatementId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclDeclarationId" ColumnName="DeclDeclarationId" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="String" ColumnName="String" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTagTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTagType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTagType">
+          <ScalarProperty Name="TagTypeId" ColumnName="TagTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTemplates">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTemplate">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTemplate">
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="TemplateDeclarationId" ColumnName="TemplateDeclarationId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTemplateArguments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTemplateArgument">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTemplateArgument">
+          <ScalarProperty Name="TemplateArgumentId" ColumnName="TemplateArgumentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningClassTemplateSpecializationId" ColumnName="OwningClassTemplateSpecializationId" />
+          <ScalarProperty Name="OwningDependentTemplateSpecializationTypeId" ColumnName="OwningDependentTemplateSpecializationTypeId" />
+          <ScalarProperty Name="OwningVarTemplateSpecializationId" ColumnName="OwningVarTemplateSpecializationId" />
+          <ScalarProperty Name="OwningTemplateSpecializationTypeId" ColumnName="OwningTemplateSpecializationTypeId" />
+          <ScalarProperty Name="OwningFunctionTemplateSpecializationId" ColumnName="OwningFunctionTemplateSpecializationId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="TypeQualifiedTypeId" ColumnName="TypeQualifiedTypeId" />
+          <ScalarProperty Name="Integral" ColumnName="Integral" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTemplateParameters">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTemplateParameter">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTemplateParameter">
+          <ScalarProperty Name="TemplateParameterId" ColumnName="TemplateParameterId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="DepthIntegerValueId" ColumnName="DepthIntegerValueId" />
+          <ScalarProperty Name="IndexIntegerValueId" ColumnName="IndexIntegerValueId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="IsParameterPack" ColumnName="IsParameterPack" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTemplateParameterSubstitutionTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTemplateParameterSubstitutionType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTemplateParameterSubstitutionType">
+          <ScalarProperty Name="TemplateParameterSubstitutionTypeId" ColumnName="TemplateParameterSubstitutionTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="ReplacementQualifiedTypeId" ColumnName="ReplacementQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTemplateParameterTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTemplateParameterType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTemplateParameterType">
+          <ScalarProperty Name="TemplateParameterTypeId" ColumnName="TemplateParameterTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="DepthIntegerValueId" ColumnName="DepthIntegerValueId" />
+          <ScalarProperty Name="IndexIntegerValueId" ColumnName="IndexIntegerValueId" />
+          <ScalarProperty Name="ParameterTypeTemplateParameterId" ColumnName="ParameterTypeTemplateParameterId" />
+          <ScalarProperty Name="IsParameterPack" ColumnName="IsParameterPack" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTemplateSpecializationTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTemplateSpecializationType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTemplateSpecializationType">
+          <ScalarProperty Name="TemplateSpecializationTypeId" ColumnName="TemplateSpecializationTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="DesugardQualifiedTypeId" ColumnName="DesugardQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTemplateTemplateParameters">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTemplateTemplateParameter">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTemplateTemplateParameter">
+          <ScalarProperty Name="TemplateTemplateParameterId" ColumnName="TemplateTemplateParameterId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="IsExpandedParameterPack" ColumnName="IsExpandedParameterPack" />
+          <ScalarProperty Name="IsPackExpansion" ColumnName="IsPackExpansion" />
+          <ScalarProperty Name="IsParameterPack" ColumnName="IsParameterPack" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTextComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTextComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTextComment">
+          <ScalarProperty Name="TextCommentId" ColumnName="TextCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="InlineContentCommentId" ColumnName="InlineContentCommentId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTParamCommandComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTParamCommandComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTParamCommandComment">
+          <ScalarProperty Name="TParamCommandCommentId" ColumnName="TParamCommandCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="BlockCommandCommentId" ColumnName="BlockCommandCommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTranslationUnits">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTranslationUnit">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTranslationUnit">
+          <ScalarProperty Name="TranslationUnitId" ColumnName="TranslationUnitId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="NamespaceId" ColumnName="NamespaceId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="IsSystemHeader" ColumnName="IsSystemHeader" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderType">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+          <ScalarProperty Name="IsDependent" ColumnName="IsDependent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypeAlias">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTypeAlia">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTypeAlias">
+          <ScalarProperty Name="TypeAliasId" ColumnName="TypeAliasId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeDefNameDeclId" ColumnName="TypeDefNameDeclId" />
+          <ScalarProperty Name="OwningDeclarationContextId" ColumnName="OwningDeclarationContextId" />
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="DescribedAliasTemplateId" ColumnName="DescribedAliasTemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypeAliasTemplates">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTypeAliasTemplate">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTypeAliasTemplate">
+          <ScalarProperty Name="TypeAliasTemplateId" ColumnName="TypeAliasTemplateId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypeDefs">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTypeDef">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTypeDef">
+          <ScalarProperty Name="TypeDefId" ColumnName="TypeDefId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeDefNameDeclId" ColumnName="TypeDefNameDeclId" />
+          <ScalarProperty Name="OwningDeclarationContextId" ColumnName="OwningDeclarationContextId" />
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypeDefDecls">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTypeDefDecl">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTypeDefDecl">
+          <ScalarProperty Name="TypeDefDeclId" ColumnName="TypeDefDeclId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeDefNameDeclId" ColumnName="TypeDefNameDeclId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypeDefNameDecls">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTypeDefNameDecl">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTypeDefNameDecl">
+          <ScalarProperty Name="TypeDefNameDeclId" ColumnName="TypeDefNameDeclId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypedefTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTypedefType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTypedefType">
+          <ScalarProperty Name="TypedefTypeId" ColumnName="TypedefTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderTypeTemplateParameters">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderTypeTemplateParameter">
+        <MappingFragment StoreEntitySet="tblSDKHeaderTypeTemplateParameter">
+          <ScalarProperty Name="TypeTemplateParameterId" ColumnName="TypeTemplateParameterId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TemplateParameterId" ColumnName="TemplateParameterId" />
+          <ScalarProperty Name="DefaultArgumentQualifiedTypeId" ColumnName="DefaultArgumentQualifiedTypeId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderUnaryTransformTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderUnaryTransformType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderUnaryTransformType">
+          <ScalarProperty Name="UnaryTransformTypeId" ColumnName="UnaryTransformTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="DesugardedQualifiedTypeId" ColumnName="DesugardedQualifiedTypeId" />
+          <ScalarProperty Name="BaseTypeQualifiedTypeId" ColumnName="BaseTypeQualifiedTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVariables">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVariable">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVariable">
+          <ScalarProperty Name="VariableId" ColumnName="VariableId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="OwningDeclarationContextId" ColumnName="OwningDeclarationContextId" />
+          <ScalarProperty Name="QualifiedTypeId" ColumnName="QualifiedTypeId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="Mangled" ColumnName="Mangled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVarTemplates">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVarTemplate">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVarTemplate">
+          <ScalarProperty Name="VarTemplateId" ColumnName="VarTemplateId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVarTemplatePartialSpecializations">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVarTemplatePartialSpecialization">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVarTemplatePartialSpecialization">
+          <ScalarProperty Name="VarTemplatePartialSpecializationId" ColumnName="VarTemplatePartialSpecializationId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="VarTemplateSpecializationId" ColumnName="VarTemplateSpecializationId" />
+          <ScalarProperty Name="OwningVarTemplateId" ColumnName="OwningVarTemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVarTemplateSpecializations">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVarTemplateSpecialization">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVarTemplateSpecialization">
+          <ScalarProperty Name="VarTemplateSpecializationId" ColumnName="VarTemplateSpecializationId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="VariableId" ColumnName="VariableId" />
+          <ScalarProperty Name="TemplateDeclVarTemplateId" ColumnName="TemplateDeclVarTemplateId" />
+          <ScalarProperty Name="LocationIdentifier" ColumnName="LocationIdentifier" />
+          <ScalarProperty Name="SpecializationKind" ColumnName="SpecializationKind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVectorTypes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVectorType">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVectorType">
+          <ScalarProperty Name="VectorTypeId" ColumnName="VectorTypeId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="ElementTypeQualifiedTypeId" ColumnName="ElementTypeQualifiedTypeId" />
+          <ScalarProperty Name="NumElementsIntegerValueId" ColumnName="NumElementsIntegerValueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVerbatimBlockComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVerbatimBlockComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVerbatimBlockComment">
+          <ScalarProperty Name="VerbatimBlockCommentId" ColumnName="VerbatimBlockCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="BlockCommandCommentId" ColumnName="BlockCommandCommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVerbatimBlockLineComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVerbatimBlockLineComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVerbatimBlockLineComment">
+          <ScalarProperty Name="VerbatimBlockLineCommentId" ColumnName="VerbatimBlockLineCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="OwningCommentId" ColumnName="OwningCommentId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVerbatimLineComments">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVerbatimLineComment">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVerbatimLineComment">
+          <ScalarProperty Name="VerbatimLineCommentId" ColumnName="VerbatimLineCommentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="BlockCommandCommentId" ColumnName="BlockCommandCommentId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVTableComponents">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVTableComponent">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVTableComponent">
+          <ScalarProperty Name="VTableComponentId" ColumnName="VTableComponentId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+          <ScalarProperty Name="OwningVTableLayoutId" ColumnName="OwningVTableLayoutId" />
+          <ScalarProperty Name="DeclarationId" ColumnName="DeclarationId" />
+          <ScalarProperty Name="OffsetIntegerValueId" ColumnName="OffsetIntegerValueId" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSDKHeaderVTableLayouts">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblSDKHeaderVTableLayout">
+        <MappingFragment StoreEntitySet="tblSDKHeaderVTableLayout">
+          <ScalarProperty Name="VTableLayoutId" ColumnName="VTableLayoutId" />
+          <ScalarProperty Name="HeaderFileId" ColumnName="HeaderFileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblServices">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblService">
+        <MappingFragment StoreEntitySet="tblService">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ServiceGuid" ColumnName="ServiceGuid" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTestIndexes">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblTestIndex">
+        <MappingFragment StoreEntitySet="tblTestIndex">
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVendors">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblVendor">
+        <MappingFragment StoreEntitySet="tblVendor">
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVendorSDKs">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.tblVendorSDK">
+        <MappingFragment StoreEntitySet="tblVendorSDK">
+          <ScalarProperty Name="VendorSdkId" ColumnName="VendorSdkId" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="SdkName" ColumnName="SdkName" />
+          <ScalarProperty Name="SdkVersion" ColumnName="SdkVersion" />
+          <ScalarProperty Name="SdkRootFolder" ColumnName="SdkRootFolder" />
+          <ScalarProperty Name="IncludeFolders" ColumnName="IncludeFolders" />
+          <ScalarProperty Name="LibraryFolders" ColumnName="LibraryFolders" />
+          <ScalarProperty Name="SourceFolders" ColumnName="SourceFolders" />
+          <ScalarProperty Name="ExecutableFolders" ColumnName="ExecutableFolders" />
+          <ScalarProperty Name="ExcludeFolders" ColumnName="ExcludeFolders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwServices">
+      <EntityTypeMapping TypeName="SDKInterfaceLibrary.Entities.vwService">
+        <MappingFragment StoreEntitySet="vwServices">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ServiceGuid" ColumnName="ServiceGuid" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ComponentType" ColumnName="ComponentType" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleFileName" ColumnName="ModuleFileName" />
+          <ScalarProperty Name="IsClrModule" ColumnName="IsClrModule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

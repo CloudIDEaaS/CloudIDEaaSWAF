@@ -1,0 +1,29 @@
+// place your settings in this file to overwrite default and user settings.
+{
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "explorer.enableDragAndDrop": false,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/*.js.map": true
+  },
+  "git.ignoreLimitWarning": true,
+  "liveServer.settings.port": 5501,
+  "whenFile.change": {
+    "/dist/": {
+      "workbenchColor": {
+        "editor.background": "#dddddd"
+      }
+    },
+    "/node_modules/": {
+      "workbenchColor": {
+        "editor.background": "#dddddd"
+      }
+    },
+    "localhost": {
+      "workbenchColor": {
+        "editor.background": "#dddddd"
+      }
+    }
+  },
+  "workbench.colorCustomizations": {}
+}

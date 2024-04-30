@@ -1,0 +1,1398 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>$(DefineConstants);INCLUDE_FARE;INCLUDE_PROCESSDIAGNOSTICSLIBRARY;INCLUDE_RTFLIBRARY;INCLUDE_SHARPSERIALIZER;NET7;USES_EF_CORE;NOHUNSPELL</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Remove="AssemblyCloning\**" />
+      <None Remove="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Properties\**" />
+      <None Remove="SqlParser\Ast\**" />
+      <None Remove="SqlParser\Dialects\**" />
+      <None Remove="SqlParser\Tokens\**" />
+    </ItemGroup>
+    <ItemGroup>
+        <COMReference Include="stdole">
+            <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+            <VersionMajor>2</VersionMajor>
+            <VersionMinor>0</VersionMinor>
+            <Lcid>0</Lcid>
+            <WrapperTool>primary</WrapperTool>
+            <Isolated>False</Isolated>
+            <EmbedInteropTypes>False</EmbedInteropTypes>
+        </COMReference>
+        <COMReference Include="EnvDTE100">
+          <WrapperTool>tlbimp</WrapperTool>
+          <VersionMinor>0</VersionMinor>
+          <VersionMajor>10</VersionMajor>
+          <Guid>26ad1324-4b7c-44bc-84f8-b86aed45729f</Guid>
+          <Lcid>0</Lcid>
+          <Isolated>false</Isolated>
+          <EmbedInteropTypes>true</EmbedInteropTypes>
+        </COMReference>
+        <COMReference Include="CERTENROLLLib">
+          <WrapperTool>tlbimp</WrapperTool>
+          <VersionMinor>0</VersionMinor>
+          <VersionMajor>1</VersionMajor>
+          <Guid>728ab348-217d-11da-b2a4-000e7bbb2b09</Guid>
+          <Lcid>0</Lcid>
+          <Isolated>false</Isolated>
+          <EmbedInteropTypes>true</EmbedInteropTypes>
+        </COMReference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Accord.Math">
+            <Version>3.8.0</Version>
+        </PackageReference>
+        <PackageReference Include="AnyAscii">
+            <Version>0.2.0</Version>
+        </PackageReference>
+        <PackageReference Include="Aspose.Words">
+            <Version>23.3.0</Version>
+        </PackageReference>
+        <PackageReference Include="envdte" Version="17.8.37221" />
+        <PackageReference Include="HtmlAgilityPack">
+            <Version>1.11.30</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Core" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.2" />
+        <PackageReference Include="Microsoft.Diagnostics.Runtime">
+            <Version>2.0.221201</Version>
+        </PackageReference>
+        <PackageReference Include="Accord.Statistics">
+            <Version>3.8.0</Version>
+        </PackageReference>
+        <PackageReference Include="ConsoleControl">
+            <Version>1.3.0</Version>
+        </PackageReference>
+        <PackageReference Include="FreeSpire.Doc">
+            <Version>7.11.0</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation">
+            <Version>8.0.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp">
+            <Version>3.8.0</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting">
+            <Version>3.8.0</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+            <Version>2.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix">
+            <Version>1.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore">
+            <Version>8.0.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="8.0.2" />
+        <PackageReference Include="Microsoft.SqlServer.DacFx" Version="162.1.172" />
+        <PackageReference Include="Microsoft.WindowsAPICodePack-Core">
+            <Version>1.1.0.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.WindowsAPICodePack-Shell">
+            <Version>1.1.0</Version>
+        </PackageReference>
+        <PackageReference Include="Moq">
+            <Version>4.16.1</Version>
+        </PackageReference>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+        <PackageReference Include="NUglify">
+            <Version>1.20.5</Version>
+        </PackageReference>
+        <PackageReference Include="Pluralize.NET" Version="1.0.2" />
+        <PackageReference Include="sautinsoft.htmltortf">
+            <Version>8.1.6.7</Version>
+        </PackageReference>
+        <PackageReference Include="Serilog" Version="3.1.1" />
+        <PackageReference Include="Serilog.Expressions" Version="4.0.0" />
+        <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+        <PackageReference Include="SuperSocket.ClientEngine" Version="0.10.0" />
+        <PackageReference Include="SuperSocket.ProtoBase" Version="1.7.0.17" />
+        <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+        <PackageReference Include="System.Management">
+            <Version>8.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="System.Management.Automation" Version="7.4.1" />
+        <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
+        <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
+        <PackageReference Include="Telnet">
+            <Version>0.11.3</Version>
+        </PackageReference>
+        <PackageReference Include="TidyManaged">
+            <Version>1.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="WebMarkupMin.Core">
+            <Version>2.13.9-preview1</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.HealthChecks.Elasticsearch" Version="7.0.0-rc2.6" />
+        <PackageReference Include="AspNetCore.HealthChecks.Hangfire" Version="7.0.0-rc2.5" />
+        <PackageReference Include="AspNetCore.HealthChecks.Kafka" Version="7.0.0-rc2.8" />
+        <PackageReference Include="AspNetCore.HealthChecks.MySql.TurricansFork" Version="7.0.1-tns" />
+        <PackageReference Include="AspNetCore.HealthChecks.Network" Version="7.0.0-rc2.6" />
+        <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="7.0.0-rc2.7" />
+        <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="7.0.0-rc2.6" />
+        <PackageReference Include="AspNetCore.HealthChecks.Sqlite" Version="7.0.0-rc2.6" />
+        <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="7.0.0-rc2.11" />
+        <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="7.0.0-rc2.6" />
+        <PackageReference Include="CuttingEdge.Conditions.NetStandard" Version="1.2.0" />
+        <PackageReference Include="InfluxDB.Collector" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="7.0.5" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+        <PackageReference Include="Telegram.Bot" Version="19.0.0" />
+        <PackageReference Include="TimeZoneConverter" Version="6.1.0" />
+        <PackageReference Include="ReaLTaiizor" Version="3.7.9.3" />
+        <PackageReference Include="YamlDotNet" Version="13.1.0" />
+
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="alglib318gpl_net2">
+            <HintPath>..\Binaries\Packages\alglib.csharp\alglib318gpl_net2.dll</HintPath>
+        </Reference>
+        <Reference Include="CsTransformationParserLibrary">
+            <HintPath>..\Binaries\CsTransformationParserLibrary.dll</HintPath>
+        </Reference>
+        <Reference Include="Fare, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\Binaries\Fare.1.0.3\lib\net35\Fare.dll</HintPath>
+        </Reference>
+        <Reference Include="GemBox.Document, Version=25.3.30.1000, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\Binaries\Packages\gembox.document.35.0.1130\lib\net35\GemBox.Document.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualBasic" />
+        <Reference Include="Microsoft.VisualStudio.TextTemplating.12.0">
+            <HintPath>..\Binaries\Packages\Microsoft.VisualStudio.TextTemplating.12.0\Microsoft.VisualStudio.TextTemplating.12.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\Binaries\Packages\Microsoft.VisualStudio.TextTemplating.12.0\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.12.0">
+            <HintPath>..\Binaries\Packages\Microsoft.VisualStudio.TextTemplating.12.0\Microsoft.VisualStudio.TextTemplating.Interfaces.12.0.dll</HintPath>
+        </Reference>
+        <PackageReference Include="DocumentFormat.OpenXml">
+            <Version>2.12.0</Version>
+        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <Reference Include="PresentationCore" />
+        <Reference Include="System" />
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data.Entity" />
+        <Reference Include="System.Data.Entity.Design" />
+        <Reference Include="System.Design" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.IO.Compression">
+            <HintPath>..\..\..\..\windows\Microsoft.NET\Framework64\v4.0.30319\System.IO.Compression.dll</HintPath>
+        </Reference>
+        <PackageReference Include="System.Linq.Dynamic" Version="1.0.7" />
+        <Reference Include="System.Management" />
+        <Reference Include="System.Net.Http" />
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Runtime.Serialization" />
+        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+        <Reference Include="System.Security" />
+        <Reference Include="System.Web" />
+        <Reference Include="System.Web.Extensions" />
+        <Reference Include="System.Web.Helpers">
+            <HintPath>..\Binaries\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages">
+            <HintPath>..\Binaries\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Deployment">
+            <HintPath>..\Binaries\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Razor">
+            <HintPath>..\Binaries\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="WebDriver">
+            <HintPath>..\Binaries\Packages\selenium.webdriver.4.5.1\lib\net48\WebDriver.dll</HintPath>
+        </Reference>
+        <Reference Include="WebDriver.Support">
+            <HintPath>..\Binaries\Packages\selenium.support.4.5.1\lib\net48\WebDriver.Support.dll</HintPath>
+        </Reference>
+        <Reference Include="WindowsBase" />
+        <Reference Include="Microsoft.TeamFoundation.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>..\Binaries\Microsoft.TeamFoundation.Client.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+            <HintPath>..\Binaries\Microsoft.TeamFoundation.VersionControl.Client.dll</HintPath>
+        </Reference>
+        <Reference Include="ZetaLongPaths">
+            <HintPath>..\Binaries\Packages\zetalongpaths.1.0.16\lib\net452-full\ZetaLongPaths.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="..\MailSlot\MailSlot.cs">
+            <Link>Mailslot\MailSlot.cs</Link>
+        </Compile>
+        <Compile Include="..\MailSlot\MailSlotClient.cs">
+            <Link>Mailslot\MailSlotClient.cs</Link>
+        </Compile>
+        <Compile Include="..\MailSlot\MailSlotServer.cs">
+            <Link>Mailslot\MailSlotServer.cs</Link>
+        </Compile>
+        <Compile Include="..\MailSlot\RawMailSlot.cs">
+            <Link>Mailslot\RawMailSlot.cs</Link>
+        </Compile>
+        <Compile Include="ActionQueueService.cs" />
+        <Compile Include="ActionStatus.cs" />
+        <Compile Include="ActiveControls\ToolStrip.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="ADOExtensions.cs" />
+        <Compile Include="AdvanceableEnumerable.cs" />
+        <Compile Include="AhoCorasickIndex\AhoCorasickTree.cs" />
+        <Compile Include="AhoCorasickIndex\AhoCorasickTreeNode.cs" />
+        <Compile Include="AlertingExtensions.cs" />
+        <Compile Include="AppDomainExtensions.cs" />
+        <Compile Include="AspExtensions.cs" />
+        <Compile Include="AtomTable.cs" />
+        <Compile Include="CommandLineParserAttributes.cs" />
+        <Compile Include="ConfigurationExtensions.cs" />
+        <Compile Include="ConsolePositioner.cs" />
+        <Compile Include="CsrDetailsWithUserId.cs" />
+        <Compile Include="CsrDetailsWithPrivateKey.cs" />
+        <Compile Include="CsrDetails.cs" />
+        <Compile Include="CueBannerTextBox.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="BaseWindowsCommandHandler.cs" />
+        <Compile Include="BoolExtensions.cs" />
+        <Compile Include="BTreeIndex\FullText\FullTextIndex.cs" />
+        <Compile Include="BTreeIndex\FullText\TextRank.cs" />
+        <Compile Include="BufferBuilder.cs" />
+        <Compile Include="BufferedPaint\BufferedPainter.cs" />
+        <Compile Include="BufferedPaint\Interop.cs" />
+        <Compile Include="CallbackState.cs" />
+        <Compile Include="CheckedListBoxItem.cs" />
+        <Compile Include="ColorMapEntry.cs" />
+        <Compile Include="ColorPicker\ColorBox2D\ColorChangedEventArgs.cs" />
+        <Compile Include="ColorPicker\ColorBox2D\ColorModes.cs" />
+        <Compile Include="ColorPicker\ColorBox2D\Controls\ColorBox2D.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="ColorPicker\ColorBox2D\Controls\ColorBox2D.Designer.cs">
+            <DependentUpon>ColorBox2D.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ColorPicker\ColorBox2D\Controls\ColorHexagon.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="ColorPicker\ColorBox2D\Controls\ColorHexagon.Designer.cs">
+            <DependentUpon>ColorHexagon.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ColorPicker\ColorBox2D\Controls\ColorSliderVertical.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="ColorPicker\ColorBox2D\Controls\ColorSliderVertical.Designer.cs">
+            <DependentUpon>ColorSliderVertical.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ColorPicker\ColorBox2D\Controls\ColorWheel.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="ColorPicker\ColorBox2D\HslColor.cs" />
+        <Compile Include="ColorPicker\ColorBox2D\MathExtensions.cs" />
+        <Compile Include="ColorPicker\ColorPickerDialog\ColorPickerDialog.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ColorPicker\ColorPickerDialog\ColorPickerDialog.Designer.cs">
+            <DependentUpon>ColorPickerDialog.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ColorPicker\ColorPickerDialog\OverlayScreen.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ColorPicker\ColorPickerDialog\OverlayScreen.Designer.cs">
+            <DependentUpon>OverlayScreen.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ColorChangeFilter.cs" />
+        <Compile Include="ColorProgressBar.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="ColorProgressBarDesigner.cs" />
+        <Compile Include="ColorWheel\ColorEx.cs" />
+        <Compile Include="ColorWheel\Extensions.cs" />
+        <Compile Include="ComboTreeBox\ComboTreeBox.cs" />
+        <Compile Include="ComboTreeBox\ComboTreeDropDown.cs" />
+        <Compile Include="ComboTreeBox\ComboTreeNode.cs" />
+        <Compile Include="ComboTreeBox\ComboTreeNodeCollection.cs" />
+        <Compile Include="ComExtensions.cs" />
+        <Compile Include="CommandPacketT.cs" />
+        <Compile Include="CommandPacket.cs" />
+        <Compile Include="ctrlEditHyperlink.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="ctrlEditHyperlink.Designer.cs">
+            <DependentUpon>ctrlEditHyperlink.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ctrlImageSearchBar.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="ctrlImageSearchBar.Designer.cs">
+            <DependentUpon>ctrlImageSearchBar.cs</DependentUpon>
+        </Compile>
+        <Compile Include="CustomThreadPool.cs" />
+        <Compile Include="DependencyInjectionExtensions.cs" />
+        <Compile Include="FileTypeMatcher\ExactMultiTextFileTypeMatcher.cs" />
+        <Compile Include="FileTypeMatcher\ExactTextFileTypeMatcher.cs" />
+        <Compile Include="FileTypeMatcher\MultiRangeTextFileTypeMatcher.cs" />
+        <Compile Include="FileTypeMatcher\MultiRangeFileTypeMatcher.cs" />
+        <Compile Include="FileTypeMatcher\TextFileTypeMatcherMultiSearch.cs" />
+        <Compile Include="FileTypeMatcher\ExactFileTypeMatcher.cs" />
+        <Compile Include="FileTypeMatcher\FileType.cs" />
+        <Compile Include="FileTypeMatcher\FileTypeChecker.cs" />
+        <Compile Include="FileTypeMatcher\FileTypeMatcher.cs" />
+        <Compile Include="FileTypeMatcher\FuzzyFileTypeMatcher.cs" />
+        <Compile Include="FileTypeMatcher\RangeFileTypeMatcher.cs" />
+        <Compile Include="GeoLocationExtensions.cs" />
+        <Compile Include="HttpServer\OnPrepareResponseEventHandler.cs" />
+        <Compile Include="HttpServer\Server.cs" />
+        <Compile Include="IManagedMutexObject.cs" />
+        <Compile Include="IntermediateLanguage\Globals.cs" />
+        <Compile Include="IntermediateLanguage\ILExtensions.cs" />
+        <Compile Include="IntermediateLanguage\ILInstruction.cs" />
+        <Compile Include="IntermediateLanguage\MethodBodyReader.cs" />
+        <Compile Include="JavaProperties\JavaProperties.cs" />
+        <Compile Include="JavaProperties\JavaPropertyReader.cs" />
+        <Compile Include="JavaProperties\JavaPropertyWriter.cs" />
+        <Compile Include="JavaProperties\ParseException.cs" />
+        <Compile Include="ManagedMutex.cs" />
+        <Compile Include="ManagedMutexObject.cs" />
+        <Compile Include="MemoryMappedFiles\MappedFileInfo.cs" />
+        <Compile Include="MemoryMappedFiles\MemoryMappedExtensions.cs" />
+        <Compile Include="PrettyXml\PrettyXmlWriter.cs" />
+        <Compile Include="SemanticVersion.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Config\Monitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\ExtensionType.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\ExtensionValidatorService.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\FileLoaderService.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\IConfigDeserializer.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\IConfigManipulator.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\IConfigSerializer.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\IExtensionValidatorService.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\IFileLoaderService.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\ISerializerFactory.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\Json\JsonConfigManipulator.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Infrastructure\Yaml\YmlConfigManipulator.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Patterns\Observers\HealthCheckEditorObserver.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Config.Generator\Patterns\Unsubscriber.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Extensions\EndpointMonitoringRouteBuilderExtensions.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Extensions\IServiceMonitoringBuilder.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Extensions\ServiceMonitoringBuilder.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Extensions\ServiceMonitoringExtensions.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Application\Services\Culture\CultureService.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Application\Services\Culture\ICultureService.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\AlertBehaviour.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\AlertTransportMethod.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\ConnectionBehaviour.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\Credentials.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\HangfireBehaviour.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\HealthCheckConditions.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\HttpBehaviour.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\MonitoringSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\MsSqlBehaviour.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\RedisBehaviour.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\ServiceHealthCheck.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\ServiceType.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\SqlBehaviour.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\TransportSettings\AlertTransportSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\TransportSettings\CustomNotificationTransportSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\TransportSettings\DictionaryTransportSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\TransportSettings\EmailTransportSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\TransportSettings\InfluxDbTransportSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\TransportSettings\SlackTransportSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Models\TransportSettings\TelegramTransportSettings.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Abstractions\IHealthCheckResultAnalyzer.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Abstractions\IServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Abstractions\IStackMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Abstractions\PublisherBase.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Abstractions\ServiceMonitoringBase.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Exceptions\AlertBehaviour\AlertBehaviourException.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Exceptions\AlertBehaviour\EmailAlertingValidationError.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Exceptions\AlertBehaviour\InfluxDbValidationError.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Exceptions\AlertBehaviour\SlackAlertingValidationError.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Exceptions\AlertBehaviour\TelegramAlertingValidationError.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Exceptions\InvalidConnectionStringException.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Exceptions\MalformedUriException.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\CustomMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\ElasticSearchServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\GenericSqlWithCustomResultValidationMonitoringBase.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\HangfireServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\HttpServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\MsSqlServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\MySqlServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\PingServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\CustomNotificationService\CustomNotificationAlertingPublisher.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\CustomNotificationService\Message.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\DictionaryPublisher.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\EmailAlertingPublisher.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Templates\Abstractions\ITemplateProvider.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Templates\StandardEmailTemplate.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Transport\Abstractions\IMailMessage.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Transport\Abstractions\IMailMessageTo.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Transport\Abstractions\IMailSenderClient.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Transport\Abstractions\ISmtpMailMessageFactory.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Transport\Implementations\SmtpMailMessage.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Transport\Implementations\SmtpMailMessageFactory.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Email\Transport\Implementations\SmtpMailSender.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\InfluxDb\InfluxDbAlertingPublisher.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Slack\Models\SlackAttachment.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Slack\Models\SlackMessage.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Slack\Models\SlackMessageResponse.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Slack\Sender\SlackMessageSender.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Slack\SlackAlertingPublisher.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\Publishers\Telegram\TelegramAlertingPublisher.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\RedisServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\RmqServiceMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Monitoring\Implementations\StandardStackMonitoring.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\Options\MonitorOptions.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\ResultExpression.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.Library\SqlResultDataType.cs" />
+        <Compile Include="ServiceMonitoring\Simple.Service.Monitoring.UI.Extensions\ServiceMonitoringUIExtensions.cs" />
+        <Compile Include="ThreadCacheServiceProvider.cs" />
+        <Compile Include="WeakDictionary.cs" />
+        <Compile Include="Wrappers\Implementations\DnsProviderFactory.cs" />
+        <Compile Include="DropdownTextEntry\ctrlDropdownTextEntry.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="DropdownTextEntry\ctrlDropdownTextEntry.Designer.cs">
+            <DependentUpon>ctrlDropdownTextEntry.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ctrlEditor.cs" />
+        <Compile Include="ctrlEditor.designer.cs">
+            <DependentUpon>ctrlEditor.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ctrlSplitCheckbox.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="ctrlValueBoundCheckedListBox.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="CursorExtensions.cs" />
+        <Compile Include="DebugState.cs" />
+        <Compile Include="CaselessEqualityComparer.cs" />
+        <Compile Include="DocumentExtensions.cs" />
+        <Compile Include="DropDownControlBase\DropDownControlBase.cs" />
+        <Compile Include="DropDownSearchBox\DropDownSearchBox.cs" />
+        <Compile Include="DropDownSearchBox\TextServices.cs" />
+        <Compile Include="DropdownTextEntry\frmDropdownText.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="DropdownTextEntry\frmDropdownText.Designer.cs">
+            <DependentUpon>frmDropdownText.cs</DependentUpon>
+        </Compile>
+        <Compile Include="DynamicAutocomplete.cs" />
+        <Compile Include="HttpException.cs" />
+        <Compile Include="Wrappers\Interfaces\IDnsProvider.cs" />
+        <Compile Include="Wrappers\Interfaces\IDnsProviderFactory.cs" />
+        <Compile Include="Kestrel\Helpers.cs" />
+        <Compile Include="Kestrel\IKestrelCliResponseHandler.cs" />
+        <Compile Include="Kestrel\IKestrelSpaBuilder.cs" />
+        <Compile Include="Kestrel\KestrelCliMiddleware.cs" />
+        <Compile Include="Kestrel\KestrelDefaultSpaBuilder.cs" />
+        <Compile Include="Kestrel\KestrelExtensions.cs" />
+        <Compile Include="Kestrel\KestrelMiddlewareStaticFileOptions.cs" />
+        <Compile Include="Kestrel\KestrelOptionsService.cs" />
+        <Compile Include="Kestrel\KestrelOptionsInfo.cs" />
+        <Compile Include="Kestrel\KestrelSharedOptionsBase.cs" />
+        <Compile Include="Kestrel\KestrelSpaOptions.cs" />
+        <Compile Include="Kestrel\KestrelStaticFileContext.cs" />
+        <Compile Include="Kestrel\KestrelStaticFileMiddleware.cs" />
+        <Compile Include="Kestrel\KestrelStaticFileOptions.cs" />
+        <Compile Include="Kestrel\KestrelStaticFileResponseContext.cs" />
+        <Compile Include="Logging\LineLogger.cs" />
+        <Compile Include="Logging\LineLoggerProvider.cs" />
+        <Compile Include="Logging\LoggerExtensions.cs" />
+        <Compile Include="Logging\LoggerRelay.cs" />
+        <Compile Include="Logging\LoggerRelayCaptureMethodAssembly.cs" />
+        <Compile Include="Logging\LoggerRelayCaptureMethodsEntry.cs" />
+        <Compile Include="Logging\LoggerRelayCaptureMethodType.cs" />
+        <Compile Include="Logging\LoggerRelayEvent.cs" />
+        <Compile Include="Logging\LoggerRelayEventSink.cs" />
+        <Compile Include="Logging\LoggerRelayEventSinkConfigArgs.cs" />
+        <Compile Include="Logging\TraceExtensions.cs" />
+        <Compile Include="Logging\TraceLogEventSink.cs" />
+        <Compile Include="Logging\TraceLogEventSinkConfigArgs.cs" />
+        <Compile Include="ObjectHashCodeComparer.cs" />
+        <Compile Include="Patches\Vector.cs" />
+        <Compile Include="ProtectedDataExtensions.cs" />
+        <Compile Include="Queryable\IQueryProviderUtility.cs" />
+        <Compile Include="Queryable\Query.cs" />
+        <Compile Include="Queryable\QueryProvider.cs" />
+        <Compile Include="Queryable\TypeSystem.cs" />
+        <Compile Include="ExtensionsSlim.cs" />
+        <Compile Include="RegistryExtensions.cs" />
+        <Compile Include="RegistryHiddenKeyAttribute.cs" />
+        <Compile Include="RulesEngine\Clause.cs" />
+        <Compile Include="RulesEngine\GEClause.cs" />
+        <Compile Include="RulesEngine\GreaterClause.cs" />
+        <Compile Include="RulesEngine\IntersectionType.cs" />
+        <Compile Include="RulesEngine\IsClause.cs" />
+        <Compile Include="RulesEngine\LEClause.cs" />
+        <Compile Include="RulesEngine\LessClause.cs" />
+        <Compile Include="RulesEngine\Rule.cs" />
+        <Compile Include="RulesEngine\RuleInferenceEngine.cs" />
+        <Compile Include="RulesEngine\WorkingMemory.cs" />
+        <Compile Include="SqlParser\SqlParserVisitor.cs" />
+        <Compile Include="Kestrel\KestrelConnectionHandler.cs" />
+        <Compile Include="Wrappers\Implementations\Pipeline.cs" />
+        <Compile Include="Wrappers\Implementations\PipelineReader.cs" />
+        <Compile Include="Wrappers\Implementations\Runspace.cs" />
+        <Compile Include="Wrappers\Implementations\Socket.cs" />
+        <Compile Include="Wrappers\Implementations\SocketWrapped.cs" />
+        <Compile Include="Wrappers\Interfaces\IPipeline.cs" />
+        <Compile Include="Wrappers\Interfaces\IPipelineReader.cs" />
+        <Compile Include="Wrappers\Interfaces\IRunspace.cs" />
+        <Compile Include="Wrappers\Interfaces\IRunspaceFactory.cs" />
+        <Compile Include="Wrappers\Interfaces\ISocket.cs" />
+        <Compile Include="Wrappers\Interfaces\ISocketFactory.cs" />
+        <Content Include="_DynamicJsonConverter.cs" />
+        <Content Include="_DynamicObject.cs" />
+        <Compile Include="ArrayExtensions.cs" />
+        <Compile Include="AssemblyAttributes.cs" />
+        <Compile Include="AssemblyExtensions.cs" />
+        <Compile Include="AssemblyNameParts.cs" />
+        <Compile Include="BaseDictionary.cs" />
+        <Compile Include="BaseList.cs" />
+        <Compile Include="BaseThreadedService.cs" />
+        <Compile Include="BitExtensions.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\BTree.BTreeAlgorithm.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\BTree.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\BTree.TreeNode.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\Collection.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\Common\BTreeEnums.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\Common\IBTree.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\Common\SingleThreadAccess.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\Common\Synchronizer.cs" />
+        <Compile Include="BTreeIndex\Collections\BTree\ThreadSafeBTree.cs" />
+        <Compile Include="BTreeIndex\Collections\Generics\BTree.BTreeAlgorithm.cs" />
+        <Compile Include="BTreeIndex\Collections\Generics\BTree.BTreeKeys.cs" />
+        <Compile Include="BTreeIndex\Collections\Generics\BTree.BTreeValues.cs" />
+        <Compile Include="BTreeIndex\Collections\Generics\BTree.TreeNode.cs" />
+        <Compile Include="BTreeIndex\Collections\Generics\BTreeDictionary.cs" />
+        <Compile Include="BTreeIndex\Collections\Generics\IBTreeDictionary.cs" />
+        <Compile Include="BTreeIndex\Collections\Generics\PartialComparer.cs" />
+        <Compile Include="BytesConverter.cs" />
+        <Compile Include="Caret.cs" />
+        <Compile Include="ChildPopupForm.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ClipboardExtensions.cs" />
+        <Compile Include="ColorGenerator.cs" />
+        <Compile Include="ColorPicker.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="CommandLineParser.cs" />
+        <Compile Include="CompareExtensions.cs" />
+        <Compile Include="CompareWith.cs" />
+        <Compile Include="ConsoleColorizer.cs" />
+        <Compile Include="ConsoleExtensions.cs" />
+        <Compile Include="ConsoleTimer.cs" />
+        <Compile Include="ControlExtensions.cs" />
+        <Compile Include="ComObjectUtility.cs" />
+        <Compile Include="DataGridViewTemplateCell.cs" />
+        <Compile Include="DataGridViewTemplateColumn.cs" />
+        <Compile Include="DataGridViewTemplateColumnCreateControlHandler.cs" />
+        <Compile Include="EmailExtensions.cs" />
+        <Compile Include="ctrlImageOverlay.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="ctrlImageOverlay.Designer.cs">
+            <DependentUpon>ctrlImageOverlay.cs</DependentUpon>
+        </Compile>
+        <Compile Include="EmbeddedEmoji.cs" />
+        <Compile Include="Emojis\Emoji.cs" />
+        <Compile Include="EntityTypeConfigRelationshipManager.cs" />
+        <Compile Include="EnvironmentExtensions.cs" />
+        <Compile Include="FolderSelect.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="FolderSelect.Designer.cs">
+            <DependentUpon>FolderSelect.cs</DependentUpon>
+        </Compile>
+        <Compile Include="FileSelect.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="FileSelect.Designer.cs">
+            <DependentUpon>FileSelect.cs</DependentUpon>
+        </Compile>
+        <Compile Include="FrameworkVersion.cs" />
+        <Compile Include="frmEmojisPalette.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="frmEmojisPalette.Designer.cs">
+            <DependentUpon>frmEmojisPalette.cs</DependentUpon>
+        </Compile>
+        <Compile Include="frmFloatingProgressBar.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="frmFloatingProgressBar.Designer.cs">
+            <DependentUpon>frmFloatingProgressBar.cs</DependentUpon>
+        </Compile>
+        <Compile Include="frmFloatingMessageBox.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="frmFloatingMessageBox.Designer.cs">
+            <DependentUpon>frmFloatingMessageBox.cs</DependentUpon>
+        </Compile>
+        <Compile Include="frmRunningProcesses.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="frmRunningProcesses.Designer.cs">
+            <DependentUpon>frmRunningProcesses.cs</DependentUpon>
+        </Compile>
+        <Compile Include="frmLockingProcesses.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="frmLockingProcesses.Designer.cs">
+            <DependentUpon>frmLockingProcesses.cs</DependentUpon>
+        </Compile>
+        <Compile Include="GroupPolicy.cs" />
+        <Compile Include="HighGraphics\RenderControl.cs" />
+        <Compile Include="HighGraphics\RenderControl.Designer.cs">
+            <DependentUpon>RenderControl.cs</DependentUpon>
+        </Compile>
+        <Compile Include="HighGraphics\RenderEventHandler.cs" />
+        <Compile Include="HostedSynchronizationContext.cs" />
+        <Compile Include="HtmlToXml\ElementHandlerFactory.cs" />
+        <Compile Include="HtmlToXml\ElementHandlerResult.cs" />
+        <Compile Include="HtmlToXml\EntityConverter.cs" />
+        <Compile Include="HtmlToXml\HtmlConverter.cs" />
+        <Compile Include="HtmlToXml\HtmlTag.cs" />
+        <Compile Include="HtmlToXml\IElementHandler.cs" />
+        <Compile Include="HtmlToXml\ITextParser.cs" />
+        <Compile Include="HtmlToXml\NestedElementHandler.cs" />
+        <Compile Include="HtmlToXml\ParagraphHandler.cs" />
+        <Compile Include="HtmlToXml\StackArray.cs" />
+        <Compile Include="HtmlToXml\StringBuilderParser.cs" />
+        <Compile Include="HtmlToXml\TextParser.cs" />
+        <Compile Include="IBaseWindowsCommandHandler.cs" />
+        <Compile Include="IDispatch.cs" />
+        <Compile Include="IJsonTransactionLog.cs" />
+        <Compile Include="ILockable.cs" />
+        <Compile Include="ImageResult.cs" />
+        <Compile Include="IManagedSemaphoreObject.cs" />
+        <Compile Include="InProcessTransactions\IEnlistment.cs" />
+        <Compile Include="InProcessTransactions\Implementation\StateManager.cs" />
+        <Compile Include="InProcessTransactions\Implementation\Transaction.cs" />
+        <Compile Include="InProcessTransactions\Implementation\TransactionWrapper.cs" />
+        <Compile Include="InProcessTransactions\IStateManager.cs" />
+        <Compile Include="InProcessTransactions\ITransaction.cs" />
+        <Compile Include="InProcessTransactions\CountdownEnlistment.cs" />
+        <Compile Include="InProcessTransactions\SimpleEnlistment.cs" />
+        <Compile Include="InProcessTransactions\TransactionAbortedException.cs" />
+        <Compile Include="InProcessTransactions\TransactionExtensions.cs" />
+        <Compile Include="IShellLink.cs" />
+        <Compile Include="IterationStateEnumerable.cs" />
+        <Compile Include="FileCompare.cs" />
+        <Compile Include="FileDetailExtensions.cs" />
+        <Compile Include="FileSystemInfoStatus.cs" />
+        <Compile Include="FormatBuilder.cs" />
+        <Compile Include="frmConsole.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="frmConsole.Designer.cs">
+            <DependentUpon>frmConsole.cs</DependentUpon>
+        </Compile>
+        <Compile Include="GlyphDrawing\ControlGlyph.cs" />
+        <Compile Include="GlyphDrawing\GlyphDictionary.cs" />
+        <Compile Include="GlyphDrawing\GlyphManager.cs" />
+        <Compile Include="GroupedComboBox\GroupedComboBox.cs" />
+        <Compile Include="GroupedComboBox\PriorityGroup.cs" />
+        <Compile Include="ICloneable.cs" />
+        <Compile Include="ILogWriter.cs" />
+        <Compile Include="InterprocessVariables.cs" />
+        <Compile Include="IRuntimeProxy.cs" />
+        <Compile Include="ITemplateEngineHostManager.cs" />
+        <Compile Include="ItemTrackingBindingList.cs" />
+        <Compile Include="JsonExtensions.cs" />
+        <Compile Include="JsonFormatter.cs" />
+        <Compile Include="KeyValuePairConverter.cs" />
+        <Compile Include="LocaleExtensions.cs" />
+        <Compile Include="LockTools.cs" />
+        <Compile Include="LogWriter.cs" />
+        <Compile Include="ManagedSemaphore.cs" />
+        <Compile Include="MedianExtensions.cs" />
+        <Compile Include="MemoryStatus.cs" />
+        <Compile Include="MemoryView\DragDropOperation.cs" />
+        <Compile Include="MemoryView\DrawRect.cs" />
+        <Compile Include="MemoryView\QueryDoDragDropEventHandler.cs" />
+        <Compile Include="MemoryView\RangePainterDragDropDataObject.cs" />
+        <Compile Include="MemoryView\RangePainterHitTestHandler.cs" />
+        <Compile Include="MemoryView\RangePainterTransaction.cs" />
+        <Compile Include="MemoryView\RangePainterType.cs" />
+        <Compile Include="NamedPipes\Delegates.cs" />
+        <Compile Include="NamedPipes\NamedPipeClient.cs" />
+        <Compile Include="NamedPipes\NamedPipeServer.cs" />
+        <Compile Include="NamedPipes\PipeServerConnection.cs" />
+        <Content Include="NativeToolbar.cs" />
+        <Content Include="NativeToolbarButton.cs">
+            <SubType>Component</SubType>
+        </Content>
+        <Content Include="NativeToolbarButtons.cs" />
+        <Compile Include="NetworkExtensions.cs" />
+        <Compile Include="NumberTimeConverter.cs" />
+        <Compile Include="CtrlTabEventArgs.cs" />
+        <Compile Include="CtrlTabManager.cs" />
+        <Compile Include="AnimationExtensions.cs" />
+        <Compile Include="FileUtilities\FileUtilities.cs" />
+        <Compile Include="FolderBrowserDialogEx.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="HexNumberTypeConverter.cs" />
+        <Compile Include="InsignificantWords.cs" />
+        <Compile Include="MediaExtensions.cs" />
+        <Compile Include="MemoryView\IStatusControl.cs" />
+        <Compile Include="MemoryView\MemoryView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="MemoryView\MemoryView.Designer.cs">
+            <DependentUpon>MemoryView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="MemoryView\PainterInfo.cs" />
+        <Compile Include="MemoryView\RangeOrientation.cs" />
+        <Compile Include="MemoryView\RangePainter.cs" />
+        <Compile Include="MemoryView\RangePainterList.cs" />
+        <Compile Include="MemoryView\StatusEventArgs.cs" />
+        <Compile Include="MemoryView\TextExtensions.cs" />
+        <Compile Include="NumericUpDownEx.cs" />
+        <Compile Include="OAuthToken.cs" />
+        <Compile Include="ObjectTree.cs" />
+        <Compile Include="ObjectTreeItem.cs" />
+        <Compile Include="OleExtensions.cs" />
+        <Compile Include="OnTabEventHandler.cs" />
+        <Compile Include="OptionsDialog\frmOptionsDialog.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="OptionsDialog\frmOptionsDialog.Designer.cs">
+            <DependentUpon>frmOptionsDialog.cs</DependentUpon>
+        </Compile>
+        <Compile Include="OverlayScreenBase.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Parsing\SpecialFunction.cs" />
+        <Compile Include="Parsing\TypeInformation.cs" />
+        <Compile Include="Parsing\TypeSignatureParser.cs" />
+        <Compile Include="Phonetics\Phonetics.cs" />
+        <Compile Include="PlatformProcess.cs" />
+        <Compile Include="PortableExecutable\ArchitectureEntry.cs" />
+        <Compile Include="PortableExecutable\BaseRelocation.cs" />
+        <Compile Include="PortableExecutable\BoundForwarderReference.cs" />
+        <Compile Include="PortableExecutable\BoundImportDescriptor.cs" />
+        <Compile Include="PortableExecutable\CodeSource.cs" />
+        <Compile Include="PortableExecutable\CodeType.cs" />
+        <Compile Include="PortableExecutable\CodeViewHeader.cs" />
+        <Compile Include="PortableExecutable\CodeViewPDBHeader.cs" />
+        <Compile Include="PortableExecutable\COFFHeader.cs" />
+        <Compile Include="PortableExecutable\COFFSection.cs" />
+        <Compile Include="PortableExecutable\COFFSectionHeader.cs" />
+        <Compile Include="PortableExecutable\COFFSectionHeaders.cs" />
+        <Compile Include="PortableExecutable\ConfigurationDirectory.cs" />
+        <Compile Include="PortableExecutable\DataDirectories.cs" />
+        <Compile Include="PortableExecutable\DataDirectoryEntry.cs" />
+        <Compile Include="PortableExecutable\DataDirectoryHeader.cs" />
+        <Compile Include="PortableExecutable\DebugDirectory.cs" />
+        <Compile Include="PortableExecutable\DelayImportEntry.cs" />
+        <Compile Include="PortableExecutable\DescriptorEntry.cs" />
+        <Compile Include="PortableExecutable\Enums\CertificateType.cs" />
+        <Compile Include="PortableExecutable\Enums\DataSectionFlags.cs" />
+        <Compile Include="PortableExecutable\Enums\DebugType.cs" />
+        <Compile Include="PortableExecutable\Enums\DirectoryId.cs" />
+        <Compile Include="PortableExecutable\Enums\DllCharacteristics.cs" />
+        <Compile Include="PortableExecutable\Enums\ImageCharacteristics.cs" />
+        <Compile Include="PortableExecutable\Enums\LayoutFlags.cs" />
+        <Compile Include="PortableExecutable\Enums\Machine.cs" />
+        <Compile Include="PortableExecutable\Enums\MemoryEnums.cs" />
+        <Compile Include="PortableExecutable\Enums\OptionalMagic.cs" />
+        <Compile Include="PortableExecutable\Enums\RelocationType.cs" />
+        <Compile Include="PortableExecutable\Enums\ResourceId.cs" />
+        <Compile Include="PortableExecutable\Enums\Subsystem.cs" />
+        <Compile Include="PortableExecutable\ExceptionEntry.cs" />
+        <Compile Include="PortableExecutable\ExportData.cs" />
+        <Compile Include="PortableExecutable\ExportDirectory.cs" />
+        <Compile Include="PortableExecutable\Extensions.cs" />
+        <Compile Include="PortableExecutable\GlobalPointerEntry.cs" />
+        <Compile Include="PortableExecutable\IDataDirectory.cs" />
+        <Compile Include="PortableExecutable\IImageLayoutCodeProviderItem.cs" />
+        <Compile Include="PortableExecutable\IImageLayoutItem.cs" />
+        <Compile Include="PortableExecutable\IImageReader.cs" />
+        <Compile Include="PortableExecutable\ImageLayoutEvents.cs" />
+        <Compile Include="PortableExecutable\ImportAddressDirectory.cs" />
+        <Compile Include="PortableExecutable\ImportAddressEntry.cs" />
+        <Compile Include="PortableExecutable\ImportByName.cs" />
+        <Compile Include="PortableExecutable\ImportDescriptor.cs" />
+        <Compile Include="PortableExecutable\IPEImage.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ChildrenEnumerator.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ChildrenEnumeratorFilter.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\DescendantEnumerator.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\IImageLayoutGenericReference.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\IImageLayoutItemContainer.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\IImageLayoutItemGenericContainer.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\IImageLayoutItemTupleContainer.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\IImageLayoutReference.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\IImageLayoutRelationship.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\IImageLayoutTree.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutItem.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutItemFind.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutItemT.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutItemTuple.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutReference.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutReferenceT.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutRelationship.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ImageLayoutRelationshipT.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ItemEnumerator.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\LayoutExtensions.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ReferencedItem.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ReferenceEnumerator.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\ReferenceEnumeratorFilter.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\RootEnumerator.cs" />
+        <Compile Include="PortableExecutable\LayoutItems\RootEnumeratorFilter.cs" />
+        <Compile Include="PortableExecutable\OffsetSizeCalculator.cs" />
+        <Compile Include="PortableExecutable\PEExtensions.cs" />
+        <Compile Include="PortableExecutable\RealModeStub.cs" />
+        <Compile Include="PortableExecutable\RelocationEntry.cs" />
+        <Compile Include="PortableExecutable\ResourceDataEntry.cs" />
+        <Compile Include="PortableExecutable\ResourceDirectory.cs" />
+        <Compile Include="PortableExecutable\ResourceDirectoryEntry.cs" />
+        <Compile Include="PortableExecutable\ResourceEntry.cs" />
+        <Compile Include="PortableExecutable\SectionHeader.cs" />
+        <Compile Include="PortableExecutable\SectionHeaders.cs" />
+        <Compile Include="PortableExecutable\ThunkData.cs" />
+        <Compile Include="PortableExecutable\TLSEntry.cs" />
+        <Compile Include="PortableExecutable\TreeBackupImageAttribute.cs" />
+        <Compile Include="PortableExecutable\TreeImageAttribute.cs" />
+        <Compile Include="PortableExecutable\TreeImageExtensions.cs" />
+        <Compile Include="PortableExecutable\WinCertificate.cs" />
+        <Compile Include="ProcessAdvancedInfoEx.cs" />
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <Compile Include="PropertyEditorBase.cs" />
+        <Compile Include="RegistryHive.cs" />
+        <Compile Include="RegistryKeyEnumerableAttribute.cs" />
+        <Compile Include="RegistryKeyInterfaces.cs" />
+        <Compile Include="RegistryKeyNameAttribute.cs" />
+        <Compile Include="RegistryNonStringValueAttribute.cs" />
+        <Compile Include="RichEdit\IRichEditOle.cs" />
+        <Compile Include="RotatePushButton.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="RotateButton.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="RuntimeProxyExtensions.cs" />
+        <Compile Include="ScreenCapture\ControlPanel.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ScreenCapture\ControlPanel.Designer.cs">
+            <DependentUpon>ControlPanel.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ScreenCapture\ImageEditor.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ScreenCapture\ImageEditor.Designer.cs">
+            <DependentUpon>ImageEditor.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ScreenCapture\OverlayScreen.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ScreenCapture\OverlayScreen.Designer.cs">
+            <DependentUpon>OverlayScreen.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ScreenCapture\ScreenShot.cs" />
+        <Compile Include="ScreenCapture\Settings.cs" />
+        <Compile Include="ScreenCapture\TipWindow.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ScreenCapture\TipWindow.Designer.cs">
+            <DependentUpon>TipWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ManagedSemaphoreObject.cs" />
+        <Compile Include="SevenSegment\SevenSegment.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="SevenSegment\SevenSegmentClock.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="SevenSegment\SevenSegmentArray.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="SortableBindingList.cs" />
+        <Compile Include="SortedList.cs" />
+        <Compile Include="BaseStandardStreamService.cs" />
+        <Compile Include="ctrlSplitButton.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="SplineExtensions.cs" />
+        <Compile Include="SwapListBase.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="SwapListBase.Designer.cs">
+            <DependentUpon>SwapListBase.cs</DependentUpon>
+        </Compile>
+        <Compile Include="SwapListT.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="ITemplateEngineHost.cs" />
+        <Compile Include="TelnetClient.cs" />
+        <Compile Include="TextEdit.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="TextEdit.Designer.cs">
+            <DependentUpon>TextEdit.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TextEditElements\Character.cs" />
+        <Compile Include="TextEditElements\Selection.cs" />
+        <Compile Include="TextEditElements\TextElement.cs" />
+        <Compile Include="TextEditElements\Word.cs" />
+        <Compile Include="TextObjectModel\Alignment.cs" />
+        <Compile Include="MemoryView\TextObjectModel\AsciiDocument.cs" />
+        <Compile Include="MemoryView\TextObjectModel\BytesDocument.cs" />
+        <Compile Include="TextObjectModel\GetRectEventArgs.cs" />
+        <Compile Include="TextObjectModel\GetTextEventArgs.cs" />
+        <Compile Include="MemoryView\TextObjectModel\IMemoryTextDocument.cs" />
+        <Compile Include="TextObjectModel\ITextDocument.cs" />
+        <Compile Include="TextObjectModel\ITextLine.cs" />
+        <Compile Include="TextObjectModel\ITextParagraph.cs" />
+        <Compile Include="TextObjectModel\ITextRange.cs" />
+        <Compile Include="TextObjectModel\ITextSelection.cs" />
+        <Compile Include="TextObjectModel\ITextStoryRanges.cs" />
+        <Compile Include="MemoryView\TextObjectModel\MemoryTextDocument.cs" />
+        <Compile Include="TextObjectModel\PointFlags.cs" />
+        <Compile Include="TextObjectModel\StoryRanges.cs" />
+        <Compile Include="TextObjectModel\StoryType.cs" />
+        <Compile Include="TextObjectModel\Style.cs" />
+        <Compile Include="TextObjectModel\TextLine.cs" />
+        <Compile Include="TextObjectModel\TextRange.cs" />
+        <Compile Include="TextObjectModel\TextSelection.cs" />
+        <Compile Include="TextObjectModel\TextSelectionFlags.cs" />
+        <Compile Include="TextObjectModel\TextSelectionType.cs" />
+        <Compile Include="Parsing\CharacterCodes.cs" />
+        <Compile Include="Parsing\Diagnostic.cs" />
+        <Compile Include="Parsing\DiagnosticCategory.cs" />
+        <Compile Include="Parsing\ITextRange.cs" />
+        <Compile Include="Parsing\NodeArray.cs" />
+        <Compile Include="Parsing\Nodes\ArrayTypeNode.cs" />
+        <Compile Include="Parsing\Nodes\BindingPattern.cs" />
+        <Compile Include="Parsing\Nodes\ComputedPropertyName.cs" />
+        <Compile Include="Parsing\Nodes\CLRStringEntityName.cs" />
+        <Compile Include="Parsing\Nodes\CLRStringType.cs" />
+        <Compile Include="Parsing\Nodes\Declaration.cs" />
+        <Compile Include="Parsing\Nodes\Expression.cs" />
+        <Compile Include="Parsing\Nodes\FunctionLikeDeclaration.cs" />
+        <Compile Include="Parsing\Nodes\IncrementExpression.cs" />
+        <Compile Include="Parsing\Nodes\LeftHandSideExpression.cs" />
+        <Compile Include="Parsing\Nodes\LiteralExpression.cs" />
+        <Compile Include="Parsing\Nodes\LiteralLikeNode.cs" />
+        <Compile Include="Parsing\Nodes\MemberExpression.cs" />
+        <Compile Include="Parsing\Nodes\MethodDeclaration.cs" />
+        <Compile Include="Parsing\ModifierFlags.cs" />
+        <Compile Include="Parsing\NodeFlags.cs" />
+        <Compile Include="Parsing\ExtensionMethods.cs" />
+        <Compile Include="Parsing\NodeStackOperation.cs" />
+        <Compile Include="Parsing\Nodes\Identifier.cs" />
+        <Compile Include="Parsing\Nodes\CLRStringMethod.cs" />
+        <Compile Include="Parsing\Nodes\Node.cs" />
+        <Compile Include="Parsing\Nodes\NumericLiteral.cs" />
+        <Compile Include="Parsing\Nodes\ParameterDeclaration.cs" />
+        <Compile Include="Parsing\Nodes\PrimaryExpression.cs" />
+        <Compile Include="Parsing\Nodes\Names.cs" />
+        <Compile Include="Parsing\Nodes\QualifiedName.cs" />
+        <Compile Include="Parsing\Nodes\SignatureDeclaration.cs" />
+        <Compile Include="Parsing\Nodes\StringLiteral.cs" />
+        <Compile Include="Parsing\Nodes\SyntaxTree.cs" />
+        <Compile Include="Parsing\Nodes\Token.cs" />
+        <Compile Include="Parsing\Nodes\TypeNode.cs" />
+        <Compile Include="Parsing\Nodes\TypeParameterDeclaration.cs" />
+        <Compile Include="Parsing\Nodes\UnaryExpression.cs" />
+        <Compile Include="Parsing\Nodes\Unions.cs" />
+        <Compile Include="Parsing\Parser.cs" />
+        <Compile Include="Parsing\ParserExtensions.cs" />
+        <Compile Include="Parsing\ParsingContext.cs" />
+        <Compile Include="Parsing\Scanner.cs" />
+        <Compile Include="Parsing\SourceKind.cs" />
+        <Compile Include="Parsing\SyntaxKind.cs" />
+        <Compile Include="OneTimeThreadTimer.cs" />
+        <Compile Include="Parsing\Nodes\TokenNode.cs" />
+        <Compile Include="Parsing\TransformFlags.cs" />
+        <Compile Include="Parsing\Nodes\TypeReferenceNode.cs" />
+        <Compile Include="ProcessBinaryWriter.cs" />
+        <Compile Include="DoubleBufferedTreeView.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="DisposableBase.cs" />
+        <Compile Include="DisposableExtensions.cs" />
+        <Compile Include="DoubleBufferedPanel.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="TextSelectionEventHandler.cs" />
+        <Compile Include="ThreadExtensions.cs" />
+        <Compile Include="TimeSelectDropdown.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="TimeSelectDropdown.Designer.cs">
+            <DependentUpon>TimeSelectDropdown.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TimerQueue.cs" />
+        <Compile Include="TimerQueueCallback.cs" />
+        <Compile Include="ToolWindow.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ToolWindow.Designer.cs">
+            <DependentUpon>ToolWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TransparentControl.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="TsvEntityParserHost.cs" />
+        <Compile Include="TsvParser.cs" />
+        <Compile Include="TsvParserHost.cs" />
+        <Compile Include="TsvParserChildRecursionAttribute.cs" />
+        <Compile Include="TypeCache.cs" />
+        <Compile Include="UriExtensions.cs" />
+        <Compile Include="ValidationAttributes\HtmlAttribute.cs" />
+        <Compile Include="ValidationAttributes\PartialUrlAttribute.cs" />
+        <Compile Include="ValidationAttributes\TextListAttribute.cs" />
+        <Compile Include="XCopy\FolderXCopy.cs" />
+        <Compile Include="XCopy\FolderXCopyOptions.cs" />
+        <Compile Include="XCopy\FolderXCopyResult.cs" />
+        <Compile Include="XPathExtensions.cs" />
+        <None Include="ComboTreeBox\ComboTreeBox.cd" />
+        <Compile Include="DTEExtensions.cs" />
+        <Compile Include="EnhancedScrollBar.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="HSLColor.cs" />
+        <Compile Include="KeyboardExtensions.cs" />
+        <Compile Include="ListViewSorter.cs" />
+        <Compile Include="Math.cs" />
+        <Compile Include="MemberSelectorEvaluator.cs" />
+        <Compile Include="DateTimeExtensions.cs" />
+        <Content Include="__BracedAttributeArgumentEvaluator.cs" />
+        <Compile Include="DebugUtils.cs" />
+        <Compile Include="DefaultEqualityComparer.cs" />
+        <Compile Include="DisposableHandle.cs" />
+        <Compile Include="DotNetType.cs" />
+        <Compile Include="DotNetTypeAttribute.cs" />
+        <Compile Include="DrawingExtensions.cs" />
+        <Compile Include="EnumerableExtensions.cs" />
+        <Compile Include="EnumExtensions.cs" />
+        <Compile Include="EventArgsT.cs" />
+        <Compile Include="EventExtensions.cs" />
+        <Compile Include="EventHandlerT.cs" />
+        <Compile Include="ExceptionExtensions.cs" />
+        <Compile Include="ExpressionExtensions.cs" />
+        <Compile Include="FileDetails.cs" />
+        <Compile Include="FixedDictionary.cs" />
+        <Compile Include="FixedList.cs" />
+        <Compile Include="FixedQueue.cs" />
+        <Compile Include="GacUtil.cs" />
+        <Compile Include="GuidExtensions.cs" />
+        <Compile Include="IDispatchUtility.cs" />
+        <Compile Include="ImageExtensions.cs" />
+        <Compile Include="IManagedLockObject.cs" />
+        <Compile Include="CaselessString.cs" />
+        <Compile Include="Line.cs" />
+        <Compile Include="MarshalExtensions.cs" />
+        <Compile Include="IOExtensions.cs" />
+        <Compile Include="LockManager.cs" />
+        <Compile Include="LowHiWord.cs" />
+        <Compile Include="ManagedLock.cs" />
+        <Compile Include="ManagedLockDoOnceAction.cs" />
+        <Compile Include="ManagedLockObject.cs" />
+        <Compile Include="HashGenerator.cs" />
+        <Compile Include="NativeWindow.cs" />
+        <Compile Include="NumberExtensions.cs" />
+        <Compile Include="ObjectExtensions.cs" />
+        <Compile Include="OneTimeTimer.cs" />
+        <Compile Include="Oscillator.cs" />
+        <Compile Include="OscillatorNotifyItem.cs" />
+        <Compile Include="OSVersion.cs" />
+        <Compile Include="PathExtensions.cs" />
+        <Compile Include="PortableExecutable\AddressingUtils.cs" />
+        <Compile Include="PortableExecutable\DataDirectory.cs" />
+        <Compile Include="PortableExecutable\DOSHeader.cs" />
+        <Compile Include="PortableExecutable\PEHeader.cs" />
+        <Compile Include="PortableExecutable\Section.cs" />
+        <Compile Include="ProcessBinaryReader.cs" />
+        <Compile Include="ProcessBinaryReaderExtensions.cs" />
+        <Compile Include="ProcessDiagnosticsWrapper.cs" />
+        <Compile Include="ProcessExtensions.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="ProcessHelpers.cs" />
+        <Compile Include="ProcessStream.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="PropertyChangeExtensions.cs" />
+        <Compile Include="RegistryKeyExtensions.cs" />
+        <Compile Include="RegistrySettingsBase.cs" />
+        <Compile Include="ResourceHelper.cs" />
+        <Compile Include="RtfStringExtensions.cs" />
+        <Compile Include="RunningObjectTable.cs" />
+        <Compile Include="SecurityExtensions.cs" />
+        <Compile Include="SeekOverunHandler.cs" />
+        <Compile Include="ShellExtensions.cs" />
+        <Compile Include="StatusEntry.cs" />
+        <Compile Include="StatusStripProperties.cs" />
+        <Compile Include="StreamReset.cs" />
+        <Compile Include="SwitchExtensions.cs" />
+        <Compile Include="TabControlEx.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="TagHandler.cs" />
+        <Compile Include="StringExtensions.cs" />
+        <Compile Include="SystemInfo.cs" />
+        <Compile Include="TemplateEngineHost.cs" />
+        <Compile Include="TfsAgent.cs" />
+        <Compile Include="TitlePropertyGrid.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="TitlePropertyGrid.Designer.cs">
+            <DependentUpon>TitlePropertyGrid.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ToolStripNumericUpDown.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="TipWindow.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="TipWindow.Designer.cs">
+            <DependentUpon>TipWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="TupleExtensions.cs" />
+        <Compile Include="TypeExtensions.cs" />
+        <Compile Include="UnionExtensions.cs" />
+        <Compile Include="VariantType.cs" />
+        <Compile Include="VirtualListView.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="WaitCursor.cs" />
+        <Compile Include="WaitHandleExtensions.cs" />
+        <Compile Include="WebExtensions.cs" />
+        <Compile Include="WindowsHook.cs" />
+        <Compile Include="WindowsSearch\Interfaces\ISearchCatalogManager.cs" />
+        <Compile Include="WindowsSearch\Interfaces\ComInterface.cs" />
+        <Compile Include="WindowsSearch\Interfaces\ISearchManager.cs" />
+        <Compile Include="WindowsSearch\Interfaces\NativeMethods.cs" />
+        <Compile Include="WindowsSearch\Interfaces\ProxyAccess.cs" />
+        <Content Include="WindowsSearch\SearchCatalog.cs" />
+        <Content Include="WindowsSearch\SearchManager.cs" />
+        <Compile Include="WindowWrapper.cs" />
+        <Compile Include="XmlExtensions.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <COMReference Include="mscoree">
+            <Guid>{5477469E-83B1-11D2-8B49-00A0C9B7C9C4}</Guid>
+            <VersionMajor>2</VersionMajor>
+            <VersionMinor>4</VersionMinor>
+            <Lcid>0</Lcid>
+            <WrapperTool>tlbimp</WrapperTool>
+            <Isolated>False</Isolated>
+            <EmbedInteropTypes>True</EmbedInteropTypes>
+        </COMReference>
+        <COMReference Include="Shell32">
+            <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+            <VersionMajor>1</VersionMajor>
+            <VersionMinor>0</VersionMinor>
+            <Lcid>0</Lcid>
+            <WrapperTool>tlbimp</WrapperTool>
+            <Isolated>False</Isolated>
+            <EmbedInteropTypes>True</EmbedInteropTypes>
+        </COMReference>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ColorMine\ColorMine.csproj">
+            <Project>{a86313db-d1e8-486b-9fac-47e3fb176da7}</Project>
+            <Name>ColorMine</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\d2dlib-master\src\D2DLibExport\D2DLibExport.csproj">
+            <Project>{81dd53d8-fcf0-4384-a931-9370fa8e8e67}</Project>
+            <Name>D2DLibExport</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\d2dlib-master\src\D2DWinForm\D2DWinForm.csproj">
+            <Project>{2ec7844f-29bf-4961-a80c-386ae84f6384}</Project>
+            <Name>D2DWinForm</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\EdgeDetection\EdgeDetection.csproj">
+            <Project>{e0239bee-27f5-4e55-807e-6bac42ec4d9d}</Project>
+            <Name>EdgeDetection</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\ManagedTOM\ManagedTOM.vcxproj">
+            <Project>{372efdc5-80dd-4bf1-aec9-7a49f32115c3}</Project>
+            <Name>ManagedTOM</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\ProcessDiagnosticsLibrary\ProcessDiagnosticsLibrary.csproj">
+            <Project>{BBB16FB1-0D5F-4E71-801C-E58A48305179}</Project>
+            <Name>ProcessDiagnosticsLibrary</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\Rtf2Html\Converter\Html\ConverterHtml2010.csproj">
+            <Project>{0F106257-E070-4510-BFA7-87CC6EDC5BA1}</Project>
+            <Name>ConverterHtml2010</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\Rtf2Html\Interpreter\Interpreter2010.csproj">
+            <Project>{3F1B94DC-2EE6-4674-A2DE-E60FFC63A1D9}</Project>
+            <Name>Interpreter2010</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\Rtf2Html\Parser\Parser2010.csproj">
+            <Project>{210DBD13-A7B0-430A-AEB4-7E558CA61A46}</Project>
+            <Name>Parser2010</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\SharpSerializer\SharpSerializer.Library\SharpSerializer.Library.csproj">
+            <Project>{88AB738F-7A36-4C93-B808-B6CE2D3444B2}</Project>
+            <Name>SharpSerializer.Library</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="ColorPicker\ColorBox2D\Controls\ColorSliderVertical.resx">
+            <DependentUpon>ColorSliderVertical.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ColorPicker\ColorPickerDialog\ColorPickerDialog.resx">
+            <DependentUpon>ColorPickerDialog.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ColorPicker\ColorPickerDialog\OverlayScreen.resx">
+            <DependentUpon>OverlayScreen.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ColorProgressBar.resx">
+            <DependentUpon>ColorProgressBar.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ctrlEditHyperlink.resx">
+            <DependentUpon>ctrlEditHyperlink.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ctrlImageSearchBar.resx">
+            <DependentUpon>ctrlImageSearchBar.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="DropdownTextEntry\ctrlDropdownTextEntry.resx">
+            <DependentUpon>ctrlDropdownTextEntry.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ctrlEditor.resx">
+            <DependentUpon>ctrlEditor.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="DropdownTextEntry\frmDropdownText.resx">
+            <DependentUpon>frmDropdownText.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="FolderSelect.resx">
+            <DependentUpon>FolderSelect.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="FileSelect.resx">
+            <DependentUpon>FileSelect.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="frmConsole.resx">
+            <DependentUpon>frmConsole.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="frmEmojisPalette.resx">
+            <DependentUpon>frmEmojisPalette.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="frmFloatingProgressBar.resx">
+            <DependentUpon>frmFloatingProgressBar.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="frmFloatingMessageBox.resx">
+            <DependentUpon>frmFloatingMessageBox.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="frmRunningProcesses.resx">
+            <DependentUpon>frmRunningProcesses.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="frmLockingProcesses.resx">
+            <DependentUpon>frmLockingProcesses.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Images\Add.bmp" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="BTreeIndex\Collections\BTree\BTreeResources.resx">
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <EmbeddedResource Include="MemoryView\MemoryView.resx">
+            <DependentUpon>MemoryView.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="OptionsDialog\frmOptionsDialog.resx">
+            <DependentUpon>frmOptionsDialog.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ScreenCapture\ControlPanel.resx">
+            <DependentUpon>ControlPanel.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ScreenCapture\ImageEditor.resx">
+            <DependentUpon>ImageEditor.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ScreenCapture\OverlayScreen.resx">
+            <DependentUpon>OverlayScreen.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="ScreenCapture\TipWindow.resx">
+            <DependentUpon>TipWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="SevenSegment\SevenSegmentClock.resx">
+            <DependentUpon>SevenSegmentClock.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="SwapListBase.resx">
+            <DependentUpon>SwapListBase.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="TitlePropertyGrid.resx">
+            <DependentUpon>TitlePropertyGrid.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="TipWindow.resx">
+            <DependentUpon>TipWindow.cs</DependentUpon>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="tidy32.dll">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="tidy64.dll">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <EmbeddedResource Include="Emojis\Emojis.html" />
+        <Content Include="htmltortf_sautinsoft.dll">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\ColorSelector.cur" />
+        <EmbeddedResource Include="Images\WarningIcon.png" />
+        <EmbeddedResource Include="Images\ProcessIcon.ico" />
+        <EmbeddedResource Include="Images\ProcessIcon16.png" />
+        <EmbeddedResource Include="Images\ProcessIcon32.png" />
+        <None Include="Resources\btnOpen.Image.png" />
+        <None Include="Resources\btnPaste.Image.png" />
+        <None Include="Images\ColorSelector.ico" />
+        <Content Include="Images\ColorSelector.png" />
+    </ItemGroup>
+    <Choose>
+        <When Condition="$(DefineConstants.Contains('INCLUDE_PROCESSDIAGNOSTICSLIBRARY'))" />
+    </Choose>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

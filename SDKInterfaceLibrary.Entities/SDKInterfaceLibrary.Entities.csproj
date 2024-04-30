@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3843F6DB-55A6-441E-BDC7-43CF8AD7B6C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDKInterfaceLibrary.Entities</RootNamespace>
+    <AssemblyName>SDKInterfaceLibrary.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <AssemblyVersion>1.0.0.557</AssemblyVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ApplicationGenerator|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ApplicationGenerator\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugAll|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugAll\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PreRelease|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\PreRelease\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SDKInterfaceLibrary.Entities.ObjectLayer.cs" />
+    <Compile Include="SDKInterfaceLibrary.Entities.Views.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Key.snk" />
+    <EmbeddedResource Include="SDKInterfaceLibrary.Entities.csdl" />
+    <EmbeddedResource Include="SDKInterfaceLibrary.Entities.msl" />
+    <EmbeddedResource Include="SDKInterfaceLibrary.Entities.ssdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\001. IntegerValue.sql" />
+    <Content Include="Scripts\002. Type.sql" />
+    <Content Include="Scripts\003. VTableLayout.sql" />
+    <Content Include="Scripts\004. BlockCommandCommentArgument.sql" />
+    <Content Include="Scripts\005. BuiltinType.sql" />
+    <Content Include="Scripts\006. BuiltinTypeExpression.sql" />
+    <Content Include="Scripts\007. CallExpr.sql" />
+    <Content Include="Scripts\008. ClassLayout.sql" />
+    <Content Include="Scripts\009. ClassTemplate.sql" />
+    <Content Include="Scripts\010. ClassTemplatePartialSpecialization.sql" />
+    <Content Include="Scripts\011. Comment.sql" />
+    <Content Include="Scripts\012. CXXConstructExpr.sql" />
+    <Content Include="Scripts\013. Expression.sql" />
+    <Content Include="Scripts\014. FunctionTemplate.sql" />
+    <Content Include="Scripts\015. Header.sql" />
+    <Content Include="Scripts\016. HTMLEndTagComment.sql" />
+    <Content Include="Scripts\017. HTMLStartTagComment.sql" />
+    <Content Include="Scripts\018. HTMLStartTagCommentAttribute.sql" />
+    <Content Include="Scripts\019. HTMLTagComment.sql" />
+    <Content Include="Scripts\020. InlineCommandCommentArgument.sql" />
+    <Content Include="Scripts\021. MacroDefinition.sql" />
+    <Content Include="Scripts\022. Namespace.sql" />
+    <Content Include="Scripts\023. PackExpansionType.sql" />
+    <Content Include="Scripts\024. ParagraphComment.sql" />
+    <Content Include="Scripts\025. PreprocessedEntity.sql" />
+    <Content Include="Scripts\026. QualifiedType.sql" />
+    <Content Include="Scripts\027. RawComment.sql" />
+    <Content Include="Scripts\028. Statement.sql" />
+    <Content Include="Scripts\029. TemplateTemplateParameter.sql" />
+    <Content Include="Scripts\030. TextComment.sql" />
+    <Content Include="Scripts\031. TParamCommandComment.sql" />
+    <Content Include="Scripts\032. TranslationUnit.sql" />
+    <Content Include="Scripts\033. TypeAliasTemplate.sql" />
+    <Content Include="Scripts\034. TypeDefDecl.sql" />
+    <Content Include="Scripts\035. VarTemplate.sql" />
+    <Content Include="Scripts\036. VerbatimBlockComment.sql" />
+    <Content Include="Scripts\037. VerbatimLineComment.sql" />
+    <Content Include="Scripts\038. AccessSpecifierDecl.sql" />
+    <Content Include="Scripts\039. ArrayType.sql" />
+    <Content Include="Scripts\040. BaseClassSpecifier.sql" />
+    <Content Include="Scripts\041. BlockCommandComment.sql" />
+    <Content Include="Scripts\042. BlockContentComment.sql" />
+    <Content Include="Scripts\043. Class.sql" />
+    <Content Include="Scripts\044. Declaration.sql" />
+    <Content Include="Scripts\045. DeclarationContext.sql" />
+    <Content Include="Scripts\046. DependentNameType.sql" />
+    <Content Include="Scripts\047. DependentTemplateSpecializationType.sql" />
+    <Content Include="Scripts\048. Enumeration.sql" />
+    <Content Include="Scripts\049. Friend.sql" />
+    <Content Include="Scripts\050. FunctionTemplateSpecialization.sql" />
+    <Content Include="Scripts\051. FunctionType.sql" />
+    <Content Include="Scripts\052. InlineCommandComment.sql" />
+    <Content Include="Scripts\053. InlineContentComment.sql" />
+    <Content Include="Scripts\054. MacroExpansion.sql" />
+    <Content Include="Scripts\055. MemberPointerType.sql" />
+    <Content Include="Scripts\056. ParamCommandComment.sql" />
+    <Content Include="Scripts\057. PointerType.sql" />
+    <Content Include="Scripts\058. TagType.sql" />
+    <Content Include="Scripts\059. Template.sql" />
+    <Content Include="Scripts\060. TemplateParameterSubstitutionType.sql" />
+    <Content Include="Scripts\061. TypeDefNameDecl.sql" />
+    <Content Include="Scripts\062. TypedefType.sql" />
+    <Content Include="Scripts\063. TypeTemplateParameter.sql" />
+    <Content Include="Scripts\064. VarTemplatePartialSpecialization.sql" />
+    <Content Include="Scripts\065. VarTemplateSpecialization.sql" />
+    <Content Include="Scripts\066. VerbatimBlockLineComment.sql" />
+    <Content Include="Scripts\067. AttributedType.sql" />
+    <Content Include="Scripts\068. BinaryOperator.sql" />
+    <Content Include="Scripts\069. ClassTemplateSpecialization.sql" />
+    <Content Include="Scripts\070. EnumerationItem.sql" />
+    <Content Include="Scripts\071. FullComment.sql" />
+    <Content Include="Scripts\072. InjectedClassNameType.sql" />
+    <Content Include="Scripts\073. Method.sql" />
+    <Content Include="Scripts\074. NonTypeTemplateParameter.sql" />
+    <Content Include="Scripts\075. TemplateParameter.sql" />
+    <Content Include="Scripts\076. TemplateSpecializationType.sql" />
+    <Content Include="Scripts\077. TypeDef.sql" />
+    <Content Include="Scripts\078. UnaryTransformType.sql" />
+    <Content Include="Scripts\079. Variable.sql" />
+    <Content Include="Scripts\080. VectorType.sql" />
+    <Content Include="Scripts\081. VTableComponent.sql" />
+    <Content Include="Scripts\082. DecayedType.sql" />
+    <Content Include="Scripts\083. Field.sql" />
+    <Content Include="Scripts\084. Function.sql" />
+    <Content Include="Scripts\085. TemplateParameterType.sql" />
+    <Content Include="Scripts\086. TypeAlias.sql" />
+    <Content Include="Scripts\087. Parameter.sql" />
+    <Content Include="Scripts\088. TemplateArgument.sql" />
+    <Content Include="Scripts\089. IndexAll.sql" />
+    <Content Include="Scripts\090. ForeignKeyAll.sql" />
+    <Content Include="Scripts\091. DropAll.sql" />
+    <Content Include="Scripts\092. TruncateAll.sql" />
+    <Content Include="Scripts\093. CreateAll.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

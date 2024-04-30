@@ -1,0 +1,279 @@
+$color-businessmodel: rgba(black, .3);
+$color-stakeholder: rgba(green, .3);
+$color-department: rgba(goldenrod, .3);
+$color-role: rgba(teal, .3);
+$color-system: rgba(rgb(60, 0, 128), .2);
+$color-responsibility: rgba(red, .2);
+$color-task: rgba(rgb(206, 206, 48), .2);
+$color-dataitem: rgba(rgb(24, 173, 24), .1);
+
+#dev-panel {
+    display: inline-block;
+    position: absolute;
+    right: 100px;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: rgba(250, 250, 200);
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 135%;
+    left: 100%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(250, 250, 200) transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+button.disabled:disabled {
+    opacity: 0.3;
+}
+
+.levelPressed {
+    font-weight: bold !important;
+}
+
+.businessmodel {
+    background-color: black;
+}
+
+.stakeholder {
+    background-color: $color-stakeholder
+}
+
+.department {
+    background-color: $color-department
+}
+
+.role {
+    background-color: $color-role
+}
+
+.system {
+    background-color: $color-system
+}
+
+.responsibility {
+    background-color: $color-responsibility
+}
+
+.task {
+    background-color: $color-task
+}
+
+.dataitem {
+    background-color: $color-dataitem
+}
+
+.status-bar {
+    position: absolute;
+    bottom: 0px;
+    width: calc(100%);
+    height: 28px;
+    padding: 5px;
+    border-style: inset;
+    border-width: 1px;
+    background-color: #449d4409;
+}
+
+.floating-legend {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    text-align: center;
+    position: fixed;
+    bottom: 35px;
+    right: 10px;
+    z-index: 99;
+    border: 1px solid rgba(217, 83, 79);
+    border-width: 1px;
+    border-radius: 25px;
+    padding: 2px;
+    height: 260px;
+    width: 220px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: white;
+    color: black;
+    border-radius: 4px 4px 0 0;
+}
+
+div {
+    font-size: .8em;
+}
+
+#chart-container {
+    background-color: #eee;
+    height: 500px;
+}
+
+.orgchart {
+    background: #fff;
+}
+
+.orgchart.edit-state .edge {
+    display: none;
+}
+
+.orgchart .node {
+    width: 150px;
+}
+
+.orgchart .node .title {
+    height: 30px;
+    line-height: 30px;
+}
+
+.orgchart .node .title .symbol {
+    margin-top: 1px;
+}
+
+#edit-panel {
+    position: relative;
+    width: calc(100%);
+    float: left;
+    padding: 10px;
+    color: #fff;
+    background-color: #449d44;
+}
+
+#edit-panel .btn-inputs {
+    font-size: 8px;
+}
+
+#edit-panel label {
+    padding: 2px
+}
+
+#edit-panel input {
+    color: black
+}
+
+#edit-panel.edit-parent-node .selected-node-group {
+    display: none;
+}
+
+#chart-state-panel,
+#selected-node,
+#btn-remove-input {
+    margin-right: 20px;
+}
+
+#edit-panel select {
+    color: black;
+    height: 20px;
+}
+
+#edit-panel button {
+    color: #333;
+    background-color: #fff;
+    display: inline-block;
+    margin: 2px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid gray;
+    border-radius: 0px;
+}
+
+#edit-panel.edit-parent-node button:not(#btn-add-nodes) {
+    display: none;
+}
+
+#edit-panel button:hover,
+.edit-panel button:focus,
+.edit-panel button:active {
+    border-color: #eea236;
+    box-shadow: 0 0 10px #eea236;
+}
+
+#new-nodelist {
+    display: inline-block;
+    list-style: none;
+    margin-top: -2px;
+    padding: 0;
+    vertical-align: text-top;
+}
+
+#new-nodelist>* {
+    padding-bottom: 4px;
+}
+
+.btn-inputs {
+    vertical-align: sub;
+}
+
+#edit-panel.edit-parent-node .btn-inputs {
+    display: none;
+}
+
+.radio-panel {
+    margin: 5px;
+}
+
+.btn-inputs:hover {
+    text-shadow: 0 0 4px #fff;
+}
+
+.radio-panel input[type='radio'] {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+#edit-panel.view-state .radio-panel input[type='radio']+label {
+    vertical-align: -webkit-baseline-middle;
+}
+
+#btn-add-nodes {
+    margin-left: 20px;
+}

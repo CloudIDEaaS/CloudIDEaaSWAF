@@ -1,0 +1,17 @@
+.addheader
+.createtextfile
+.getfile
+.loadfromfile
+<jsp
+javax.servlet
+response.binarywrite
+response.write
+scripting.filesystemobject
+server.createobject
+server.execute
+server.htmlencode
+server.mappath
+server.urlencode
+vbscript.encode
+wscript.network
+wscript.shell

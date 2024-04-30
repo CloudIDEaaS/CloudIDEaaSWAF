@@ -1,0 +1,30 @@
+.breadcrumb {
+    margin: 0px;
+}
+
+.toolbar {
+    --min-height: 40px;
+}
+
+:host ::ng-deep ul.breadcrumb {
+	list-style: none;
+    margin: 0;
+    padding: 5px 5px 0px 5px;
+}
+
+:host ::ng-deep ul.breadcrumb li {
+    display: inline;
+    font-size: .8em;
+}
+
+:host ::ng-deep ul.breadcrumb li:last-child {
+    cursor: default;
+}
+
+:host ::ng-deep ul.breadcrumb li:not(:last-child) {
+    cursor: pointer;
+}
+
+:host ::ng-deep ul.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+}

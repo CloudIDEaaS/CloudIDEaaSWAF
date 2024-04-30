@@ -1,0 +1,12 @@
+{
+  "git.confirmSync": false,
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 0,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 300,
+  "prettier.singleQuote": false,
+  "prettier.arrowParens": "never",
+  "editor.tabSize": 2,
+  "editor.tabCompletion": "on"
+}

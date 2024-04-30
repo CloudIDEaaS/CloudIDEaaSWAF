@@ -1,0 +1,39 @@
+<div [ngStyle]="{ 'padding': getPadding() }">
+  <div #nodeElements *ngFor="let node of nodes" class="divitem">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="treeNodeArrow">
+          <button class="treeNodeArrowButton" *ngIf="node.__treeNode__.childNodes" ion-item detail-none no-lines (click)="expandCollapseNode($event, node)" icon-left>
+            <ion-icon [name]="node.__treeNode__.isExpanded ? 'caret-down-outline' : 'caret-forward-outline'"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col class="treeNodeIcon" *ngIf="hasIcons">
+            <ion-icon *ngIf="node.__treeNode__.icon" name="{{ node.__treeNode__.icon }}"></ion-icon>
+            <img *ngIf="node.__treeNode__.image" [src]="node.__treeNode__.image">
+        </ion-col>
+        <ion-col class="treeNodeText">
+          <editLabel *ngIf="getNodeContent==null;else other_content" (click)="selectNode($event, node)" class="unselected" selectedStyle="selected" [attr.style]="node.__treeNode__.style" (onchange)="onLabelChange(node, $event)" (onEndEdit)="onLabelBlur(node)">
+            {{ node.__treeNode__.title }}
+          </editLabel>
+          <ng-template #other_content>
+            <ngx-dynamic-hooks [content]="getNodeContent(node)" sanitize="false"></ngx-dynamic-hooks>
+          </ng-template>
+          <div class="tree-view-node-divider"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- Recursive call -->
+    <tree-view
+      #childTree
+      *ngIf="node.__treeNode__.childNodes"
+      [hasIcons]="hasIcons"
+      [treeView]="rootTreeView || this"
+      (onCreate)="this.childTree.onCreate(node)"
+      [thisNode]="node"
+      [configuration]="configuration"
+      [nodes]="node.__treeNode__.childNodes"
+      [getNodeContent]="getNodeContent"
+      [hidden]="!isExpanded(node)"
+      class="unselectable">
+    </tree-view>
+</div>

@@ -1,0 +1,150 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceRoot}"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "label": "npm: build - no background",
+      "options": {
+        "cwd": "${workspaceRoot}"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "rm",
+      "label": "deleteNgCache",
+      "args": [ 
+        "-rf",
+        ".angular" 
+      ],
+      "options": {
+        "cwd": "${workspaceRoot}"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "serve",
+      "isBackground": true,
+      "dependsOn": "npm: build",
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^([^\\s].*)\\((\\d+|\\d+,\\d+|\\d+,\\d+,\\d+,\\d+)\\):\\s+(error)\\s+(TS\\d+)\\s*:\\s*(.*)$",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "build succeeded",
+          "endsPattern": "."
+        }
+      },
+      "options": {
+        "cwd": "${workspaceRoot}"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "e2e:createProject",
+      "dependsOn": "npm: serve",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^([^\\s].*)\\((\\d+|\\d+,\\d+|\\d+,\\d+,\\d+,\\d+)\\):\\s+(error)\\s+(TS\\d+)\\s*:\\s*(.*)$",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Angular Live Development Server is listening",
+          "endsPattern": "."
+        }
+      },
+      "options": {
+        "cwd": "${workspaceRoot}"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "e2e",
+      "isBackground": true,
+      "dependsOn": "npm:serve",
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^([^\\s].*)\\((\\d+|\\d+,\\d+|\\d+,\\d+,\\d+,\\d+)\\):\\s+(error)\\s+(TS\\d+)\\s*:\\s*(.*)$",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".",
+          "endsPattern": "adfasdf"
+        }
+      },
+      "options": {
+        "cwd": "${workspaceRoot}"
+      }
+    },
+    {
+      "label": "sleep-delay",
+      "type": "shell",
+      "command": "sleep 1000",
+      "windows": {
+        "command": "ping localhost -n 1000 > nul"
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "announce-attach",
+      "type": "shell",
+      "command": "echo attaching",
+      "windows": {
+        "command": "echo attaching"
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "term-serve",
+      "command": "echo ${input:terminate}",
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "attach-chrome",
+      "command": "echo ${input:attachChrome}",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "terminate",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "terminateAll"
+    },
+    {
+      "id": "attachChrome",
+      "type": "command",
+      "command": "workbench.actions.attachChrome"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A73DCF52-8E67-4083-A081-4A8B286DDABB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CppParser</RootNamespace>
+    <AssemblyName>CppParser</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AssemblyVersion>1.0.0.51</AssemblyVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ApplicationGenerator|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ApplicationGenerator\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASTConverter.cs" />
+    <Compile Include="AST\ASTContext.cs" />
+    <Compile Include="AST\ASTVisitor.cs" />
+    <Compile Include="AST\Attribute.cs" />
+    <Compile Include="AST\Class.cs" />
+    <Compile Include="AST\ClassExtensions.cs" />
+    <Compile Include="AST\ClassLayout.cs" />
+    <Compile Include="AST\Comment.cs" />
+    <Compile Include="AST\Conversions.cs" />
+    <Compile Include="AST\CppTypePrinter.cs" />
+    <Compile Include="AST\Declaration.cs" />
+    <Compile Include="AST\DeclIterator.cs" />
+    <Compile Include="AST\Delegate.cs" />
+    <Compile Include="AST\Enumeration.cs" />
+    <Compile Include="AST\Event.cs" />
+    <Compile Include="AST\Expression.cs" />
+    <Compile Include="AST\Field.cs" />
+    <Compile Include="AST\Friend.cs" />
+    <Compile Include="AST\Function.cs" />
+    <Compile Include="AST\FunctionExtensions.cs" />
+    <Compile Include="AST\IExpressionPrinter.cs" />
+    <Compile Include="AST\ITypePrinter.cs" />
+    <Compile Include="AST\LayoutBase.cs" />
+    <Compile Include="AST\LayoutField.cs" />
+    <Compile Include="AST\Method.cs" />
+    <Compile Include="AST\Module.cs" />
+    <Compile Include="AST\Namespace.cs" />
+    <Compile Include="AST\Preprocessor.cs" />
+    <Compile Include="AST\Property.cs" />
+    <Compile Include="AST\PropertyExtensions.cs" />
+    <Compile Include="AST\Reference.cs" />
+    <Compile Include="AST\SourceLocation.cs" />
+    <Compile Include="AST\Statement.cs" />
+    <Compile Include="AST\SymbolContext.cs" />
+    <Compile Include="AST\Template.cs" />
+    <Compile Include="AST\TranslationUnit.cs" />
+    <Compile Include="AST\Type.cs" />
+    <Compile Include="AST\TypeExtensions.cs" />
+    <Compile Include="AST\Variable.cs" />
+    <Compile Include="Bindings\CSharp\i686-pc-win32-msvc\CppSharp.CppParser.cs" />
+    <Compile Include="Bindings\CSharp\i686-pc-win32-msvc\Std.cs" />
+    <Compile Include="Core\Diagnostics.cs" />
+    <Compile Include="Core\Platform.cs" />
+    <Compile Include="Core\Toolchains\ManagedToolchain.cs" />
+    <Compile Include="Core\Toolchains\MSVCToolchain.cs" />
+    <Compile Include="Core\Toolchains\XcodeToolchain.cs" />
+    <Compile Include="Generator\AST\ASTRecord.cs" />
+    <Compile Include="Generator\AST\Utils.cs" />
+    <Compile Include="Generator\AST\VTables.cs" />
+    <Compile Include="Generator\BindingContext.cs" />
+    <Compile Include="Generator\Driver.cs" />
+    <Compile Include="Generator\Generator.cs" />
+    <Compile Include="Generator\Generators\CLI\CLIGenerator.cs" />
+    <Compile Include="Generator\Generators\CLI\CLIHeaders.cs" />
+    <Compile Include="Generator\Generators\CLI\CLIMarshal.cs" />
+    <Compile Include="Generator\Generators\CLI\CLISources.cs" />
+    <Compile Include="Generator\Generators\CLI\CLITemplate.cs" />
+    <Compile Include="Generator\Generators\CLI\CLITypePrinter.cs" />
+    <Compile Include="Generator\Generators\CLI\CLITypeReferences.cs" />
+    <Compile Include="Generator\Generators\CSharp\CSharpCommentPrinter.cs" />
+    <Compile Include="Generator\Generators\CSharp\CSharpExpressionPrinter.cs" />
+    <Compile Include="Generator\Generators\CSharp\CSharpGenerator.cs" />
+    <Compile Include="Generator\Generators\CSharp\CSharpMarshal.cs" />
+    <Compile Include="Generator\Generators\CSharp\CSharpSources.cs" />
+    <Compile Include="Generator\Generators\CSharp\CSharpTypePrinter.cs" />
+    <Compile Include="Generator\Generators\ExtensionMethods.cs" />
+    <Compile Include="Generator\Generators\Marshal.cs" />
+    <Compile Include="Generator\Generators\Template.cs" />
+    <Compile Include="Generator\Library.cs" />
+    <Compile Include="Generator\Options.cs" />
+    <Compile Include="Generator\Passes\CheckAbiParameters.cs" />
+    <Compile Include="Generator\Passes\CheckAmbiguousFunctions.cs" />
+    <Compile Include="Generator\Passes\CheckDuplicatedNamesPass.cs" />
+    <Compile Include="Generator\Passes\CheckFlagEnumsPass.cs" />
+    <Compile Include="Generator\Passes\CheckIgnoredDecls.cs" />
+    <Compile Include="Generator\Passes\CheckMacrosPass.cs" />
+    <Compile Include="Generator\Passes\CheckOperatorsOverloads.cs" />
+    <Compile Include="Generator\Passes\CheckStaticClass.cs" />
+    <Compile Include="Generator\Passes\CheckVirtualOverrideReturnCovariance.cs" />
+    <Compile Include="Generator\Passes\CheckVTableComponentsPass.cs" />
+    <Compile Include="Generator\Passes\CleanInvalidDeclNamesPass.cs" />
+    <Compile Include="Generator\Passes\CleanUnitPass.cs" />
+    <Compile Include="Generator\Passes\ConstructorToConversionOperatorPass.cs" />
+    <Compile Include="Generator\Passes\DelegatesPass.cs" />
+    <Compile Include="Generator\Passes\FieldToPropertyPass.cs" />
+    <Compile Include="Generator\Passes\FindSymbolsPass.cs" />
+    <Compile Include="Generator\Passes\FixDefaultParamValuesOfOverridesPass.cs" />
+    <Compile Include="Generator\Passes\FixParameterUsageFromComments.cs" />
+    <Compile Include="Generator\Passes\FunctionToInstanceMethodPass.cs" />
+    <Compile Include="Generator\Passes\FunctionToStaticMethodPass.cs" />
+    <Compile Include="Generator\Passes\GenerateAbstractImplementationsPass.cs" />
+    <Compile Include="Generator\Passes\GenerateAnonymousDelegatesPass.cs" />
+    <Compile Include="Generator\Passes\GenerateInlinesCodePass.cs" />
+    <Compile Include="Generator\Passes\GenerateTemplatesCodePass.cs" />
+    <Compile Include="Generator\Passes\GetterSetterToPropertyAdvancedPass.cs" />
+    <Compile Include="Generator\Passes\GetterSetterToPropertyPass.cs" />
+    <Compile Include="Generator\Passes\HandleDefaultParamValuesPass.cs" />
+    <Compile Include="Generator\Passes\IgnoreSystemDeclarationsPass.cs" />
+    <Compile Include="Generator\Passes\MarkSupportedClassTemplateSpecializationsPass.cs" />
+    <Compile Include="Generator\Passes\MarshalPrimitivePointersAsRefTypePass.cs" />
+    <Compile Include="Generator\Passes\MoveFunctionToClassPass.cs" />
+    <Compile Include="Generator\Passes\MoveOperatorToClassPass.cs" />
+    <Compile Include="Generator\Passes\MultipleInheritancePass.cs" />
+    <Compile Include="Generator\Passes\ObjectOverridesPass.cs" />
+    <Compile Include="Generator\Passes\ParamTypeToInterfacePass.cs" />
+    <Compile Include="Generator\Passes\Pass.cs" />
+    <Compile Include="Generator\Passes\PassBuilder.cs" />
+    <Compile Include="Generator\Passes\RenamePass.cs" />
+    <Compile Include="Generator\Passes\ResolveIncompleteDeclsPass.cs" />
+    <Compile Include="Generator\Passes\SortDeclarationsPass.cs" />
+    <Compile Include="Generator\Passes\TrimSpecializationsPass.cs" />
+    <Compile Include="Generator\Types\Std\Stdlib.cs" />
+    <Compile Include="Generator\Types\TypeMap.cs" />
+    <Compile Include="Generator\Types\Types.cs" />
+    <Compile Include="Generator\Utils\FileHashes.cs" />
+    <Compile Include="Generator\Utils\Glob.cs" />
+    <Compile Include="Generator\Utils\HtmlEncoder.cs" />
+    <Compile Include="Generator\Utils\IEnumerableExtensions.cs" />
+    <Compile Include="Generator\Utils\Options.cs" />
+    <Compile Include="Generator\Utils\OrderedSet.cs" />
+    <Compile Include="Generator\Utils\TextGenerator.cs" />
+    <Compile Include="Generator\Utils\Utils.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="ParserExtensions.cs" />
+    <Compile Include="ParserOptions.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bindings\CSharp\i686-pc-win32-msvc\CppSharp.CppParser.dll-templates.cpp" />
+    <Content Include="Bindings\CSharp\i686-pc-win32-msvc\Std-templates.cpp" />
+    <Content Include="Generator\Passes\verbs.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

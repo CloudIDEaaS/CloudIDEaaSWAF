@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <PackageId>MailSlot</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Robert Masen</Authors>
+    <Company>wiredforge.com</Company>
+    <Description>A C# implementation of the Windows Mailslot API</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/FreeMasen/MailSlot</RepositoryUrl>
+    <AssemblyVersion>0.1.0.36</AssemblyVersion>
+    <FileVersion>0.1.0.21</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdgeDetection\EdgeDetection.csproj" />
+  </ItemGroup>
+</Project>

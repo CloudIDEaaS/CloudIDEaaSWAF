@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="register-logo">
+    <img class=".register-logo" src="../../../assets/img/logo.png" alt="CloudIDEaaS Logo">
+  </div>
+
+  <form class="formSingleColumn" [formGroup]="registrationForm" (ngSubmit)="submit(registrationForm)">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">First Name</ion-label>
+        <ion-input appSetFocus formControlName="firstName" name="firstName" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('firstName')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('firstName')">{{ error }}
+          </li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Last Name</ion-label>
+        <ion-input formControlName="lastName" name="lastName" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('lastName')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('lastName')">{{ error }}</li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Organization Name</ion-label>
+        <ion-input formControlName="organizationName" name="organizationName" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('organizationName')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('organizationName')">{{ error
+            }}</li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Phone Number</ion-label>
+        <ion-input mask="(000) 000-0000" showMaskTyped="true" formControlName="phoneNumber" name="phoneNumber"
+          type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('phoneNumber')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('phoneNumber')">{{ error }}
+          </li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Location</ion-label>
+        <ion-input formControlName="location" name="location" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('location')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('location')">{{ error }}</li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Username (email address)</ion-label>
+        <ion-input formControlName="userName" name="userName" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('userName')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('userName')">{{ error }}</li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Password</ion-label>
+        <div #passwordPanel>
+          <ion-input formControlName="password" #passwordInput name="password" type="password">
+          </ion-input>
+          <ng2-password-strength-bar [passwordToCheck]="formPassword" [barLabel]="barLabel" [barColors]="myColors">
+          </ng2-password-strength-bar>
+        </div>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('password')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('password')">{{ error }}</li>
+        </ul>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Confirm Password</ion-label>
+        <ion-input formControlName="passwordConfirm" name="passwordConfirm" type="password">
+        </ion-input>
+        <ng2-password-strength-bar [passwordToCheck]="formPasswordConfirm" [barLabel]="barLabel" [barColors]="myColors">
+        </ng2-password-strength-bar>
+      </ion-item>
+      <ion-item *ngIf="registrationValidator.hasValidationErrors('passwordConfirm')">
+        <ul class="errorBlock">
+          <li class="error" *ngFor="let error of registrationValidator.getValidationErrors('passwordConfirm')">{{ error
+            }}</li>
+        </ul>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button appDefaultCommand type="submit" expand="block"
+        [disabled]="registrationForm.invalid">Submit</ion-button>
+    </div>
+  </form>
+
+</ion-content>

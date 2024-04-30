@@ -1,0 +1,172 @@
+-10048 Syntax error
+' doesn't exist
+'80040e14'
+[42000-192]
+[DM_QUERY_E_SYNTAX]
+[IBM][CLI Driver][DB2/6000]
+[Macromedia][SQLServer JDBC Driver]
+[Microsoft][ODBC Microsoft Access Driver]
+[Microsoft][ODBC SQL Server Driver]
+[MonetDB][ODBC Driver
+[MySQL][ODBC
+[SQL Server]
+[SqlException
+[SQLITE_ERROR]
+[Virtuoso Driver][Virtuoso Server]
+[Virtuoso iODBC Driver][Virtuoso Server]
+<b>Warning</b> ibase_
+A comparison operator is required here
+Access Database Engine
+ADODB.Field (0x800A0BCD)
+Altibase.jdbc.driver
+An illegal character has been found in the statement
+check the manual that corresponds to your Drizzle server version
+check the manual that corresponds to your MariaDB server version
+check the manual that corresponds to your MySQL server version
+check the manual that fits your Drizzle server version
+check the manual that fits your MariaDB server version
+check the manual that fits your MySQL server version
+CLI Driver
+Column count doesn't match
+Column count doesn't match value count at row
+com.facebook.presto.jdbc
+com.frontbase.jdbc
+com.ibm.db2.jcc
+com.informix.jdbc
+com.ingres.gcf.jdbc
+com.jnetdirect.jsql
+com.mckoi.database.jdbc
+com.mckoi.JDBCDriver
+com.microsoft.sqlserver.jdbc
+com.mimer.jdbc
+com.mysql.jdbc.exceptions
+com.sap.dbtech.jdbc
+com.simba.presto.jdbc
+com.sybase.jdbc
+com.vertica.dsi.dataengine
+com.vertica.jdbc
+Conversion failed when converting the varchar value
+Data type mismatch in criteria expression.
+DB2 SQL error
+DB2 SQL error:
+db2_
+Driver
+DriverSapDB
+Dynamic SQL Error
+encountered after end of query
+Error
+ERROR 42X01
+ERROR parser: parse error at or near
+Exception
+Exception
+has occurred in the vicinity of:
+ibm_db_dbi.ProgrammingError
+IfxException
+in query expression
+Incorrect syntax near
+Informix ODBC Driver
+Ingres SQLSTATE
+invalid input syntax for integer:
+Invalid keyword or missing delimiter
+io.crate.client.jdbc
+io.prestosql.jdbc
+is not supported by MemSQL
+java.sql.SQLException
+JET Database Engine
+macromedia.jdbc.oracle
+macromedia.jdbc.sqlserver
+MemSQL does not support this type of query
+Microsoft OLE DB Provider for ODBC Drivers
+Microsoft OLE DB Provider for SQL Server
+Microsoft SQL Native Client error
+Microsoft.Data.SQLite.SQLiteException
+mssql_query()
+MySQL server version for the right syntax to use
+mysql_fetch_array()
+MySqlClient.
+MySqlException
+MySQLSyntaxErrorException
+nl.cwi.monetdb.jdbc
+Npgsql.
+ODBC Informix driver
+on MySQL result index
+ORA-
+Oracle error
+oracle.jdbc
+OracleException
+org.apache.derby
+org.firebirdsql.jdbc
+org.h2.jdbc
+org.hsqldb.jdbc
+org.jkiss.dbeaver.ext.vertica
+org.postgresql.jdbc
+org.postgresql.util.PSQLException
+org.sqlite.JDBC
+PG :SyntaxError:
+pg_exec() [:
+pg_query() [:
+PostgreSQL
+PostgreSQL query failed:
+Procedure or function
+PSQLException
+quoted string not properly terminated
+Roadhouse.Cms.
+Semantic error
+Server message
+Sintaxis incorrecta cerca de
+SQ074 Line
+SQ200 No table
+SQL command not properly ended
+SQL error
+SQL Server
+SQL syntax
+SQLite error
+SQLite.Exception
+SQLite/JDBCDriver
+SQLite3 :SQLException
+sqlite3.OperationalError
+SQLiteException
+SQLServerException
+SQLSrvException
+SQLSTATE[
+SR185 Undefined procedure
+supplied argument is not a valid MySQL
+supplied argument is not a valid PostgreSQL result
+sybase
+Sybase message
+Sybase message:
+Sybase.Data.AseClient
+SybSQLException
+Syntax error 1. Missing
+syntax error at or near
+Syntax error in string in query expression
+Syntax error or access violation
+Syntax error: Encountered
+Syntax error: failed at position
+System.Data.OleDb.OleDbException
+System.Data.SqlClient.
+System.Data.SqlClient.SqlConnection.OnError
+System.Data.SqlClient.SqlException
+System.Data.SQLite.SQLiteException
+the used select statements have different number of columns
+Unclosed quotation mark after the character string
+Unclosed quotation mark before the character string
+Unexpected end of command in statement
+UNION query has different number of fields:
+unsupported nested scalar subselect
+valid MySQL result
+valid PostgreSQL result
+Virtuoso S0002 Error
+Warning
+weblogic.jdbc.informix
+XPATH syntax error:
+You have an error in your SQL syntax near
+You have an error in your SQL syntax;
+Zend_Db_Adapter_Db2_Exception
+Zend_Db_Adapter_Mysqli_Exception
+Zend_Db_Adapter_Oracle_Exception
+Zend_Db_Adapter_Sqlsrv_Exception
+Zend_Db_Statement_Db2_Exception
+Zend_Db_Statement_Mysqli_Exception
+Zend_Db_Statement_Oracle_Exception
+Zend_Db_Statement_Sqlsrv_Exception

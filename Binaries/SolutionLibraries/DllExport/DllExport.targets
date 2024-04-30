@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <PostBuildEventDependsOn>
+		$(PostBuildEventDependsOn);
+		DllExportTarget
+	</PostBuildEventDependsOn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BuildDependsOn>
+		$(BuildDependsOn);
+		DllExportTarget
+	</BuildDependsOn>
+  </PropertyGroup>
+ 
+  <UsingTask TaskName="DllExport.MSBuild.DllExportAppDomainIsolatedTask" AssemblyFile="$(SolutionDir)Binaries\SolutionLibraries\v47\DllExport.MSBuild.dll" />
+  <Target Name="DllExportTarget" DependsOnTargets="GetFrameworkPaths">
+
+	  <Message Text="DllExportDllExportTarget" Importance="high" />
+
+	  <!--
+      These properties can still be applied to the task, but upon installation of a 
+      new version of the nuget package, the properties 
+      DllExportAttributeAssemblyName and DllExportAttributeAssemblyName will be removed from the project.
+      So, if you want to provide an alternative attribute name, the you have to name the property in your project file differently.
+      
+      e.g.:
+      DllExportAttributeAssemblyName="$(MyDllExportAttributeAssemblyName)"
+      DllExportAttributeFullName="$(MyDllExportAttributeFullName)"
+    -->
+	<PropertyGroup>
+
+		<!-- Sorry for the weird naming of those 2, but I have to prevent the upgrade from the old template to remove those from your project files -->
+		<DllExportAttributeFullNameProp Condition="'$(DllExportAttributeFullNameProp)' == ''">DllExport.DllExportAttribute</DllExportAttributeFullNameProp>
+		<DllExportAttributeAssemblyNameProp Condition="'$(DllExportAttributeAssemblyNameProp)' == ''">DllExport.Metadata</DllExportAttributeAssemblyNameProp>
+
+		<DllExportPlatform Condition="'$(DllExportPlatform)' == ''">$(Platform)</DllExportPlatform>
+		<DllExportEmitDebugSymbols Condition="'$(DllExportEmitDebugSymbols)' == ''">$(DebugSymbols)</DllExportEmitDebugSymbols>
+		<DllExportLeaveIntermediateFiles Condition="'$(DllExportLeaveIntermediateFiles)' == ''">true</DllExportLeaveIntermediateFiles>
+		<DllExportTimeout Condition="'$(DllExportTimeout)' == ''">1000</DllExportTimeout>
+		<DllExportKeyContainer Condition="'$(DllExportKeyContainer)' == ''">$(KeyContainerName)$(AssemblyKeyContainerName)</DllExportKeyContainer>
+		<DllExportKeyFile Condition="'$(DllExportKeyFile)' == ''">$(KeyOriginatorFile)</DllExportKeyFile>
+		<DllExportProjectDirectory Condition="'$(DllExportProjectDirectory)' == ''">$(MSBuildProjectDirectory)</DllExportProjectDirectory>
+		<DllExportInputFileName Condition="'$(DllExportInputFileName)' == ''">$(TargetPath)</DllExportInputFileName>
+		<DllExportLibToolPath Condition="'$(DllExportLibToolPath)' == ''">$(DevEnvDir)..\..\VC\Tools\MSVC\14.28.29910\bin\Hostx86\x86</DllExportLibToolPath>
+		<DllExportLibToolDllPath Condition="'$(DllExportLibToolDllPath)' == ''">$(DevEnvDir)</DllExportLibToolDllPath>
+		<DllExportTestTempDirectory Condition="'$(DllExportLibToolDllPath)' == ''">"$(userprofile)\Documents\TestTempDirectory</DllExportTestTempDirectory>
+	</PropertyGroup>
+
+	<DllExportAppDomainIsolatedTask Platform="$(DllExportPlatform)"
+                                    EmitDebugSymbols="$(DllExportEmitDebugSymbols)"
+                                    LeaveIntermediateFiles="$(DllExportLeaveIntermediateFiles)"
+                                    Timeout="$(DllExportTimeout)"
+                                    KeyContainer="$(DllExportKeyContainer)"
+                                    KeyFile="$(DllExportKeyFile)"
+                                    ProjectDirectory="$(DllExportProjectDirectory)"
+                                    InputFileName="$(DllExportInputFileName)"
+                                    LibToolPath="$(DllExportLibToolPath)"
+                                    LibToolDllPath="$(DllExportLibToolDllPath)"
+									TestTempDirectory="$(DllExportTestTempDirectory)"/>
+
+		<Message Text="DllExportPlatform = $(DllExportPlatform)" Importance="high" />
+		<Message Text="DllExportEmitDebugSymbols = $(DllExportEmitDebugSymbols)" Importance="high" />
+		<Message Text="DllExportLeaveIntermediateFiles = $(DllExportLeaveIntermediateFiles)" Importance="high" />
+		<Message Text="DllExportTimeout = $(DllExportTimeout)" Importance="high" />
+		<Message Text="DllExportKeyContainer = $(DllExportKeyContainer)" Importance="high" />
+		<Message Text="DllExportKeyFile = $(DllExportKeyFile)" Importance="high" />
+		<Message Text="DllExportProjectDirectory = $(DllExportProjectDirectory)" Importance="high" />
+		<Message Text="DllExportInputFileName = $(DllExportInputFileName)" Importance="high" />
+		<Message Text="DllExportLibToolPath = $(DllExportLibToolPath)" Importance="high" />
+		<Message Text="DllExportLibToolDllPath = $(DllExportLibToolDllPath)" Importance="high" />
+	    <Message Text="DllExportTestTempDirectory = $(DllExportTestTempDirectory)" Importance="high" />
+									
+  </Target>
+</Project>

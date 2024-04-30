@@ -1,0 +1,13 @@
+POST https://localhost:65400/cloudideaas/hydra/services/eeab49801d55410c9457dee4d48dc2d7/api/About/about HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:65400
+Content-Type: application/json
+Content-Length: 60
+
+{
+  "Hello": 
+  {
+    "Hi1": "1",
+    "Hi2": "2"
+  }
+}

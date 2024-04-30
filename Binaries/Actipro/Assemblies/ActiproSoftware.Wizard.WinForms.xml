@@ -1,0 +1,1337 @@
+<?xml version="1.0"?><doc><assembly><name>ActiproSoftware.Wizard.WinForms</name></assembly><members><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer"><summary>
+            Provides the base requirements for a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control renderer.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="wizard">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardButtonContainerBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="buttonContainer">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardExteriorPageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Draws the background of an exterior <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardInteriorPageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Draws the background of an interior <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardInteriorPageHeaderBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="header">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardInteriorPageHeaderForeground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader)"><summary>
+            Draws the foreground of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="header">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardSeparator(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard)"><summary>
+            Draws a separator in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="wizard">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.DrawWizardWelcomePageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage)"><summary>
+            Draws the background of a welcome <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.WizardButtonContainerHeight"><summary>
+            Gets or sets the height of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.
+            </summary><value>The height of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.WizardInteriorPageHeaderHeight"><summary>
+            Gets or sets the height of the interior page header.
+            </summary><value>The height of the interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.WizardInteriorPageMargin"><summary>
+            Gets or sets the height of the interior page header.
+            </summary><value>The height of the interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.WizardSeparatorHeight"><summary>
+            Gets or sets the height of a separator in a wizard.
+            </summary><value>The height of a separator in a wizard.</value></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer.PropertyChanged"><summary>
+            Occurs after a property is changed.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer"><summary>
+            Provides a renderer for the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control that has a Windows Classic appearance.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.#ctor"><summary>
+            Initializes a new instance of the <c>WindowsClassicWizardRenderer</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.Dispose(System.Boolean)"><summary>
+            Clean up any resources being used.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="wizard">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardButtonContainerBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="buttonContainer">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardExteriorPageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Draws the background of an exterior <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardInteriorPageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Draws the background of an interior <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardInteriorPageHeaderBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="header">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardInteriorPageHeaderForeground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader)"><summary>
+            Draws the foreground of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="header">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardSeparator(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard)"><summary>
+            Draws a separator in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="wizard">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.DrawWizardWelcomePageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage)"><summary>
+            Draws the background of a welcome <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.Equals(System.Object)"><summary>
+            Determines whether the specified <c>Object</c> is equal to the current <c>Object</c>. 
+            </summary><param name="obj">The <c>Object</c> to compare to the current <c>Object</c>.</param><returns><c>true</c> if the specified <c>Object</c> is equal to the current <c>Object</c>; 
+            otherwise, <c>false</c>. 
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.GetHashCode"><summary>
+            Returns a hash code for this object.
+            </summary><returns>An integer value that specifies a hash value for this object.</returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetAll(System.Boolean)"><summary>
+            Resets all property values to their defaults.
+            </summary><param name="force">Whether to force resetting.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardButtonContainerDefaultBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardButtonContainerDefaultBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardButtonContainerDefaultBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardButtonContainerDefaultBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardExteriorPageDefaultBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardExteriorPageDefaultBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardExteriorPageDefaultBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardExteriorPageDefaultBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardInteriorPageDefaultBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageDefaultBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardInteriorPageDefaultBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageDefaultBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardInteriorPageHeaderDefaultBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderDefaultBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardInteriorPageHeaderDefaultBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderDefaultBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardInteriorPageHeaderDefaultImage"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderDefaultImage" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardInteriorPageHeaderDefaultImage"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderDefaultImage" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardInteriorPageHeaderImageSize"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSize" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardInteriorPageHeaderImageSize"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSize" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardInteriorPageHeaderImageSizeToFit"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSizeToFit" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardInteriorPageHeaderImageSizeToFit"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSizeToFit" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardPageCaptionFont"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionFont" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardPageCaptionFont"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionFont" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardPageCaptionForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardPageCaptionForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardPageCaptionOffset"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionOffset" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardPageCaptionOffset"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionOffset" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardPageDescriptionFont"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionFont" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardPageDescriptionFont"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionFont" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardPageDescriptionForeColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionForeColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardPageDescriptionForeColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionForeColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardPageDescriptionOffset"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionOffset" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardPageDescriptionOffset"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionOffset" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ResetWizardWelcomePageWatermarkDefaultBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardWelcomePageWatermarkDefaultBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.ShouldSerializeWizardWelcomePageWatermarkDefaultBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardWelcomePageWatermarkDefaultBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardButtonContainerDefaultBackgroundFill"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.
+            </summary><value>The <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardExteriorPageDefaultBackgroundFill"><summary>
+            Gets or sets the default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for an exterior page in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><value>The default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for an exterior page in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageDefaultBackgroundFill"><summary>
+            Gets or sets the default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for an interior page in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><value>The default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for an interior page in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderDefaultBackgroundFill"><summary>
+            Gets or sets the default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><value>The default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderDefaultImage"><summary>
+            Gets or sets the default <see cref="T:System.Drawing.Image" /> for a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><value>The default <see cref="T:System.Drawing.Image" /> for a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSize"><summary>
+            Gets or sets the <see cref="T:System.Drawing.Size" /> in which each <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /><see cref="T:System.Drawing.Image" /> should be drawn.
+            </summary><value>The <see cref="T:System.Drawing.Size" /> in which each <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /><see cref="T:System.Drawing.Image" /> should be drawn.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSizeToFit"><summary>
+            Gets or sets whether to automatically resize each <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /><see cref="T:System.Drawing.Image" /> to the <see cref="T:System.Drawing.Size" />
+            specified in the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSize" /> property.
+            </summary><value><c>true</c> if images should be resized to the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardInteriorPageHeaderImageSize" />; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionFont"><summary>
+            Gets or sets the <see cref="T:System.Drawing.Font" /> to use when drawing wizard page captions in an interior page header.
+            </summary><value>The <see cref="T:System.Drawing.Font" /> to use when drawing wizard page captions in an interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionForeColor"><summary>
+            Gets or sets the foreground color of a wizard page caption in an interior page header.
+            </summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the foreground color of a wizard page caption in an interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageCaptionOffset"><summary>
+            Gets or sets the offset of a wizard page caption in an interior page header.
+            </summary><value>The offset of a wizard page caption in an interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionFont"><summary>
+            Gets or sets the <see cref="T:System.Drawing.Font" /> to use when drawing wizard page descriptions in an interior page header.
+            </summary><value>The <see cref="T:System.Drawing.Font" /> to use when drawing wizard page descriptions in an interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionForeColor"><summary>
+            Gets or sets the foreground color of a wizard page description in an interior page header.
+            </summary><value>A <see cref="T:System.Drawing.Color" /> object specifying the foreground color of a wizard page description in an interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardPageDescriptionOffset"><summary>
+            Gets or sets the offset of a wizard page description in an interior page header.
+            </summary><value>The offset of a wizard page description in an interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WindowsClassicWizardRenderer.WizardWelcomePageWatermarkDefaultBackgroundFill"><summary>
+            Gets or sets the default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for the watermark area of a welcome page in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><value>The default <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for the watermark area of a welcome page in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.</value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard"><summary>
+            Represents a <c>Wizard</c> control.
+            </summary><remarks>
+            This control is placed on a <c>Form</c> and docked to <c>Fill</c> it.
+            </remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.#ctor"><summary>
+            Initializes a new instance of the <c>Wizard</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ArrangeOverride(System.Drawing.Size)"><summary>
+            Positions child elements and determines an arrange size.
+            </summary><param name="finalSize">The final area within the parent that this element should use to arrange itself and its children.</param><returns>The actual size used.</returns><remarks>
+            Element authors should override this method, call <c>Arrange</c> on each visible child element and position each child element.
+            It is required that a parent element calls <c>Arrange</c> on each child or they won't be rendered.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ResetBackButtonBackColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonBackColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ShouldSerializeBackButtonBackColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonBackColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ResetCancelButtonBackColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonBackColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ShouldSerializeCancelButtonBackColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonBackColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CreateChildren"><summary>
+            Invoked when the collection of child elements is to be created.
+            </summary><returns>The <see cref="T:System.Collections.IList" /> that should be assigned to the <see cref="P:ActiproSoftware.UI.WinForms.ILogicalTreeNode.Children" /> property.</returns><remarks>By default no child collection is created.</remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CreateControlsInstance"><summary>
+            Creates a new instance of the control collection for the control.
+            </summary><returns>A new instance of a <see cref="T:System.Windows.Forms.Control.ControlCollection" /> assigned to the control.</returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Dispose(System.Boolean)"><summary>
+            Disposes any resources used by the object.
+            </summary><param name="disposing">Whether the object is being disposed.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.EndInitialization"><summary>
+            Performs routines that should occur after initialization and is only intended to be called by designer code.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ResetFinishButtonBackColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonBackColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ShouldSerializeFinishButtonBackColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonBackColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ResetHelpButtonBackColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonBackColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ShouldSerializeHelpButtonBackColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonBackColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HitTest(ActiproSoftware.UI.WinForms.Controls.PointHitTestParameters,System.Func{ActiproSoftware.UI.WinForms.Controls.IUIElement,ActiproSoftware.UI.WinForms.Controls.PointHitTestParameters,System.Boolean})"><summary>
+            Hit tests to find the <see cref="T:ActiproSoftware.UI.WinForms.Controls.IUIElement" /> that contains the specified coordinates.
+            </summary><param name="hitTestParams">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.PointHitTestParameters" /> containing hit test parameters.</param><param name="filter">Optionally defines a filter which must return <c>true</c> for an element to match the hit test.</param><returns>A <see cref="T:ActiproSoftware.UI.WinForms.Controls.PointHitTestResult" /> containing the hit test result.</returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HitTestRecursive(ActiproSoftware.UI.WinForms.Controls.PointHitTestParameters,System.Func{ActiproSoftware.UI.WinForms.Controls.IUIElement,ActiproSoftware.UI.WinForms.Controls.PointHitTestParameters,System.Boolean})"><summary>
+            Recursively hit tests to find the <see cref="T:ActiproSoftware.UI.WinForms.Controls.IUIElement" /> that contains the specified coordinates.
+            </summary><param name="hitTestParams">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.PointHitTestParameters" /> containing hit test parameters.</param><param name="filter">Optionally defines a filter which must return <c>true</c> for an element to match the hit test.</param><returns>A <see cref="T:ActiproSoftware.UI.WinForms.Controls.PointHitTestResult" /> containing the hit test result.</returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ResetNextButtonBackColor"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonBackColor" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ShouldSerializeNextButtonBackColor"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonBackColor" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnBackButtonClick(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Raises the <c>BackButtonClick</c> event.
+            </summary><param name="e">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnButtonMouseEnter(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEventArgs)"><summary>
+            Raises the <c>ButtonMouseEnter</c> event.
+            </summary><param name="e">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnButtonMouseLeave(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEventArgs)"><summary>
+            Raises the <c>ButtonMouseLeave</c> event.
+            </summary><param name="e">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnCancelButtonClick(System.EventArgs)"><summary>
+            Raises the <c>CancelButtonClick</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnFinishButtonClick(System.EventArgs)"><summary>
+            Raises the <c>FinishButtonClick</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnHelpButtonClick(System.EventArgs)"><summary>
+            Raises the <c>HelpButtonClick</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnLayoutButtons(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs)"><summary>
+            Raises the <c>LayoutButtons</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnMouseDown(System.Windows.Forms.MouseEventArgs)"><summary>
+            Raises the <c>MouseDown</c> event.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnNextButtonClick(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Raises the <c>NextButtonClick</c> event.
+            </summary><param name="e">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnParentChanged(System.EventArgs)"><summary>
+            Raises the <c>ParentChanged</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnResize(System.EventArgs)"><summary>
+            Raises the <c>Resize</c> event.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnSelectionChanged(System.EventArgs)"><summary>
+            Raises the <c>SelectionChanged</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.OnSelectionChanging(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Raises the <c>SelectionChanging</c> event.
+            </summary><param name="e">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ShouldSerializePages"><summary>
+            Determines whether the pages collection should be serialized.
+            </summary><returns><c>true</c> if the pages collection should be serialized; otherwise <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.PerformBackButtonClick"><summary>
+            Performs a click of the Back button.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.PerformCancelButtonClick"><summary>
+            Performs a click of the Cancel button.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.PerformFinishButtonClick"><summary>
+            Performs a click of the Finish button.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.PerformHelpButtonClick"><summary>
+            Performs a click of the Help button.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.PerformNextButtonClick"><summary>
+            Performs a click of the Next button.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ProcessDialogKey(System.Windows.Forms.Keys)"><summary>
+            Processes a dialog key.
+            </summary><param name="keyData">One of the <see cref="T:System.Windows.Forms.Keys" /> values that represents the key to process.</param><returns><c>true</c> if the key was processed by the control; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ProcessTabKey(System.Boolean)"><summary>
+            Selects the next available control and makes it the active control.
+            </summary><param name="forward"><c>true</c> to cycle forward through the controls in the ContainerControl; otherwise, <c>false</c>. 
+            </param><returns><c>true</c> if a control is selected; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.RaiseCommand(ActiproSoftware.UI.WinForms.Controls.Commands.Command)"><summary>
+            Raises the specified <see cref="T:ActiproSoftware.UI.WinForms.Controls.Commands.Command" />.
+            </summary><param name="command">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Commands.Command" /> to raise.</param><returns><c>true</c> if the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Commands.Command" /> was handled; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ResetRenderer"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Renderer" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ShouldSerializeRenderer"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Renderer" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.WndProc(System.Windows.Forms.Message@)"><summary>
+            Processes Windows messages.
+            </summary><param name="m">The Windows <see cref="T:System.Windows.Forms.Message" /> to process.</param></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButton"><summary>
+            Gets the <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Back button.
+            </summary><value>The <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Back button.</value><remarks>
+            Use this property to directly access the <see cref="T:System.Windows.Forms.Button" /> control, allowing for advanced customization.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonBackColor"><summary>
+            Gets or sets the background color of the Back button.
+            </summary><value>
+            The background color of the Back button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonCausesValidation"><summary>
+            Gets or sets a value indicating whether validation is performed when the Back button is clicked.
+            </summary><value><c>true</c> if validation is performed when the Back button is clicked; otherwise, <c>false</c>. 
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonEnabled"><summary>
+            Gets or sets whether the Back button is currently enabled.
+            </summary><value><c>true</c> if the button is enabled; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonTabIndex"><summary>
+            Gets or sets the tab order of the Back button within its container.
+            </summary><value>
+            The tab order of the Back button within its container.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonTabStop"><summary>
+            Gets or sets whether the Back button has a tab stop.
+            </summary><value><c>true</c> if the button has a tab stop; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonText"><summary>
+            Gets or sets the text displayed on the Back button.
+            </summary><value>
+            The text displayed on the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonWidth"><summary>
+            Gets or sets the width of the Back button.
+            </summary><value>
+            The width of the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ButtonFlatStyle"><summary>
+            Gets or sets the flat style appearance of the buttons in the wizard.
+            </summary><value>
+            A <see cref="T:System.Windows.Forms.FlatStyle" /> specifying the flat style appearance of the buttons in the wizard.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ButtonHeight"><summary>
+            Gets or sets the height of the buttons.
+            </summary><value>
+            The height of the buttons.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButton"><summary>
+            Gets the <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Cancel button.
+            </summary><value>The <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Cancel button.</value><remarks>
+            Use this property to directly access the <see cref="T:System.Windows.Forms.Button" /> control, allowing for advanced customization.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonBackColor"><summary>
+            Gets or sets the background color of the Cancel button.
+            </summary><value>
+            The background color of the Cancel button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonCausesValidation"><summary>
+            Gets or sets a value indicating whether validation is performed when the Cancel button is clicked.
+            </summary><value><c>true</c> if validation is performed when the Cancel button is clicked; otherwise, <c>false</c>. 
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonDialogResult"><summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.DialogResult" /> for the Cancel button.
+            </summary><value>
+            The <see cref="T:System.Windows.Forms.DialogResult" /> for the Cancel button.
+            The default value is <c>DialogResult.Cancel</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonEnabled"><summary>
+            Gets or sets whether the Cancel button is currently enabled.
+            </summary><value><c>true</c> if the button is enabled; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonTabIndex"><summary>
+            Gets or sets the tab order of the Cancel button within its container.
+            </summary><value>
+            The tab order of the Cancel button within its container.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonTabStop"><summary>
+            Gets or sets whether the Cancel button has a tab stop.
+            </summary><value><c>true</c> if the button has a tab stop; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonText"><summary>
+            Gets or sets the text displayed on the Cancel button.
+            </summary><value>
+            The text displayed on the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonWidth"><summary>
+            Gets or sets the width of the Cancel button.
+            </summary><value>
+            The width of the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CommandLinks"><summary>
+            Gets a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Commands.CommandLinkCollection" /> containing the command links associated with the object.
+            </summary><value>A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Commands.CommandLinkCollection" /> containing the command links associated with the object.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Controls"><summary>
+            Gets the <c>ControlCollection</c> that contains the child controls of the wizard.
+            </summary><value>The <c>ControlCollection</c> that contains the child controls of the wizard.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.DefaultSize"><summary>
+            Gets the default size of the control.
+            </summary><value>The default <see cref="T:System.Drawing.Size" /> of the control.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.DisableButtonsDuringPageChange"><summary>
+            Gets or sets whether to disable wizard buttons during page changes.
+            </summary><value><c>true</c> if wizard buttons should be disabled during page changes; otherwise, <c>false</c>.
+            </value><remarks>
+            When a page change occurs, if this property is set to <c>true</c>, all the buttons are 
+            disabled until the page change is complete.  The mouse cursor is also set to a wait cursor
+            during the page change.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ExteriorPageBounds"><summary>
+            Gets the bounds of exterior pages.
+            </summary><value>A <c>Rectangle</c> specifying the bounds of interior pages.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButton"><summary>
+            Gets the <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Finish button.
+            </summary><value>The <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Finish button.</value><remarks>
+            Use this property to directly access the <see cref="T:System.Windows.Forms.Button" /> control, allowing for advanced customization.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonBackColor"><summary>
+            Gets or sets the background color of the Finish button.
+            </summary><value>
+            The background color of the Finish button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonCausesValidation"><summary>
+            Gets or sets a value indicating whether validation is performed when the Finish button is clicked.
+            </summary><value><c>true</c> if validation is performed when the Finish button is clicked; otherwise, <c>false</c>. 
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonDialogResult"><summary>
+            Gets or sets the <see cref="T:System.Windows.Forms.DialogResult" /> for the Finish button.
+            </summary><value>
+            The <see cref="T:System.Windows.Forms.DialogResult" /> for the Finish button.
+            The default value is <c>DialogResult.OK</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonDistinct"><summary>
+            Gets or sets whether the Finish button should always appear or if it should appear in place of the Next button on Finish pages.
+            </summary><value><c>true</c> if the Finish button should always appear on its own; otherwise, <c>false</c>.
+            </value><remarks>
+            This property should be set to <c>true</c> for wizards that have pages with the Next and Finish buttons enabled.
+            Otherwise, the property should be set to <c>false</c> to adhere to the Wizard97 specification.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonEnabled"><summary>
+            Gets or sets whether the Finish button is currently enabled.
+            </summary><value><c>true</c> if the button is enabled; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonTabIndex"><summary>
+            Gets or sets the tab order of the Finish button within its container.
+            </summary><value>
+            The tab order of the Finish button within its container.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonTabStop"><summary>
+            Gets or sets whether the Finish button has a tab stop.
+            </summary><value><c>true</c> if the button has a tab stop; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonText"><summary>
+            Gets or sets the text displayed on the Finish button.
+            </summary><value>
+            The text displayed on the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonWidth"><summary>
+            Gets or sets the width of the Finish button.
+            </summary><value>
+            The width of the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Font"><summary>
+            Gets or sets the <c>Font</c> to use for text in the control.
+            </summary><value>
+            The <c>Font</c> to use for text in the control.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FormAcceptButton"><summary>
+            Gets or sets the button in the wizard that is clicked when the user presses the ENTER key.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardAcceptButtonDefault" /> specifying the accept button for the wizard.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FormCancelButton"><summary>
+            Gets or sets the button in the wizard that is clicked when the user presses the ESCAPE key.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardCancelButtonDefault" /> specifying the cancel button for the wizard.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ForwardCommandsTo"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Commands.ICommandTarget" /> to forward commands to.
+            </summary><value>The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Commands.ICommandTarget" /> to forward commands to.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButton"><summary>
+            Gets the <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Help button.
+            </summary><value>The <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Help button.</value><remarks>
+            Use this property to directly access the <see cref="T:System.Windows.Forms.Button" /> control, allowing for advanced customization.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonAlignLeft"><summary>
+            Gets or sets whether the Help button is aligned to the left side of the wizard.
+            </summary><value><c>true</c> if the Help button is aligned to the left side of the wizard; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonBackColor"><summary>
+            Gets or sets the background color of the Help button.
+            </summary><value>
+            The background color of the Help button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonCausesValidation"><summary>
+            Gets or sets a value indicating whether validation is performed when the Help button is clicked.
+            </summary><value><c>true</c> if validation is performed when the Help button is clicked; otherwise, <c>false</c>. 
+            The default value is <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonEnabled"><summary>
+            Gets or sets whether the Help button is currently enabled.
+            </summary><value><c>true</c> if the button is enabled; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonTabIndex"><summary>
+            Gets or sets the tab order of the Help button within its container.
+            </summary><value>
+            The tab order of the Help button within its container.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonTabStop"><summary>
+            Gets or sets whether the Help button has a tab stop.
+            </summary><value><c>true</c> if the button has a tab stop; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonText"><summary>
+            Gets or sets the text displayed on the Help button.
+            </summary><value>
+            The text displayed on the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonWidth"><summary>
+            Gets or sets the width of the Help button.
+            </summary><value>
+            The width of the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.InteriorPageBounds"><summary>
+            Gets the bounds of interior pages.
+            </summary><value>A <c>Rectangle</c> specifying the bounds of interior pages.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.InteriorPageGuideLineCount"><summary>
+            Gets or sets the number of interior page guide lines to display in design-time mode.
+            </summary><value>The number of interior page guide lines to display in design-time mode.</value><remarks>
+            Set this property to <c>0</c> to display no guide lines.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButton"><summary>
+            Gets the <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Next button.
+            </summary><value>The <see cref="T:System.Windows.Forms.Button" /> instance that is used for the Next button.</value><remarks>
+            Use this property to directly access the <see cref="T:System.Windows.Forms.Button" /> control, allowing for advanced customization.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonBackColor"><summary>
+            Gets or sets the background color of the Next button.
+            </summary><value>
+            The background color of the Next button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonCausesValidation"><summary>
+            Gets or sets a value indicating whether validation is performed when the Next button is clicked.
+            </summary><value><c>true</c> if validation is performed when the Next button is clicked; otherwise, <c>false</c>. 
+            The default value is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonEnabled"><summary>
+            Gets or sets whether the Next button is currently enabled.
+            </summary><value><c>true</c> if the button is enabled; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonTabIndex"><summary>
+            Gets or sets the tab order of the Next button within its container.
+            </summary><value>
+            The tab order of the Next button within its container.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonTabStop"><summary>
+            Gets or sets whether the Next button has a tab stop.
+            </summary><value><c>true</c> if the button has a tab stop; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonText"><summary>
+            Gets or sets the text displayed on the Next button.
+            </summary><value>
+            The text displayed on the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonWidth"><summary>
+            Gets or sets the width of the Next button.
+            </summary><value>
+            The width of the button.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Pages"><summary>
+            Gets the collection of pages in the wizard. 
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> representing the pages in the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </value><remarks>
+            This property enables you to obtain a reference to the list of pages that are currently stored 
+            in the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />. 
+            With this reference, you can add pages, remove pages, and obtain a count of the pages 
+            in the collection. 
+            For more information on the tasks that can be performed with the <c>Pages</c> collection, 
+            see the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> class reference topics. 
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.PageSequenceType"><summary>
+            Gets or sets the type of page sequencing to perform.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageSequenceType" /> specifying the type of page sequencing to perform.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Renderer"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer" /> used to render the control.
+            </summary><value>The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.IWizardRenderer" /> used to render the control.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedIndex"><summary>
+            Gets or sets the index of the selected item. 
+            </summary><value>
+            The index of the selected item. 
+            If there are no items in the control, this property returns <c>-1</c>. 
+            </value><remarks>
+            The index is zero-based.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedPage"><summary>
+            Gets or sets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is currently selected.
+            </summary><value>
+            The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is currently selected.
+            <see langword="null" /> is returned if there is no page currently selected.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.UseExtendedDoubleBuffering"><summary>
+            Gets or sets whether to use extended double buffering for rendering.
+            </summary><value><c>true</c> if extended double buffering should be used; otherwise, <c>false</c>.
+            </value></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.BackButtonClick"><summary>
+            Occurs when the Back button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardPageCancelEventArgs</c> containing data related to this event.
+            The <c>Cancel</c> property in the <c>WizardPageCancelEventArgs</c> class provides information specific to this event.
+            </eventdata><remarks>
+            By default, the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> will move to the previous <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> in the
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> after this event fires.  To cancel this behavior, set
+            the <c>Cancel</c> property of the event argument to <c>true</c>.  Then you can use
+            the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedPage" /> property to set the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that should
+            be displayed.
+            <para>
+            If the selected page has an event handler for this event, this particular event will not be
+            raised since it will be assumed that the associated page's event handler executed the appropriate code.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ButtonMouseEnter"><summary>
+            Occurs when mouse moves over a wizard button.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardButtonEventArgs</c> containing data related to this event.
+            </eventdata></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.ButtonMouseLeave"><summary>
+            Occurs when mouse moves out of a wizard button.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardButtonEventArgs</c> containing data related to this event.
+            </eventdata></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.CancelButtonClick"><summary>
+            Occurs when the Cancel button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Handlers of this event generally abort any currently-executing processing tasks and 
+            close the <c>Form</c> containing the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            <para>
+            If the selected page has an event handler for this event, this particular event will not be
+            raised since it will be assumed that the associated page's event handler executed the appropriate code.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.FinishButtonClick"><summary>
+            Occurs when the Finish button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Handlers of this event generally finish processing any remaining wizard tasks.
+            <para>
+            If the selected page has an event handler for this event, this particular event will not be
+            raised since it will be assumed that the associated page's event handler executed the appropriate code.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.HelpButtonClick"><summary>
+            Occurs when the Help button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Handlers of this event generally display help for the currently displayed wizard step.
+            <para>
+            If the selected page has an event handler for this event, this particular event will not be
+            raised since it will be assumed that the associated page's event handler executed the appropriate code.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.LayoutButtons"><summary>
+            Occurs when the wizard's buttons need to be positioned.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardLayoutButtonsEventArgs</c> containing data related to this event.
+            </eventdata></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.NextButtonClick"><summary>
+            Occurs when the Next button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardPageCancelEventArgs</c> containing data related to this event.
+            The <c>Cancel</c> property in the <c>WizardPageCancelEventArgs</c> class provides information specific to this event.
+            </eventdata><remarks>
+            By default, the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> will move to the next <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> in the
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> after this event fires.  To cancel this behavior, set
+            the <c>Cancel</c> property of the event argument to <c>true</c>.  Then you can use
+            the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedPage" /> property to set the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that should
+            be displayed.
+            <para>
+            If the selected page has an event handler for this event, this particular event will not be
+            raised since it will be assumed that the associated page's event handler executed the appropriate code.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectionChanged"><summary>
+            Occurs after the selected page changes.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Use this event to perform any processing that should occur after the selected page changes.
+            </remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectionChanging"><summary>
+            Occurs before the selected page changes.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardPageCancelEventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Use this event to perform any processing that should occur before selected page changes.
+            The <c>Page</c> property of the event arguments indicates the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> about to be selected.
+            The selection change may be cancelled by setting the <c>Cancel</c> property of the event arguments to <c>true</c>.
+            </remarks></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardAcceptButtonDefault"><summary>
+            Specifies the button in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control that is clicked when the user 
+            presses the ENTER key.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardAcceptButtonDefault.None"><summary>
+            None of the wizard buttons are clicked.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardAcceptButtonDefault.Next"><summary>
+            The Next button is clicked.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardAcceptButtonDefault.Finish"><summary>
+            The Finish button is clicked.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardAcceptButtonDefault.FinishThenNext"><summary>
+            The Finish button is clicked if visible, otherwise the Next button is clicked.
+            </summary></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer"><summary>
+            Represents a container area for <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control buttons.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer.#ctor"><summary>
+            Initializes a new instance of the <c>WizardButtonContainer</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer.CreateChildren"><summary>
+            Invoked when the collection of child elements is to be created.
+            </summary><returns>The <see cref="T:System.Collections.IList" /> that should be assigned to the <see cref="P:ActiproSoftware.UI.WinForms.ILogicalTreeNode.Children" /> property.</returns><remarks>By default no child collection is created.</remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer.MeasureOverride(System.Drawing.Graphics,System.Drawing.Size)"><summary>
+            Measures the size in layout required for child elements and determines a size for the element itself. 
+            </summary><param name="g">The <see cref="T:System.Drawing.Graphics" /> object to use for measurement.</param><param name="availableSize">
+            The available size that this element can give to child elements.
+            Infinity can be specified as a value to indicate that the element will size to whatever content is available.
+            </param><returns>The size that this element determines it needs during layout, based on its calculations of child element sizes.</returns><remarks>
+            Element authors should override this method, call <c>Measure</c> on each visible child element and determine the total size required.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer.Wizard"><summary>
+            Gets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that contains the element.
+            </summary><value>The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that contains the element.</value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault"><summary>
+            Specifies if a button is enabled or how its enabled state should be determined.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault.True"><summary>
+            The button is enabled.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault.False"><summary>
+            The button is disabled.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault.Auto"><summary>
+            The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control determines whether the button should be enabled.
+            </summary></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEventArgs"><summary>
+            Provides data for button events of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            </summary></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEventArgs.ButtonType"><summary>
+            Gets the button type for which the event is raised.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonType" /> specifying the button type for which the event is raised.
+            </value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEventHandler"><summary>
+            Represents the method that will handle button events of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            </summary><remarks>
+            When you create a <c>WizardButtonEventHandler</c> delegate, you identify the method that will handle the event. 
+            To associate the event with your event handler, add an instance of the delegate to the event. 
+            The event handler is called whenever the event occurs, unless you remove the delegate.
+            </remarks></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonType"><summary>
+            Specifies one of the wizard buttons.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonType.Back"><summary>
+            The Back button.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonType.Cancel"><summary>
+            The Cancel button.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonType.Help"><summary>
+            The Help button.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonType.Next"><summary>
+            The Next button.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonType.Finish"><summary>
+            The Finish button.
+            </summary></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardCancelButtonDefault"><summary>
+            Specifies the button in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control that is clicked when the user
+            presses the ESCAPE key.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardCancelButtonDefault.None"><summary>
+            None of the wizard buttons are clicked.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardCancelButtonDefault.Cancel"><summary>
+            The Cancel button is clicked.
+            </summary></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm"><summary>
+            Provides an implementation of a <c>Form</c> with a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control filling its client area.
+            </summary><remarks>
+            To create a custom wizard dialog, create a <c>Form</c> that inherits from the <c>WizardDialogForm</c>.
+            Then set the properties of the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> control and override the protected <c>On...</c>
+            methods of the <c>WizardDialogForm</c>.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.#ctor"><summary>
+            Initializes a new instance of the <c>WizardDialogForm</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Dispose(System.Boolean)"><summary>
+            Clean up any resources being used.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnBackButtonClick(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Occurs when Back button on the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> is clicked.
+            </summary><param name="e">A <c>WizardPageCancelEventArgs</c> that contains the event data.</param><remarks>
+            By default, the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> will move to the previous <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> in the
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> after this event fires.  To cancel this behavior, set
+            the <c>Cancel</c> property of the event argument to <c>true</c>.  Then you can use
+            the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedIndex" /> property to set the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that should
+            be displayed.
+            <para>
+            If the selected page has an event handler for this event, this particular event will not be
+            raised since it will be assumed that the associated page's event handler executed the appropriate code.
+            </para></remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnCancelButtonClick(System.EventArgs)"><summary>
+            Occurs when Cancel button on the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> is clicked.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnFinishButtonClick(System.EventArgs)"><summary>
+            Occurs when Finish button on the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> is clicked.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnHelpButtonClick(System.EventArgs)"><summary>
+            Occurs when Help button on the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> is clicked.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnLayoutButtons(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs)"><summary>
+            Occurs when control is requested to lay out it's child controls.
+            </summary><param name="e">A <c>WizardLayoutButtonsEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnNextButtonClick(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Occurs when Next button on the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> is clicked.
+            </summary><param name="e">A <c>WizardPageCancelEventArgs</c> that contains the event data.</param><remarks>
+            By default, the <see cref="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard" /> will move to the next <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> in the
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> after this event fires.  To cancel this behavior, set
+            the <c>Cancel</c> property of the event argument to <c>true</c>.  Then you can use
+            the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedIndex" /> property to set the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that should
+            be displayed.
+            <para>
+            If the selected page has an event handler for this event, this particular event will not be
+            raised since it will be assumed that the associated page's event handler executed the appropriate code.
+            </para></remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnSelectionChanged(System.EventArgs)"><summary>
+            Occurs after a page is selected.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnSelectionChanging(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Occurs before a page is selected.
+            </summary><param name="e">A <c>WizardPageCancelEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.OnUpdateTitleBarText(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleBarTextEventArgs)"><summary>
+            Occurs when the title bar text of the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" /> needs to be updated.
+            </summary><param name="e">A <c>WizardDialogTitleBarTextEventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.UpdateTitleBarText"><summary>
+            Updates the title bar text.
+            </summary></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Text"><summary>
+            Gets the text that is displayed in the title bar of the <c>Form</c>.
+            </summary><value>The text that is displayed in the title bar of the <c>Form</c>.</value><remarks>
+            This property returns the title bar text as constructed by the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.TitleStyle" />.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.TitleBarText"><summary>
+            Gets or sets the base text to be displayed in the title bar of the <c>Form</c>.
+            </summary><value>The base text to be displayed in the title bar of the <c>Form</c>.</value><remarks>
+            The <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.TitleStyle" /> property specifies how to modify this text for display
+            in the title bar.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.TitleStyle"><summary>
+            Gets or sets how to modify the text in the title bar of the <c>Form</c>.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleStyle" /> specifying how to modify the text 
+            in the title bar of the <c>Form</c>.
+            </value></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Wizard"><summary>
+            Gets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control that is contained by the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" />.
+            </summary><value>The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control that is contained by the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" />.</value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleBarTextEventArgs"><summary>
+            Provides data for the setting the title bar text of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" />.
+            </summary></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleBarTextEventArgs.TitleBarText"><summary>
+            Gets or sets the title bar text to assign to the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" />.
+            </summary><value>
+            The title bar text to assign to the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" />.
+            </value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleStyle"><summary>
+            Specifies how the title bar text of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" /> should be constructed.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleStyle.None"><summary>
+            Only display the text in the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Text" /> property.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleStyle.Step"><summary>
+            Displays the text in the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Text" /> property appended by the
+            text <c>Step ? of ?</c>.  This title style is only useful for Wizards that do not have
+            multiple execution paths.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleStyle.PageCaption"><summary>
+            Displays the text in the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Text" /> property appended by the
+            text in the current page's <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.PageCaption" /> property.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleStyle.PageDescription"><summary>
+            Displays the text in the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Text" /> property appended by the
+            text in the current page's <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.PageDescription" /> property.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogTitleStyle.PageTitleBarText"><summary>
+            Displays the text in the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm.Text" /> property appended by the
+            text in the current page's <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.PageTitleBarText" /> property.
+            </summary></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader"><summary>
+            Represents a header for an interior page in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader.#ctor"><summary>
+            Initializes a new instance of the <c>WizardInteriorPageHeader</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader.MeasureOverride(System.Drawing.Graphics,System.Drawing.Size)"><summary>
+            Measures the size in layout required for child elements and determines a size for the element itself. 
+            </summary><param name="g">The <see cref="T:System.Drawing.Graphics" /> object to use for measurement.</param><param name="availableSize">
+            The available size that this element can give to child elements.
+            Infinity can be specified as a value to indicate that the element will size to whatever content is available.
+            </param><returns>The size that this element determines it needs during layout, based on its calculations of child element sizes.</returns><remarks>
+            Element authors should override this method, call <c>Measure</c> on each visible child element and determine the total size required.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader.Wizard"><summary>
+            Gets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that contains the element.
+            </summary><value>The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that contains the element.</value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs"><summary>
+            Provides data for the layout buttons event of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            </summary></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs.BackButtonLocation"><summary>
+            Gets or sets the position at which the Back button should be placed.
+            </summary><value>
+            The position at which the Back button should be placed.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs.CancelButtonLocation"><summary>
+            Gets or sets the position at which the Cancel button should be placed.
+            </summary><value>
+            The position at which the Cancel button should be placed.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs.FinishButtonLocation"><summary>
+            Gets or sets the position at which the Finish button should be placed.
+            </summary><value>
+            The position at which the Finish button should be placed.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs.HelpButtonLocation"><summary>
+            Gets or sets the position at which the Help button should be placed.
+            </summary><value>
+            The position at which the Help button should be placed.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventArgs.NextButtonLocation"><summary>
+            Gets or sets the position at which the Next button should be placed.
+            </summary><value>
+            The position at which the Next button should be placed.
+            </value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardLayoutButtonsEventHandler"><summary>
+            Represents the method that will handle the layout buttons event of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            </summary><remarks>
+            When you create a <c>WizardLayoutButtonsEventHandler</c> delegate, you identify the method that will handle the event. 
+            To associate the event with your event handler, add an instance of the delegate to the event. 
+            The event handler is called whenever the event occurs, unless you remove the delegate.
+            </remarks></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage"><summary>
+            Represents a page within a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control. 
+            </summary><remarks>
+            This class is used to track information relating to each page in a 
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control. 
+            </remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.#ctor"><summary>
+            Initializes a new instance of the <c>WizardPage</c> class. 
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ResetBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ShouldSerializeBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ResetButtonContainerBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ButtonContainerBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ShouldSerializeButtonContainerBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ButtonContainerBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.CreateControlsInstance"><summary>
+            Creates a new instance of the control collection for the control.
+            </summary><returns>A new instance of a <see cref="T:System.Windows.Forms.Control.ControlCollection" /> assigned to the control.</returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Dispose(System.Boolean)"><summary>
+            Clean up any resources being used.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ResetInteriorPageHeaderBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.InteriorPageHeaderBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ShouldSerializeInteriorPageHeaderBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.InteriorPageHeaderBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ResetInteriorPageHeaderImage"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.InteriorPageHeaderImage" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ShouldSerializeInteriorPageHeaderImage"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.InteriorPageHeaderImage" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnBackButtonClick(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Raises the <c>BackButtonClick</c> event.
+            </summary><param name="e">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnCancelButtonClick(System.EventArgs)"><summary>
+            Raises the <c>CancelButtonClick</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnCreateControl"><summary>
+            Raises the <c>CreateControl</c> event.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnFinishButtonClick(System.EventArgs)"><summary>
+            Raises the <c>FinishButtonClick</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnHelpButtonClick(System.EventArgs)"><summary>
+            Raises the <c>HelpButtonClick</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnLoad(System.EventArgs)"><summary>
+            Raises the <c>Load</c> event.
+            </summary><param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnNextButtonClick(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs)"><summary>
+            Raises the <c>NextButtonClick</c> event.
+            </summary><param name="e">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnMouseDown(System.Windows.Forms.MouseEventArgs)"><summary>
+            Raises the <c>MouseDown</c> event.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.OnResize(System.EventArgs)"><summary>
+            Raises the <c>Resize</c> event.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ProcessTabKey(System.Boolean)"><summary>
+            Selects the next available control and makes it the active control.
+            </summary><param name="forward"><c>true</c> to cycle forward through the controls in the ContainerControl; otherwise, <c>false</c>. 
+            </param><returns><c>true</c> if a control is selected; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ToString"><summary>
+            Returns a <c>String</c> that represents the current <c>Object</c>.
+            </summary><returns>A <c>String</c> that represents the current <c>Object</c>.</returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.WndProc(System.Windows.Forms.Message@)"><summary>
+            Processes Windows messages.
+            </summary><param name="m">The Windows <see cref="T:System.Windows.Forms.Message" /> to process.</param></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Anchor"><summary>
+            Gets or sets which edges of the control are anchored to the edges of its container.
+            </summary><value>A bitwise combination of the <see cref="T:System.Windows.Forms.AnchorStyles" /> values. The default is <c>Top</c> and <c>Left</c>.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackButtonEnabled"><summary>
+            Determines the enabled state of the Back button when this page is selected.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /> specifying the enabled state of the button.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackButtonVisible"><summary>
+            Determines the visibility of the Back button when this page is selected.
+            </summary><value><c>true</c> if the button should be visible; otherwise, <c>false</c>.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill"><summary>
+            Gets or sets the page-specific <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> for the page.
+            </summary><value>The page-specific <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> for the page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.ButtonContainerBackgroundFill"><summary>
+            Gets or sets the page-specific <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> for the button container.
+            </summary><value>The page-specific <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> for the button container.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.CancelButtonEnabled"><summary>
+            Determines the enabled state of the Cancel button when this page is selected.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /> specifying the enabled state of the button.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.CancelButtonVisible"><summary>
+            Determines the visibility of the Cancel button when this page is selected.
+            </summary><value><c>true</c> if the button should be visible; otherwise, <c>false</c>.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.CausesValidation"><summary>
+            Gets or sets a value indicating whether the control causes validation to be performed on any controls 
+            that require validation when it receives focus.
+            </summary><value><c>true</c> if the control causes validation to be performed on any controls requiring validation when it receives focus; 
+            otherwise, <c>false</c>.  The default is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Dock"><summary>
+            Gets or sets which edge of the parent container a control is docked to.
+            </summary><value>One of the <see cref="T:System.Windows.Forms.DockStyle" /> values. The default is <c>None</c>.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.FinishButtonEnabled"><summary>
+            Determines the enabled state of the Finish button when this page is selected.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /> specifying the enabled state of the button.
+            </value><remarks>
+            This property should only be set at design-time.
+            <para>
+            This property also controls the enabled state of the Finish button, since the Finish
+            button is simply the Finish button with a different caption.
+            </para></remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.FinishButtonVisible"><summary>
+            Determines the visibility of the Finish button when this page is selected.
+            </summary><value><c>true</c> if the button should be visible; otherwise, <c>false</c>.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.HelpButtonEnabled"><summary>
+            Determines the enabled state of the Help button when this page is selected.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /> specifying the enabled state of the button.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.HelpButtonVisible"><summary>
+            Determines the visibility of the Help button when this page is selected.
+            </summary><value><c>true</c> if the button should be visible; otherwise, <c>false</c>.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.InteriorPageHeaderBackgroundFill"><summary>
+            Gets or sets the page-specific <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> for the header of the page if it is an interior page.
+            </summary><value>The page-specific <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackgroundFill" /> for the header of the page if it is an interior page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.InteriorPageHeaderImage"><summary>
+            Gets or sets the page-specific <see cref="T:System.Drawing.Image" /> for the header of the page if it is an interior page.
+            </summary><value>The page-specific <see cref="T:System.Drawing.Image" /> for the header of the page if it is an interior page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.IsInteriorPage"><summary>
+            Gets or sets whether the page is an interior page.
+            </summary><value><c>true</c> if the page is an interior page; otherwise, <c>false</c>.
+            </value><remarks>
+            Interior pages make use of the header and are padded from the sides of the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" />.  
+            Exterior pages fill the entire <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> client area.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Location"><summary>
+            Gets or sets the coordinates of the upper-left corner of the control relative
+            to the upper-left corner of its container.
+            </summary><value>
+            The <see cref="T:System.Drawing.Point" /> that represents the upper-left corner of the control
+            relative to the upper-left corner of its container.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.NextButtonEnabled"><summary>
+            Determines the enabled state of the Next button when this page is selected.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /> specifying the enabled state of the button.
+            </value><remarks>
+            This property should only be set at design-time.
+            <para>
+            This property also controls the enabled state of the Finish button, since the Finish
+            button is simply the Next button with a different caption.
+            </para></remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonEnabledDefault" /></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.NextButtonVisible"><summary>
+            Determines the visibility of the Next button when this page is selected.
+            </summary><value><c>true</c> if the button should be visible; otherwise, <c>false</c>.
+            </value><remarks>
+            This property should only be set at design-time.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.PageCaption"><summary>
+            Gets or sets the caption of the page. 
+            </summary><value>The caption displayed on the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> for the page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.PageDescription"><summary>
+            Gets or sets the description of the page. 
+            </summary><value>The description displayed on the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> for the page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.PageTitleBarText"><summary>
+            Gets or sets the title bar text of the page. 
+            </summary><value>The title bar text displayed on a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" /> for the page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Size"><summary>
+            Gets or sets the height and width of the control.
+            </summary><value>
+            The <see cref="T:System.Drawing.Size" /> that represents the height and width of the control in pixels.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.UseExtendedDoubleBuffering"><summary>
+            Gets or sets whether to use extended double buffering for rendering.
+            </summary><value><c>true</c> if extended double buffering should be used; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Visible"><summary>
+            Gets or sets a value indicating whether the control is displayed.
+            </summary><value><c>true</c> if the control is displayed; otherwise, <c>false</c>. The default is <c>true</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard"><summary>
+            Gets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that contains the page.
+            </summary><value>The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that contains the page.</value></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.BackButtonClick"><summary>
+            Occurs when this page is selected and the Back button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardPageCancelEventArgs</c> containing data related to this event.
+            The <c>Cancel</c> property in the <c>WizardPageCancelEventArgs</c> class provides information specific to this event.
+            </eventdata><remarks>
+            By default, the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> will move to the previous <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> in the
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> after this event fires.  To cancel this behavior, set
+            the <c>Cancel</c> property of the event argument to <c>true</c>.  Then you can use
+            the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedPage" /> property to set the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that should
+            be displayed.
+            <para>
+            If an event handler is set for this event on this page, and the event is raised, it
+            will only be raised from this <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.  
+            The more general associated event on the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> will not be raised.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.CancelButtonClick"><summary>
+            Occurs when this page is selected and the Cancel button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Handlers of this event generally abort any currently-executing processing tasks and 
+            close the <c>Form</c> containing the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            <para>
+            If an event handler is set for this event on this page, and the event is raised, it
+            will only be raised from this <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.  
+            The more general associated event on the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> will not be raised.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.FinishButtonClick"><summary>
+            Occurs when this page is selected and the Finish button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Handlers of this event generally finish processing any remaining wizard tasks.
+            <para>
+            If an event handler is set for this event on this page, and the event is raised, it
+            will only be raised from this <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.  
+            The more general associated event on the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> will not be raised.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.HelpButtonClick"><summary>
+            Occurs when this page is selected and the Help button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            Handlers of this event generally display help for the currently displayed wizard step.
+            <para>
+            If an event handler is set for this event on this page, and the event is raised, it
+            will only be raised from this <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.  
+            The more general associated event on the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> will not be raised.
+            </para></remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Load"><summary>
+            Occurs before the control becomes visible for the first time.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata><remarks>
+            You can use this event to perform tasks such as allocating resources used by the control.
+            </remarks></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.NextButtonClick"><summary>
+            Occurs when this page is selected and the Next button is clicked.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>WizardPageCancelEventArgs</c> containing data related to this event.
+            The <c>Cancel</c> property in the <c>WizardPageCancelEventArgs</c> class provides information specific to this event.
+            </eventdata><remarks>
+            By default, the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> will move to the next <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> in the
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /> after this event fires.  To cancel this behavior, set
+            the <c>Cancel</c> property of the event argument to <c>true</c>.  Then you can use
+            the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.SelectedPage" /> property to set the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that should
+            be displayed.
+            <para>
+            If an event handler is set for this event on this page, and the event is raised, it
+            will only be raised from this <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.  
+            The more general associated event on the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage.Wizard" /> will not be raised.
+            </para></remarks></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs"><summary>
+            Provides event arguments for cancelling page switching events.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs.#ctor(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason)"><summary>
+            Initializes a new instance of the <c>WizardPageCancelEventArgs</c> class. 
+            </summary><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is about to be selected.</param><param name="reason">A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason" /> specifying what caused the event to occur.</param></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs.Page"><summary>
+            Gets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is about to be selected.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> specifying the page that is about to be selected.
+            A null reference is returned if no page will be selected.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventArgs.Reason"><summary>
+            Gets a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason" /> specifying what caused the event to occur.
+            </summary><value>
+            A <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason" /> specifying what caused the event to occur.
+            </value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCancelEventHandler"><summary>
+            Represents the method that will handle page switching events.
+            </summary><remarks>
+            When you create a <c>WizardPageCancelEventHandler</c> delegate, you identify the method that will handle the event. 
+            To associate the event with your event handler, add an instance of the delegate to the event. 
+            The event handler is called whenever the event occurs, unless you remove the delegate.
+            </remarks></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection"><summary>
+            Encapsulates a collection of <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> components.
+            </summary><remarks>
+            This class is a zero-based indexed collection. 
+            </remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.#ctor(System.Windows.Forms.Control.ControlCollection)"><summary>
+            Initializes a new instance of the <c>WizardPageCollection</c> class. 
+            </summary><param name="wizardPageContainerControls">The control collection to link to.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.Add(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Adds the specified <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to the collection. 
+            </summary><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to add.</param><returns>
+            The index of the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that was inserted.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.AddRange(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage[])"><summary>
+            Adds the specified array of <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> controls to the collection. 
+            </summary><param name="pages">The array of <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> controls to add.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.Clear"><summary>
+            Removes all <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> objects from the collection.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.Contains(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Determines whether the specified <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> is in the collection. 
+            </summary><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to look for.</param><returns><c>true</c> if the collection contains the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />; otherwise, <c>false</c>. 
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.CopyTo(System.Array,System.Int32)"><summary>
+            Copies the entire collection to a compatible one-dimensional <c>Array</c>, 
+            starting at the specified index of the target array.
+            </summary><param name="array">
+            The one-dimensional <c>Array</c> that is the destination of the elements copied from the collection. 
+            The <c>Array</c> must have zero-based indexing. 
+            </param><param name="arrayIndex">The zero-based index in <paramref name="array" /> at which copying begins.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.GetEnumerator"><summary>
+            Retrieves an <c>IEnumerator</c> object for the entire collection.
+            </summary><returns>An <c>IEnumerator</c> object for the entire collection</returns><remarks>
+            Enumerators are intended to be used only to read data in the collection. 
+            Enumerators cannot be used to modify the underlying collection.
+            <para>
+            The enumerator does not have exclusive access to the collection.
+            </para><para>
+            When an enumerator is instantiated, it takes a snapshot of the current state of the collection. 
+            If changes are made to the collection, such as adding, modifying or deleting elements, the 
+            snapshot gets out of sync and the enumerator throws an <c>InvalidOperationException</c>. 
+            Two enumerators instantiated from the same collection at the same time can have 
+            different snapshots of the collection.
+            </para></remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.IndexOf(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Returns the index of the specified <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> in the collection.
+            </summary><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to look for.</param><returns>
+            If found, the index where the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> is in the collection; otherwise, <c>-1</c>. 
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.Insert(System.Int32,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Inserts an <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> into the specified location in the collection. 
+            </summary><param name="index">The index at which to place the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to add.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.MoveTo(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage,System.Int32)"><summary>
+            Moves a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to the specified index.
+            </summary><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to move.</param><param name="newIndex">The new index.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.Remove(ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Removes the specified <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> from the collection.
+            </summary><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to remove.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.RemoveAt(System.Int32)"><summary>
+            Removes the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> at the specified index from the collection.
+            </summary><param name="index">The index of the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to remove.</param></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.Count"><summary>
+            Gets the number of pages contained in the collection.
+            </summary><value>The number of pages contained in the collection.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.IsFixedSize"><summary>
+            Gets a value indicating whether the collection has a fixed size.
+            </summary><value><c>true</c> if the collection has a fixed size; otherwise, <c>false</c>.
+            </value><remarks>
+            A collection with a fixed size does not allow the addition or removal of elements, 
+            but it allows the modification of existing elements.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.IsReadOnly"><summary>
+            Gets a value indicating whether the collection is read-only.
+            </summary><value><c>true</c> if the collection is read-only; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.IsSynchronized"><summary>
+            Gets a value indicating whether access to the collection is synchronized (thread-safe).
+            </summary><value><c>true</c> if the collection is synchronized (thread-safe); otherwise, <c>false</c>.
+            </value><remarks>
+            To guarantee the thread safety of the collection, all operations must be done through 
+            the wrapper returned by the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.SyncRoot" /> property.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.SyncRoot"><summary>
+            Gets an <c>Object</c> that can be used to synchronize access to the collection.
+            </summary><value>
+            An <c>Object</c> that can be used to synchronize access to the collection.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection.Item(System.Int32)"><summary>
+            Gets the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> at the specified index. 
+            <para>
+            [C#] In C#, this property is the indexer for the <c>WizardPageCollection</c> class. 
+            </para></summary><param name="index">The index of the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> to return.</param><value>
+            The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> at the specified index. 
+            </value></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason"><summary>
+            Specifies the reason why a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> event was raised.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason.Programmatic"><summary>
+            The page change was caused programmatically.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason.BackButtonClick"><summary>
+            The page change was caused by the Back button being pressed.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageEventReason.NextButtonClick"><summary>
+            The page change was caused by the Next button being pressed.
+            </summary></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageSequenceType"><summary>
+            Specifies the type of page sequencing to use.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageSequenceType.Normal"><summary>
+            Normal page sequencing, in which pages are visited in the order in which they appear in the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard.Pages" /> collection.
+            </summary></member><member name="F:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageSequenceType.BackStack"><summary>
+            Normal page sequencing occurs when the Next button is pressed.
+            Each page visited is stored in an internal stack.
+            Back button presses move backwards through the stack.
+            </summary></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer"><summary>
+            Provides a base renderer for the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.#ctor"><summary>
+            Initializes a new instance of the <c>WizardRenderer</c> class. 
+            </summary><remarks>
+            The default constructor initializes all fields to their default values.
+            </remarks></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.Dispose(System.Boolean)"><summary>
+            Disposes any resources used by the object.
+            </summary><param name="disposing">Whether the object is being disposed.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="wizard">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardButtonContainerBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="buttonContainer">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardExteriorPageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Draws the background of an exterior <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardInteriorPageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage)"><summary>
+            Draws the background of an interior <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardInteriorPageHeaderBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader)"><summary>
+            Draws the background of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="header">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardInteriorPageHeaderForeground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader)"><summary>
+            Draws the foreground of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="header">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardInteriorPageHeader" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardSeparator(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard)"><summary>
+            Draws a separator in a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="wizard">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.DrawWizardWelcomePageBackground(System.Windows.Forms.PaintEventArgs,System.Drawing.Rectangle,ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage)"><summary>
+            Draws the background of a welcome <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param><param name="bounds">The bounds in which to draw.</param><param name="page">The <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" /> that is being painted.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.Equals(System.Object)"><summary>
+            Determines whether the specified <c>Object</c> is equal to the current <c>Object</c>. 
+            </summary><param name="obj">The <c>Object</c> to compare to the current <c>Object</c>.</param><returns><c>true</c> if the specified <c>Object</c> is equal to the current <c>Object</c>; 
+            otherwise, <c>false</c>. 
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.GetHashCode"><summary>
+            Returns a hash code for this object.
+            </summary><returns>An integer value that specifies a hash value for this object.</returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.OnPropertyChanged(System.EventArgs)"><summary>
+            Raises the <c>PropertyChanged</c> event.
+            </summary><param name="e">An <c>EventArgs</c> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetAll(System.Boolean)"><summary>
+            Resets all property values to their defaults.
+            </summary><param name="force">Whether to force resetting.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetResetAllPropertiesOnSystemColorChange"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetAllPropertiesOnSystemColorChange" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ShouldSerializeResetAllPropertiesOnSystemColorChange"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetAllPropertiesOnSystemColorChange" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetWizardButtonContainerHeight"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardButtonContainerHeight" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ShouldSerializeWizardButtonContainerHeight"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardButtonContainerHeight" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetWizardInteriorPageHeaderHeight"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardInteriorPageHeaderHeight" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ShouldSerializeWizardInteriorPageHeaderHeight"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardInteriorPageHeaderHeight" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetWizardInteriorPageMargin"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardInteriorPageMargin" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ShouldSerializeWizardInteriorPageMargin"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardInteriorPageMargin" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetWizardSeparatorHeight"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardSeparatorHeight" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ShouldSerializeWizardSeparatorHeight"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardSeparatorHeight" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.ResetAllPropertiesOnSystemColorChange"><summary>
+            Gets or sets whether to reset all properties when a system color change event occurs.
+            </summary><value><c>true</c> if all properties should be reset; otherwise, <c>false</c>.
+            </value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardButtonContainerHeight"><summary>
+            Gets or sets the height of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.
+            </summary><value>The height of a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardButtonContainer" />.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardInteriorPageHeaderHeight"><summary>
+            Gets or sets the height of the interior page header.
+            </summary><value>The height of the interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardInteriorPageMargin"><summary>
+            Gets or sets the margin of the interior page header.
+            </summary><value>The margin of the interior page header.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.WizardSeparatorHeight"><summary>
+            Gets or sets the height of a separator in a wizard.
+            </summary><value>The height of a separator in a wizard.</value></member><member name="E:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardRenderer.PropertyChanged"><summary>
+            Occurs after a property is changed.
+            </summary><eventdata>
+            The event handler receives an argument of type <c>EventArgs</c> containing data related to this event.
+            </eventdata></member><member name="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage"><summary>
+            Represents a welcome page within a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control. 
+            </summary><remarks>
+            This class is used to track information relating to a welcome page in a 
+            <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> control. 
+            </remarks><seealso cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPageCollection" /></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.#ctor"><summary>
+            Initializes a new instance of the <c>WizardWelcomePage</c> class. 
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.Dispose(System.Boolean)"><summary>
+            Clean up any resources being used.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.OnRender(System.Windows.Forms.PaintEventArgs)"><summary>
+            Renders the element.
+            </summary><param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ResetWatermarkBackgroundFill"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkBackgroundFill" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ShouldSerializeWatermarkBackgroundFill"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkBackgroundFill" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ResetWatermarkImage"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImage" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ShouldSerializeWatermarkImage"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImage" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ResetWatermarkImageLocation"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImageLocation" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ShouldSerializeWatermarkImageLocation"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImageLocation" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ResetWatermarkImageSize"><summary>
+            Resets the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImageSize" /> property to its default value.
+            </summary></member><member name="M:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.ShouldSerializeWatermarkImageSize"><summary>
+            Indicates whether the <see cref="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImageSize" /> property should be persisted.
+            </summary><returns><c>true</c> if the property value has changed from its default; otherwise, <c>false</c>.
+            </returns></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.PageCaption"><summary>
+            Gets or sets the caption of the page. 
+            </summary><value>The caption displayed on the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> for the page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.PageDescription"><summary>
+            Gets or sets the description of the page. 
+            </summary><value>The description displayed on the <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" /> for the page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.PageTitleBarText"><summary>
+            Gets or sets the title bar text of the page. 
+            </summary><value>The title bar text displayed on a <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardDialogForm" /> for the page.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkBackgroundFill"><summary>
+            Gets or sets the page-specific <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for the watermark area.
+            </summary><value>The page-specific <see cref="T:ActiproSoftware.UI.WinForms.Drawing.BackgroundFill" /> for the watermark area.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImage"><summary>
+            Gets or sets the image to display in the upper-right corner of the watermark area.
+            </summary><value>
+            An <c>Image</c> specifying the image to display in the upper-right corner of the watermark area.
+            </value><remarks>
+            The Wizard97 specification calls for the size of the watermark image to be 61x61 pixels.
+            </remarks></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImageLocation"><summary>
+            Gets or sets the location of the watermark image within the watermark area.
+            </summary><value>A <c>Point</c> specifying the location of the watermark image.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkImageSize"><summary>
+            Gets or sets the size of the watermark image within the watermark area.
+            </summary><value>A <c>Size</c> specifying the size of the watermark image.</value></member><member name="P:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardWelcomePage.WatermarkWidth"><summary>
+            Gets or sets the width of the watermark area.
+            </summary><value>
+            The width of the watermark area.
+            </value><remarks>
+            The Wizard97 specification calls for the width of the watermark area to be 164 pixels.
+            </remarks></member><member name="T:ActiproSoftware.Products.Wizard.AssemblyInfo"><summary>
+            Provides a class for retrieving information about the <c>ActiproSoftware.UI.WinForms.Controls.Wizard</c> assembly.
+            </summary></member><member name="P:ActiproSoftware.Products.Wizard.AssemblyInfo.Instance"><summary>
+            Gets the instance of the <see cref="T:ActiproSoftware.Products.AssemblyInfo" /> class for this assembly.
+            </summary><value>The instance of the <see cref="T:ActiproSoftware.Products.AssemblyInfo" /> class for this assembly.</value></member><member name="P:ActiproSoftware.Products.Wizard.AssemblyInfo.LicenseType"><summary>
+            Gets the type of license that is available for the assembly.
+            </summary><value>A <see cref="T:ActiproSoftware.Products.AssemblyLicenseType" /> specifying the type of license that is available for the assembly.</value></member><member name="P:ActiproSoftware.Products.Wizard.AssemblyInfo.Platform"><summary>
+            Gets the target platform for the assembly.
+            </summary><value>A <see cref="T:ActiproSoftware.Products.AssemblyPlatform" /> specifying the target platform for the assembly.</value></member><member name="P:ActiproSoftware.Products.Wizard.AssemblyInfo.ProductCode"><summary>
+            Gets the product code of the assembly.
+            </summary><value>A three-letter product code of the assembly.</value></member><member name="P:ActiproSoftware.Products.Wizard.AssemblyInfo.ProductId"><summary>
+            Gets the product ID of the assembly.
+            </summary><value>The product ID of the assembly.</value></member><member name="T:ActiproSoftware.Products.Wizard.DesignerTypeNames"><summary>
+            Defines the names of types defined in the Wizard designer assembly.
+            </summary><remarks>For internal use only.</remarks></member><member name="F:ActiproSoftware.Products.Wizard.DesignerTypeNames.WizardDesigner"><summary>
+            The <see cref="P:System.Type.FullName" /> of the type used as a designer for <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary></member><member name="F:ActiproSoftware.Products.Wizard.DesignerTypeNames.WizardPageDesigner"><summary>
+            The <see cref="P:System.Type.FullName" /> of the type used as a designer for <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary></member><member name="T:ActiproSoftware.Products.Wizard.DesignerTypeNames.AssemblyQualified"><summary>
+            Gets the <see cref="P:System.Type.AssemblyQualifiedName" /> of types defined in the Wizard designer assembly.
+            </summary></member><member name="F:ActiproSoftware.Products.Wizard.DesignerTypeNames.AssemblyQualified.WizardDesigner"><summary>
+            The <see cref="P:System.Type.AssemblyQualifiedName" /> of the type used as a designer for <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.Wizard" />.
+            </summary></member><member name="F:ActiproSoftware.Products.Wizard.DesignerTypeNames.AssemblyQualified.WizardPageDesigner"><summary>
+            The <see cref="P:System.Type.AssemblyQualifiedName" /> of the type used as a designer for <see cref="T:ActiproSoftware.UI.WinForms.Controls.Wizard.WizardPage" />.
+            </summary></member><member name="T:ActiproSoftware.Products.Wizard.Resources"><summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary></member><member name="P:ActiproSoftware.Products.Wizard.Resources.ResourceManager"><summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary></member><member name="P:ActiproSoftware.Products.Wizard.Resources.Culture"><summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary></member><member name="T:ActiproSoftware.Products.Wizard.SR"><summary>
+            Provides access to the string resources of this assembly, also allowing for their customization.
+            </summary><remarks>
+            Call the <see cref="M:ActiproSoftware.Products.Wizard.SR.GetString(System.String)" /> method to return a resolved resource string.
+            If a custom string has been set for a specified string resource name, it will be returned.
+            Otherwise, the default string resource value is returned.
+            <para>
+            If any of the resource strings are customized via a call to <see cref="M:ActiproSoftware.Products.Wizard.SR.SetCustomString(System.String,System.String)" />,
+            it is best to do so before any other classes in this assembly are referenced,
+            such as in the application startup.
+            </para></remarks></member><member name="M:ActiproSoftware.Products.Wizard.SR.ClearCustomStrings"><summary>
+            Removes all custom strings.
+            </summary></member><member name="M:ActiproSoftware.Products.Wizard.SR.ContainsCustomString(System.String)"><summary>
+            Returns whether a custom string is defined for the specified string resource.
+            </summary><param name="name">The name of the resource for which to search.</param><returns><c>true</c> if a custom string is defined for the specified string resource; otherwise, <c>false</c>.
+            </returns></member><member name="M:ActiproSoftware.Products.Wizard.SR.GetCustomString(System.String)"><summary>
+            Returns custom string that is stored for the specified string resource, if any.
+            </summary><param name="name">The name of the resource to get.</param><returns>The custom string that is stored for the specified string resource, if any.</returns></member><member name="M:ActiproSoftware.Products.Wizard.SR.GetString(System.String)"><summary>
+            Returns the resolved value of the specified string resource.
+            </summary><param name="name">The name of the resource to get.</param><returns>
+            The value of the resource localized for the caller's current culture settings. 
+            If a best match is not possible, <see langword="null" /> is returned.
+            </returns></member><member name="M:ActiproSoftware.Products.Wizard.SR.GetString(System.String,System.Object[])"><summary>
+            Returns the resolved value of the specified string resource, by calling <c>String.Format</c> using supplied arguments.
+            </summary><param name="name">The name of the resource to get.</param><param name="args">The arguments to pass to <c>String.Format</c>.</param><returns>
+            The value of the resource localized for the caller's current culture settings. 
+            If a best match is not possible, <see langword="null" /> is returned.
+            </returns></member><member name="M:ActiproSoftware.Products.Wizard.SR.RemoveCustomString(System.String)"><summary>
+            Removes any custom string that is defined for the specified string resource.
+            </summary><param name="name">The name of the resource to remove.</param></member><member name="M:ActiproSoftware.Products.Wizard.SR.SetCustomString(System.String,System.String)"><summary>
+            Sets a custom string value for the specified string resource.
+            </summary><param name="name">The name of the resource to set.</param><param name="value">The value of the resource to set.</param></member><member name="P:ActiproSoftware.Products.Wizard.SR.ResourceManager"><summary>
+            Gets the <see cref="P:ActiproSoftware.Products.Wizard.SR.ResourceManager" /> that provides the default resources. 
+            </summary><value>The <see cref="P:ActiproSoftware.Products.Wizard.SR.ResourceManager" /> that provides the default resources.</value></member></members></doc>

@@ -1,0 +1,13 @@
+<ion-content>
+  <span #viewerPanel [ngSwitch]="viewType">
+    <ng-container *ngSwitchCase="'model'">
+      <business-model-editor></business-model-editor>
+    </ng-container>
+    <ng-container *ngSwitchCase="'project'">
+      <project></project>
+    </ng-container>
+    <ng-container *ngSwitchCase="'entity'">
+      <entity-editor></entity-editor>
+    </ng-container>
+  </span>
+</ion-content>

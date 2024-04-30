@@ -1,0 +1,10 @@
+{
+  "Platform": "AnyCPU",
+  "EmitDebugSymbols": true,
+  "LeaveIntermediateFiles": false,
+  "Timeout": 1000,
+  "ProjectPath": "D:\\MC\\CloudIDEaaS\\develop\\Hydra.Scanner\\Hydra.Scanner.csproj",
+  "InputFileName": "D:\\MC\\CloudIDEaaS\\develop\\ApplicationGenerator\\bin\\Release\\Signed\\Hydra.Scanner.dll",
+  "Files": "VkYp3s6v",
+  "PrivateKey": "KaPdSgUkXp2s5v8y/B?E(H+MbQeThWmY"
+}

@@ -1,0 +1,2047 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "ManagedTOM"
+    </assembly>
+    <members>
+        <member name="M:TextObjectModel.TextDocument.ToString">
+            <summary>
+Returns the name of the document, or "Document" if <see cref="P:TextObjectModel.TextDocument.Name" /> is empty.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.Save(System.String,TextObjectModel.TextOpenSave,TextObjectModel.TextSaveFlags,System.Int32)">
+            <summary>
+Saves the document.
+</summary>
+            <param name="fileName">Path and filename of the save target. Specify null to overwrite an existing document.</param>
+            <param name="mode">Mutually exclusive options for saving the document.</param>
+            <param name="flags">Additional options for saving the document.</param>
+            <param name="codePage">The code page to use for the file (0=auto).</param>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.RangeFromPoint(System.Drawing.Point)">
+            <summary>
+Retrieves a range for the content at or nearest to the specified point on the screen.
+</summary>
+            <param name="p">The horizontal and vertical coordinates of the specified point, in screen coordinates.</param>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.Range(System.Int32,System.Int32)">
+            <summary>
+Retrieves a text range object for a specified range of content in the active story of the document.
+</summary>
+            <param name="start">Character position for the start of the range.</param>
+            <param name="length">Length of the range.</param>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.New">
+            <summary>
+Opens a new document.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.Open(System.String,TextObjectModel.TextOpenSave,TextObjectModel.TextOpenFlags,System.Int32)">
+            <summary>
+Opens a specified document.
+</summary>
+            <param name="fileName">Path and filename of the document to open.</param>
+            <param name="mode">Mutually exclusive options for opening the document.</param>
+            <param name="flags">Additional options for opening the document.</param>
+            <param name="codePage">The code page to use for the file (0=auto).</param>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.Redo(System.Int32)">
+            <summary>
+Performs a specified number of redo operations.
+</summary>
+            <param name="count">The specified number of redo operations.</param>
+            <returns>The actual count of redo operations performed.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.Undo(System.Int32)">
+            <summary>
+Performs a specified number of undo operations.
+</summary>
+            <param name="count">The specified number of undo operations.</param>
+            <returns>The actual count of undo operations performed.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.ResumeUndo">
+            <summary>
+Resumes undo processing.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.SuspendUndo">
+            <summary>
+Suspends undo processing.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.EndEditCollection">
+            <summary>
+Turns off edit collection (also called undo grouping). 
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.BeginEditCollection">
+            <summary>
+Turns on edit collection (also called undo grouping). 
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.EndUpdate">
+            <summary>
+Decrements the freeze count. If the freeze count goes to zero, screen updating is enabled.
+</summary>
+            <example>
+The following example demonstrates how to disable and re-enable screen updating: 
+<code source="..\Examples\TextDocument.cs" region="BeginUpdate" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.BeginUpdate">
+            <summary>
+Increments the freeze count. If the freeze count is nonzero, screen updating is disabled.
+</summary>
+            <remarks>
+Disabling screen updating will reduce flicker when performing 
+several consecutive operations on a range.
+</remarks>
+            <example>
+The following example demonstrates how to disable and re-enable screen updating: 
+<code source="..\Examples\TextDocument.cs" region="BeginUpdate" language="cs" /></example>
+        </member>
+        <member name="P:TextObjectModel.TextDocument.StoryRanges">
+            <summary>
+Gets a <see cref="T:TextObjectModel.TextStoryRanges" /> which enumerates through the stories in the document.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextDocument.Selection">
+            <summary>
+Gets the active selection.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextDocument.Saved">
+            <summary>
+Gets or sets a value that indicates whether changes have been made since the file was last saved.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextDocument.Name">
+            <summary>
+Gets the file name of this document.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextDocument.EntireRange">
+            <summary>
+Returns a <see cref="T:TextObjectModel.TextRange" /> representing the entire document.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextDocument.DefaultTabStop">
+            <summary>
+Gets or sets the default tab width.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.FromIUnknown(System.IntPtr)">
+            <summary>
+Creates a <see cref="T:TextObjectModel.TextDocument" /> instance from a pointer to an IUnknown object.
+</summary>
+            <param name="pUnk">Pointer to an IUnknown object.</param>
+            <returns>
+                <see cref="T:TextObjectModel.TextDocument" /> instance derived from the IUnknown object.</returns>
+            <remarks>
+                <seealso href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms680509(v=vs.85).aspx">IUnknown interface</seealso>
+            </remarks>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.FromComObject(System.Object)">
+            <summary>
+Creates a <see cref="T:TextObjectModel.TextDocument" /> instance from the specified COM object.
+</summary>
+            <param name="comObject">COM object implementing the ITextDocument interface.</param>
+            <returns>
+                <see cref="T:TextObjectModel.TextDocument" /> instance derived from the COM object.</returns>
+            <remarks>
+The <paramref name="comObject" /> parameter must be a Runtime 
+Callable Wrapper (RCW) for a COM object that implements the 
+ITextDocument interface.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.FromRichEditControl(System.IntPtr,System.Boolean)">
+            <summary>
+Creates a <see cref="T:TextObjectModel.TextDocument" /> instance from a RichEdit control.
+</summary>
+            <param name="handle">Handle to the native RichEdit control..</param>
+            <param name="enableAdvancedTypography">Whether to enable advanced typography options in the control.</param>
+            <returns>
+                <see cref="T:TextObjectModel.TextDocument" /> instance representing the rich text document in the control.</returns>
+            <remarks>
+                <para>
+The version of the RichEdit control determines the breadth of TOM 
+functionality supported. Some methods and properties may not be 
+available. 
+</para>
+            </remarks>
+        </member>
+        <member name="M:TextObjectModel.TextDocument.FromRichTextBox(System.Windows.Forms.RichTextBox,System.Boolean)">
+            <summary>
+Creates a <see cref="T:TextObjectModel.TextDocument" /> instance from the specified 
+<see cref="T:System.Windows.Forms.RichTextBox" /> control.
+</summary>
+            <param name="rtb">A <see cref="T:System.Windows.Forms.RichTextBox" /> control.</param>
+            <param name="enableAdvancedTypography">Whether to enable advanced typography options in the control.</param>
+            <returns>
+                <see cref="T:TextObjectModel.TextDocument" /> instance representing the rich text document in the control.</returns>
+            <remarks>
+                <para>
+The version of the underlying RichEdit control determines the 
+breadth of TOM functionality supported. Some methods and properties 
+may not be available. 
+</para>
+                <para>
+This method binds the <see cref="T:TextObjectModel.TextDocument" /> to the lifetime of 
+the control. All resources used by the object will be released when 
+the control is disposed.
+</para>
+            </remarks>
+            <example>
+The following example demonstrates how to obtain an instance of the 
+<see cref="T:TextObjectModel.TextDocument" /> class from a RichTextBox control: 
+<code source="..\Examples\TextDocument.cs" region="FromRichTextBox" language="cs" /></example>
+        </member>
+        <member name="T:TextObjectModel.TextDocument">
+            <summary>
+Represents a top-level document in the Text Object Model (TOM).
+</summary>
+            <remarks>
+                <para>
+Managed wrapper class for the COM interface ITextDocument. 
+<seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb774052%28v=vs.85%29.aspx">ITextDocument interface</seealso></para>
+                <para>
+You can obtain an instance <see cref="T:TextObjectModel.TextDocument" /> in a number of ways:
+</para>
+                <list type="bullet">
+                    <item>
+                        <description>
+From an instance of the Windows Forms <see cref="T:System.Windows.Forms.RichTextBox" /> control 
+(using the <see cref="M:TextObjectModel.TextDocument.FromRichTextBox(System.Windows.Forms.RichTextBox,System.Boolean)" /> method). This is the preferred 
+method.
+</description>
+                    </item>
+                    <item>
+                        <description>
+From a native RichEdit control (by passing its window handle to the 
+<see cref="M:TextObjectModel.TextDocument.FromRichEditControl(System.IntPtr,System.Boolean)" /> method). Use this method if you need 
+to use a specific or custom version of the RichEdit control that you 
+have instantiated yourself.
+</description>
+                    </item>
+                    <item>
+                        <description>
+From a Runtime Callable Wrapper (RCW) for a COM object that implements 
+the ITextDocument interface (see <see cref="M:TextObjectModel.TextDocument.FromComObject(System.Object)" /> method).
+</description>
+                    </item>
+                    <item>
+                        <description>
+From an unmanaged pointer to the IUnknown interface of a COM object 
+that implements ITextDocument (see <see cref="M:TextObjectModel.TextDocument.FromIUnknown(System.IntPtr)" /> method).
+</description>
+                    </item>
+                </list>
+            </remarks>
+        </member>
+        <member name="P:TextObjectModel.TextStoryRanges.default(System.Int32)">
+            <summary>
+Gets a <see cref="T:TextObjectModel.TextRange" /> for the story at the specified index.
+</summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="index" /> was outside the bounds of the collection.
+</exception>
+        </member>
+        <member name="P:TextObjectModel.TextStoryRanges.Count">
+            <summary>
+Gets the number of stories in the document.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextStoryRanges.GetEnumerator">
+            <summary>
+Gets an object that enumerates through the collection.
+</summary>
+        </member>
+        <member name="T:TextObjectModel.TextStoryRanges">
+            <summary>
+Enumerates through the stories in a <see cref="T:TextObjectModel.TextDocument" />.
+</summary>
+            <remarks>
+Managed wrapper class for the COM interface ITextStoryRanges. 
+<seealso href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb774062(v=vs.85).aspx">ITextStoryRanges interface</seealso></remarks>
+        </member>
+        <member name="M:TextObjectModel.TextSelection.TypeText(System.String)">
+            <summary>
+Types the string given by <paramref name="text" /> at this 
+selection as if someone typed it. This is similar to setting 
+the <see cref="P:TextObjectModel.TextRange.Text" /> property, but is sensitive 
+to the Insert/Overtype key state and UI settings like 
+AutoCorrect and smart quotes.
+</summary>
+            <param name="text">String to type into this selection.</param>
+        </member>
+        <member name="M:TextObjectModel.TextSelection.MoveRight(TextObjectModel.TextUnit,System.Int32,TextObjectModel.RangeShiftType)">
+            <summary>
+Generalizes the functionality of the Right Arrow key. 
+</summary>
+            <param name="unit">Unit to use in the operation.</param>
+            <param name="count">Number of Units to move past.</param>
+            <param name="extend">Flag that indicates how to change the selection.</param>
+            <returns>the actual count of units the insertion point or active end is moved.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextSelection.MoveLeft(TextObjectModel.TextUnit,System.Int32,TextObjectModel.RangeShiftType)">
+            <summary>
+Generalizes the functionality of the Left Arrow key. 
+</summary>
+            <param name="unit">Unit to use in the operation.</param>
+            <param name="count">Number of Units to move past.</param>
+            <param name="extend">Flag that indicates how to change the selection.</param>
+            <returns>the actual count of units the insertion point or active end is moved.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextSelection.MoveUp(TextObjectModel.TextUnit,System.Int32,TextObjectModel.RangeShiftType)">
+            <summary>
+Mimics the functionality of the Up Arrow and Page Up keys. 
+</summary>
+            <param name="unit">Unit to use in the operation.</param>
+            <param name="count">Number of Units to move past.</param>
+            <param name="extend">Flag that indicates how to change the selection.</param>
+            <returns>the actual count of units the insertion point or active end is moved.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextSelection.MoveDown(TextObjectModel.TextUnit,System.Int32,TextObjectModel.RangeShiftType)">
+            <summary>
+Mimics the functionality of the Down Arrow and Page Down keys. 
+</summary>
+            <param name="unit">Unit to use in the operation.</param>
+            <param name="count">Number of Units to move past.</param>
+            <param name="extend">Flag that indicates how to change the selection.</param>
+            <returns>the actual count of units the insertion point or active end is moved.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextSelection.HomeKey(System.Boolean,TextObjectModel.RangeShiftType)">
+            <summary>
+Mimics the functionality of the Home key. 
+</summary>
+            <param name="ctrl">Whether to simulate the CTRL key (false = start of line, true = start of story).</param>
+            <param name="extend">Flag that indicates how to change the selection.</param>
+            <returns>The count of characters that the insertion point or the active end is moved.</returns>
+        </member>
+        <member name="P:TextObjectModel.TextSelection.Type">
+            <summary>
+Gets the type of text selection.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextSelection.Flags">
+            <summary>
+Gets or sets the text selection flags.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextSelection.EndKey(System.Boolean,TextObjectModel.RangeShiftType)">
+            <summary>
+Mimics the functionality of the End key. 
+</summary>
+            <param name="ctrl">Whether to simulate the CTRL key (false = end of line, true = end of story).</param>
+            <param name="extend">Flag that indicates how to change the selection.</param>
+            <returns>The count of characters that the insertion point or the active end is moved.</returns>
+        </member>
+        <member name="T:TextObjectModel.TextSelection">
+            <summary>
+Represents a text range with selection highlighting.
+</summary>
+            <remarks>
+Managed wrapper class for the COM interface ITextSelection.
+<seealso href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb774060(v=vs.85).aspx">ITextSelection interface</seealso></remarks>
+        </member>
+        <member name="P:TextObjectModel.RichTextBoxEx.CreateParams">
+            <summary>
+Gets the required creation parameters when the control handle is created.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.RichTextBoxEx.#ctor">
+            <summary>
+Initialises a new instance of the <see cref="T:TextObjectModel.RichTextBoxEx" /> class.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.RichTextBoxEx.LoadFrom(System.String,System.String)">
+            <summary>
+Creates a <see cref="T:TextObjectModel.RichTextBoxEx" /> by loading a specific version 
+of the native RichEdit control from the specified DLL.
+</summary>
+            <param name="fileName">The path to the DLL that contains the RichEdit control.</param>
+            <param name="windowClassName">The name of the window class used to create the control.</param>
+            <returns>The control.</returns>
+            <exception cref="T:System.DllNotFoundException">
+The DLL at the path pointed to by <paramref name="fileName" /> does 
+not exist, could not be loaded or has the wrong processor architecture.
+</exception>
+        </member>
+        <member name="M:TextObjectModel.RichTextBoxEx.#cctor">
+            <summary>
+Type initializer.
+</summary>
+        </member>
+        <member name="T:TextObjectModel.RichTextBoxEx">
+            <summary>
+Extends <see cref="T:System.Windows.Forms.RichTextBox" /> to allow the underlying RichEdit 
+control to be loaded from either the shared Microsoft Office DLL or 
+the Windows MSFTEDIT.DLL library.
+</summary>
+            <remarks>
+                <para>
+During its initial creation, the control will attempt to locate a 
+Microsoft Office shared DLL containing the desired RichEdit control. 
+If this fails (either because Office is not installed or the DLL is 
+for a different processor architecture), it will try MSFTEDIT.DLL 
+instead.
+</para>
+                <para>
+In order to utilise the Microsoft Office implementation, the caller 
+must have read access for following registry key: 
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SharedDLLs - this 
+may not be available in sandboxed environments.
+</para>
+                <para>
+Important: The processor architecture of the Microsoft Office 
+installation must match that of the calling process. If both the 32-bit 
+and 64-bit versions of Office are installed, the control will attempt 
+both DLLs until it finds a suitable match.
+</para>
+                <para>
+After loading the libraries into memory, it will then select the 
+highest version of the RichEdit control that is available. It will 
+select from the following window class names (in order of preference): 
+</para>
+                <list type="bullet">
+                    <item>
+                        <description>RICHEDIT60W (RichEdit 6.0 / Office 2007 and higher)</description>
+                    </item>
+                    <item>
+                        <description>RICHEDIT50W (RichEdit 4.1)</description>
+                    </item>
+                    <item>
+                        <description>RICHEDIT20W (RichEdit 2.0)</description>
+                    </item>
+                </list>
+            </remarks>
+        </member>
+        <member name="T:TextObjectModel.NamespaceDoc">
+            <summary>
+                <para>
+Contains managed wrapper classes for Microsoft's Text Object Model 
+(TOM) interfaces (e.g. ITextDocument, ITextRange, etc).
+</para>
+                <para>
+The top-level object in this implementation is the 
+<see cref="T:TextObjectModel.TextDocument" /> class. The most common usage scenario is to 
+create an instance from a <see cref="T:System.Windows.Forms.RichTextBox" /> 
+control. This library also includes the <see cref="T:TextObjectModel.RichTextBoxEx" /> 
+control, which provides access to advanced RichEdit functionality.
+</para>
+                <para>
+For more information, refer to the 
+<see href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb787607%28v=vs.85%29.aspx">Text Object Model</see> 
+documentation or visit the <see href="http://www.brad-smith.info/blog/projects/textobjectmodel">TOM Classes for .NET</see> 
+project page.
+<seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb787607%28v=vs.85%29.aspx">Text Object Model (Windows)</seealso><seealso href="http://www.brad-smith.info/blog/projects/textobjectmodel">TOM Classes for .NET</seealso></para>
+            </summary>
+        </member>
+        <member name="M:TextObjectModel.TextExtensions.Remove(TextObjectModel.TextRange,System.Int32,System.Int32)">
+            <summary>
+Removes a sequence of characters from the range.
+</summary>
+            <param name="range">The range to remove the characters from.</param>
+            <param name="index">Character position (relative to the start of the range) to begin removing characters.</param>
+            <param name="count">The number of characters to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="index" /> does not fall within the bounds of the 
+range, or <paramref name="count" /> is negative, or 
+<paramref name="count" /> is greater-than the number of characters 
+in the range after <paramref name="index" />. 
+</exception>
+            <remarks>
+This extension method mimics the behaviour of the 
+<see cref="M:System.Text.StringBuilder.Remove(System.Int32,System.Int32)" /> method of the 
+<see cref="T:System.Text.StringBuilder" /> class.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextExtensions.Insert(TextObjectModel.TextRange,System.Int32,System.String,TextObjectModel.RangeInsertMode)">
+            <summary>
+Inserts <paramref name="text" /> at the specified position within the range.
+</summary>
+            <param name="range">The range to insert the text into.</param>
+            <param name="index">Character position (relative to the start of the range).</param>
+            <param name="text">The text to insert.</param>
+            <param name="mode">Controls how the start and end positions of the range are affected.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="index" /> does not fall within the bounds of the range.
+</exception>
+            <remarks>
+This extension method mimics the behaviour of the 
+<see cref="M:System.Text.StringBuilder.Insert(System.Int32,System.String)" /> method of the 
+<see cref="T:System.Text.StringBuilder" /> class.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextExtensions.Clear(TextObjectModel.TextRange)">
+            <summary>
+Clears the text in the range.
+</summary>
+            <param name="range">The range to clear.</param>
+        </member>
+        <member name="M:TextObjectModel.TextExtensions.AppendLine(TextObjectModel.TextRange,System.String,TextObjectModel.RangeAppendMode)">
+            <summary>
+Appends <paramref name="text" />, followed by a newline character, to the end of the range.
+</summary>
+            <param name="range">The range to append the text the end of.</param>
+            <param name="text">The text to append.</param>
+            <param name="mode">Controls how the start and end positions of the range are affected.</param>
+            <remarks>
+This extension method mimics the behaviour of the 
+<see cref="M:System.Text.StringBuilder.AppendLine(System.String)" /> method of the 
+<see cref="T:System.Text.StringBuilder" /> class.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextExtensions.Append(TextObjectModel.TextRange,System.String,TextObjectModel.RangeAppendMode)">
+            <summary>
+Appends <paramref name="text" /> to the end of the range.
+</summary>
+            <param name="range">The range to append the text the end of.</param>
+            <param name="text">The text to append.</param>
+            <param name="mode">Controls how the start and end positions of the range are affected.</param>
+            <remarks>
+This extension method mimics the behaviour of the 
+<see cref="M:System.Text.StringBuilder.Append(System.String)" /> method of the 
+<see cref="T:System.Text.StringBuilder" /> class.
+</remarks>
+        </member>
+        <member name="T:TextObjectModel.TextExtensions">
+            <summary>
+Contains extension methods for performing additional operations on Text Object Model (TOM) types.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextRange.ComObject">
+            <summary>
+Gets a pointer to the underlying COM object.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextRange.GetHashCode">
+            <summary>
+Returns the hash code for the object.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Equals(System.Object)">
+            <summary>	
+Tests if this object is considered equal to another.
+</summary>
+            <param name="other">The object to compare to this object.</param>
+            <returns>true if the objects are considered equal, false if they are not.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Equals(TextObjectModel.TextRange)">
+            <summary>
+Determines whether this range has the same character positions and story as those of a specified range.
+</summary>
+            <param name="other">Text range that is compared to the current range.</param>
+            <returns>The comparison result.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextRange.ToString">
+            <summary>
+Returns the plain text in the range.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextRange.StartOf(TextObjectModel.TextUnit,TextObjectModel.RangeShiftType)">
+            <summary>
+Moves the range ends to the start of the first overlapping Unit in the range. 
+</summary>
+            <param name="unit">Unit to use in the move operation.</param>
+            <param name="extend">How to move the ends of the range.</param>
+            <returns>The number of characters that the start position is moved.</returns>
+            <example>
+The following example demonstrates how to use the 
+<see cref="M:TextObjectModel.TextRange.StartOf(TextObjectModel.TextUnit,TextObjectModel.RangeShiftType)" /> and <see cref="M:TextObjectModel.TextRange.EndOf(TextObjectModel.TextUnit,TextObjectModel.RangeShiftType)" /> methods to move the 
+ends of a range: 
+<code source="..\Examples\TextRange.cs" region="EndOf" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.SetRange(System.Int32,System.Int32)">
+            <summary>
+Adjusts the range endpoints to the specified values. 
+</summary>
+            <param name="start">Character position for the start of the range.</param>
+            <param name="length">New length for the range.</param>
+        </member>
+        <member name="M:TextObjectModel.TextRange.SetPoint(System.Drawing.Point,TextObjectModel.RangePosition,TextObjectModel.RangeShiftType)">
+            <summary>
+Changes the range based on a specified point at or up through 
+(depending on <paramref name="extend" />) the point (x, y) aligned 
+according to <paramref name="position" />. 
+</summary>
+            <param name="p">Coordinates of the specified point, in absolute screen coordinates. </param>
+            <param name="position">The end to move to the specified point.</param>
+            <param name="extend">How to set the endpoints of the range.</param>
+        </member>
+        <member name="M:TextObjectModel.TextRange.SetIndex(TextObjectModel.TextUnit,System.Int32,TextObjectModel.RangeShiftType)">
+            <summary>
+Changes this range to the specified unit of the story. 
+</summary>
+            <param name="unit">Unit used to index the range.</param>
+            <param name="index">Index for the unit.</param>
+            <param name="extend">Flag that indicates the extent of the range.</param>
+        </member>
+        <member name="M:TextObjectModel.TextRange.SetFormattedText(TextObjectModel.TextRange)">
+            <summary>
+Sets the formatted text of this range text to the formatted text of the specified range.
+</summary>
+            <param name="other">The formatted text to replace this range's text. </param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="other" /> is null.
+</exception>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Select">
+            <summary>
+Sets the start and end positions, and story values of the active selection, to those of this range. 
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextRange.ScrollIntoView(TextObjectModel.RangePosition)">
+            <summary>
+Scrolls the range into view. 
+</summary>
+            <param name="position">Flag specifying the end to scroll into view.</param>
+        </member>
+        <member name="M:TextObjectModel.TextRange.SetDataObject(System.Windows.Forms.IDataObject)">
+            <summary>
+Replaces the text in the range with the specified data object.
+</summary>
+            <param name="o">The data object containing the new text.</param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="o" /> is null.
+</exception>
+            <remarks>
+                <para>
+The data object may contain:
+</para>
+                <list type="bullet">
+                    <item>
+                        <description>
+                            <see cref="F:System.Windows.Forms.DataFormats.Text" />
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <see cref="F:System.Windows.Forms.DataFormats.UnicodeText" />
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <see cref="F:System.Windows.Forms.DataFormats.Rtf" />
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <see cref="F:System.Windows.Forms.DataFormats.Bitmap" /> (image)</description>
+                    </item>
+                    <item>
+                        <description>
+                            <see cref="F:System.Windows.Forms.DataFormats.Dib" /> (image)</description>
+                    </item>
+                    <item>
+                        <description>
+                            <see cref="F:System.Windows.Forms.DataFormats.MetafilePict" /> (image)</description>
+                    </item>
+                    <item>
+                        <description>
+                            <see cref="F:System.Windows.Forms.DataFormats.FileDrop" /> (OLE object)</description>
+                    </item>
+                    <item>
+                        <description>...as well as several other formats</description>
+                    </item>
+                </list>
+                <para>
+Different implementations of the Text Object Model (TOM) may 
+support different formats.
+</para>
+            </remarks>
+            <example>
+The following example demonstrates how to set the text in a range 
+using an <see cref="T:System.Windows.Forms.IDataObject" />:
+<code source="..\Examples\TextRange.cs" region="SetDataObject" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Paste">
+            <summary>
+Pastes text from the clipboard.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveWhile(System.Char[])">
+            <summary>
+Starts at the end of the range and searches while the characters 
+belong to the set specified by <paramref name="chars" />.
+The range is collapsed to an insertion point when a non-matching character is found.
+</summary>
+            <param name="chars">The character set to use in the match.</param>
+            <returns>The number of characters the insertion point is moved.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="chars" /> is null.
+</exception>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveUntil(System.Char[])">
+            <summary>
+Searches for the first character in the set of characters 
+specified by <paramref name="chars" />. If a character is found, 
+the range is collapsed to that point.
+</summary>
+            <param name="chars">The character set to use in the match.</param>
+            <returns>The number of characters the insertion point is moved.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="chars" /> is null.
+</exception>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveStartWhile(System.Char[])">
+            <summary>
+Moves the start position of the range just past all contiguous 
+characters that are found in the set of characters specified by 
+<paramref name="chars" />. 
+</summary>
+            <param name="chars">The character set to use in the match.</param>
+            <returns>The actual number of characters the start of the range is moved.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="chars" /> is null.
+</exception>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveStartUntil(System.Char[])">
+            <summary>
+Moves the range's start to the character position of the first 
+character found that is in the set of characters specified by 
+<paramref name="chars" />.
+</summary>
+            <param name="chars">The character set to use in the match.</param>
+            <returns>The actual number of characters the start of the range is moved.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="chars" /> is null.
+</exception>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveStart(TextObjectModel.TextUnit,System.Int32)">
+            <summary>
+Moves the start position of the range. 
+</summary>
+            <param name="unit">Unit used in the move.</param>
+            <param name="count">Number of units to move.</param>
+            <returns>The actual number of units that the end is moved.</returns>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveEndWhile(System.Char[])">
+            <summary>
+Moves the end of the range just past all contiguous characters 
+that are found in the set of characters specified by 
+<paramref name="chars" />, whichever is less. 
+</summary>
+            <param name="chars">The character set to use in the match.</param>
+            <returns>The actual number of characters that the range end is moved.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="chars" /> is null.
+</exception>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveEndUntil(System.Char[])">
+            <summary>
+Moves the range's end to the character position of the first 
+character found that is in the set of characters specified by 
+<paramref name="chars" />.
+</summary>
+            <param name="chars">The character set to use in the match.</param>
+            <returns>The actual number of characters that the range end is moved.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="chars" /> is null.
+</exception>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.MoveEnd(TextObjectModel.TextUnit,System.Int32)">
+            <summary>
+Moves the end position of the range. 
+</summary>
+            <param name="unit">The units by which to move the end of the range.</param>
+            <param name="count">Number of units to move past.</param>
+            <returns>The actual number of units that the end position of the range is moved past.</returns>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Move(TextObjectModel.TextUnit,System.Int32)">
+            <summary>
+Moves the insertion point forward or backward a specified number of units. 
+If the range is nondegenerate, the range is collapsed to an insertion point at either end, 
+depending on <paramref name="count" />, and then is moved. 
+</summary>
+            <param name="unit">Unit to use.</param>
+            <param name="count">Number of units to move past.</param>
+            <returns>The actual number of units the insertion point moves past.</returns>
+            <example>
+The following example demonstrates the various move methods: 
+<code source="..\Examples\TextRange.cs" region="Move" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.InRange(TextObjectModel.TextRange)">
+            <summary>
+Determines whether this range is within or at the same text as a specified range. 
+</summary>
+            <param name="other">Text that is compared to the current range. </param>
+            <returns>The comparison result.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="other" /> is null.
+</exception>
+        </member>
+        <member name="M:TextObjectModel.TextRange.GetPoint(TextObjectModel.RangePosition,System.Drawing.ContentAlignment,TextObjectModel.RangePointFlags)">
+            <summary>
+Retrieves screen coordinates for the start or end character position in the text range, along with the intra-line position.
+</summary>
+            <param name="character">Indicates the start or end of the range. </param>
+            <param name="position">Indicate the horizontal and vertical position.</param>
+            <param name="flags">Flag that indicates the position to retrieve.</param>
+            <returns>The coordinates of the point.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextRange.GetIndex(TextObjectModel.TextUnit)">
+            <summary>
+Retrieves the story index of the <paramref name="unit" /> parameter at the specified range start character position. 
+The first unit in a story has an index value of 1. 
+The index of a Unit is the same for all character positions from that immediately preceding the unit up to the last character in the unit.
+</summary>
+            <param name="unit">Unit that is indexed.</param>
+            <returns>The index value.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextRange.GetEmbeddedObject">
+            <summary>
+Retrieves the embedded object at the start of the specified range. 
+The range must either be an insertion point or it must select only the embedded object. 
+</summary>
+            <returns>The object.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Clone">
+            <summary>
+Gets a duplicate of this range object. 
+</summary>
+            <returns>The duplicate of the range.</returns>
+            <example>
+The following example demonstrates how to duplicate a 
+<see cref="T:TextObjectModel.TextRange" /> object: 
+<code source="..\Examples\TextRange.cs" region="Clone" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.FindTextStart(System.String,System.Int32,TextObjectModel.RangeMatchType)">
+            <summary>
+Searches up to <paramref name="count" /> characters for <paramref name="text" />, starting at the range's start. 
+</summary>
+            <param name="text">String to find.</param>
+            <param name="count">Maximum number of characters to search.</param>
+            <param name="type">Flags governing comparisons.</param>
+            <returns>The length of string matched.</returns>
+            <remarks>
+The search is subject to the comparison parameter, <paramref name="type" />. 
+If the string is found, the start is changed to be the matched string, and the length of the string is returned. 
+If the string is not found, the range is unchanged and zero is returned.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextRange.FindTextStart(System.String,TextObjectModel.RangeMatchType)">
+            <summary>
+Searches to the end of the story for <paramref name="text" />, starting at the range's start. 
+</summary>
+            <param name="text">String to find.</param>
+            <param name="flags">Flags governing comparisons.</param>
+            <returns>The length of string matched.</returns>
+            <remarks>
+The search is subject to the comparison parameter, <paramref name="flags" />. 
+If the string is found, the start is changed to be the matched string, and the length of the string is returned. 
+If the string is not found, the range is unchanged and zero is returned.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextRange.FindTextEnd(System.String,System.Int32,TextObjectModel.RangeMatchType)">
+            <summary>
+Searches up to <paramref name="count" /> characters for <paramref name="text" />, starting from the range's end. 
+</summary>
+            <param name="text">String to find.</param>
+            <param name="count">Maximum number of characters to search.</param>
+            <param name="flags">Flags governing comparisons.</param>
+            <returns>The length of string matched.</returns>
+            <remarks>
+The search is subject to the comparison parameter, <paramref name="flags" />. 
+If the string is found, the end is changed to be the end of the matched string, and the length of the string is returned. 
+If the string is not found, the range is unchanged and zero is returned.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextRange.FindTextEnd(System.String,TextObjectModel.RangeMatchType)">
+            <summary>
+Searches to the end of the story for <paramref name="text" />, starting from the range's end. 
+</summary>
+            <param name="text">String to find.</param>
+            <param name="flags">Flags governing comparisons.</param>
+            <returns>The length of string matched.</returns>
+            <remarks>
+The search is subject to the comparison parameter, <paramref name="flags" />. 
+If the string is found, the end is changed to be the end of the matched string, and the length of the string is returned. 
+If the string is not found, the range is unchanged and zero is returned.
+</remarks>
+        </member>
+        <member name="M:TextObjectModel.TextRange.FindText(System.String,System.Int32,TextObjectModel.RangeMatchType)">
+            <summary>
+Searches up to <paramref name="count" /> characters for the text given by <paramref name="text" />. 
+The starting position and direction are also specified by <paramref name="count" />, 
+and the matching criteria are given by <paramref name="flags" />. 
+</summary>
+            <param name="text">String to find.</param>
+            <param name="count">Maximum number of characters to search.</param>
+            <param name="flags">Flags governing comparisons.</param>
+            <returns>The length of string matched.</returns>
+            <example>
+The following example demonstrates how to find text in a range: 
+<code source="..\Examples\TextRange.cs" region="FindText" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.FindText(System.String,TextObjectModel.RangeMatchType)">
+            <summary>
+Searches to the end of the story for the text given by <paramref name="text" />. 
+The matching criteria are given by <paramref name="flags" />. 
+</summary>
+            <param name="text">String to find.</param>
+            <param name="flags">Flags governing comparisons.</param>
+            <returns>The length of string matched.</returns>
+            <example>
+The following example demonstrates how to find text in a range: 
+<code source="..\Examples\TextRange.cs" region="FindText" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Expand(TextObjectModel.TextUnit)">
+            <summary>
+Expands this range so that any partial units it contains are completely contained. 
+</summary>
+            <param name="unit">Unit to include.</param>
+            <returns>The count of characters added to the range.</returns>
+            <example>
+The following example demonstrates the effect of collapsing and 
+expanding a range: 
+<code source="..\Examples\TextRange.cs" region="Collapse" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.EndOf(TextObjectModel.TextUnit,TextObjectModel.RangeShiftType)">
+            <summary>
+Moves this range's ends to the end of the last overlapping <paramref name="unit" /> in the range. 
+</summary>
+            <param name="unit">Unit to use.</param>
+            <param name="extend">Indicator of how the shifting of the range ends is to proceed.</param>
+            <returns>The count of characters that End is moved past.</returns>
+            <example>
+The following example demonstrates how to use the 
+<see cref="M:TextObjectModel.TextRange.StartOf(TextObjectModel.TextUnit,TextObjectModel.RangeShiftType)" /> and <see cref="M:TextObjectModel.TextRange.EndOf(TextObjectModel.TextUnit,TextObjectModel.RangeShiftType)" /> methods to move the 
+ends of a range: 
+<code source="..\Examples\TextRange.cs" region="EndOf" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Delete(TextObjectModel.TextUnit,System.Int32)">
+            <summary>
+Mimics the DELETE and BACKSPACE keys, with and without the CTRL key depressed. 
+</summary>
+            <param name="unit">
+Unit to use. Unit can be <see cref="F:TextObjectModel.TextUnit.Character" /> 
+(the default value) or <see cref="F:TextObjectModel.TextUnit.Word" />.
+</param>
+            <param name="count" />
+            <returns>The count of units deleted.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Cut">
+            <summary>
+Cuts the plain or rich text to the clipboard. 
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextRange.GetDataObject">
+            <summary>
+Returns an <see cref="T:System.Windows.Forms.IDataObject" /> containing the text in the range.
+</summary>
+            <returns>A data object containing RTF and Unicode Text formats.</returns>
+            <example>
+The following example demonstrates how to extract RTF text from the   
+<see cref="T:System.Windows.Forms.IDataObject" /> obtained from a 
+range: 
+<code source="..\Examples\TextRange.cs" region="GetDataObject" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Copy">
+            <summary>
+Copies the text to the clipboard.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextRange.Collapse(TextObjectModel.RangePosition)">
+            <summary>
+Collapses the specified text range into a degenerate point at either the beginning or end of the range. 
+</summary>
+            <param name="collapseTo">Flag specifying the end to collapse at.</param>
+            <example>
+The following example demonstrates the effect of collapsing and 
+expanding a range: 
+<code source="..\Examples\TextRange.cs" region="Collapse" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextRange.ChangeCase(TextObjectModel.TextCasing)">
+            <summary>
+Changes the case of letters in this range according to the <paramref name="type" /> parameter.
+</summary>
+            <param name="type">Type of case change.</param>
+            <example>
+The following example demonstrates how to change the case of text 
+in a range: 
+<code source="..\Examples\TextRange.cs" region="ChangeCase" language="cs" /></example>
+        </member>
+        <member name="P:TextObjectModel.TextRange.Text">
+            <summary>
+Gets or sets the plain text in this range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextRange.Start">
+            <summary>
+Gets or sets the start character position of the range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextRange.Rtf">
+            <summary>
+Gets or sets the content of the range as a Rich Text Format (RTF) string.
+</summary>
+            <remarks>
+If the range is empty, value of this property is <see cref="F:System.String.Empty" />. 
+Setting this property to <see cref="F:System.String.Empty" /> will clear the range. 
+</remarks>
+        </member>
+        <member name="P:TextObjectModel.TextRange.Para">
+            <summary>
+Gets or sets a <see cref="T:TextObjectModel.TextPara" /> object with the paragraph attributes of the specified range.
+</summary>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="value" /> is null.
+</exception>
+        </member>
+        <member name="P:TextObjectModel.TextRange.Font">
+            <summary>
+Gets or sets a <see cref="T:TextObjectModel.TextFont" /> object with the character attributes of the specified range.
+</summary>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="value" /> is null.
+</exception>
+        </member>
+        <member name="P:TextObjectModel.TextRange.Length">
+            <summary>
+Gets or sets the length of the range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextRange.End">
+            <summary>
+Gets or sets the end character position of the range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextRange.Char">
+            <summary>
+Gets or sets the character at the start position of the range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextRange.CanPaste">
+            <summary>
+Gets a value determining if data on the clipboard can be pasted into the current range. 
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextRange.CanEdit">
+            <summary>
+Gets a value determining whether the specified range can be edited.
+</summary>
+        </member>
+        <member name="T:TextObjectModel.TextRange">
+            <summary>
+Represents a range of text in a document in the Text Object Model (TOM).
+</summary>
+            <remarks>
+                <para>
+Managed wrapper class for the COM interface ITextRange. 
+<seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb774058%28v=vs.85%29.aspx">ITextRange interface</seealso></para>
+                <para>
+Ranges are the primary mechanism for reading and manipulating text in 
+TOM. A range provides access to the content and formatting options for 
+the rich text bounded by a particular start and end position.
+</para>
+                <para>
+A range can be obtained by:
+</para>
+                <list type="bullet">
+                    <item>
+                        <description>
+Using the TextDocument.EntireRange property, to get a range that spans the entire document
+</description>
+                    </item>
+                    <item>
+                        <description>
+Requesting a range with a particular start and end position via the TextDocument.Range(Int32,Int32) method
+</description>
+                    </item>
+                    <item>
+                        <description>
+Creating a duplicate of an existing range (using the <see cref="M:TextObjectModel.TextRange.Clone" /> method), which can then be moved/resized independently
+</description>
+                    </item>
+                </list>
+            </remarks>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListTypeInternal">
+            <summary>
+Gets or sets the kind of numbering to use with paragraphs.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ComObject">
+            <summary>	
+Gets a pointer to the underlying COM object.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextPara.#ctor(ITextPara*)">
+            <summary>
+Constructor.
+</summary>
+            <param name="para">The ITextPara to wrap.</param>
+        </member>
+        <member name="M:TextObjectModel.TextPara.GetHashCode">
+            <summary>
+Calculates a hash code for this object.
+</summary>
+            <returns>A hash code for this object.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextPara.Equals(System.Object)">
+            <summary>
+Tests if this <see cref="T:TextObjectModel.TextPara" /> is considered equal to another object.
+</summary>
+            <param name="other">The object to compare to this object.</param>
+            <returns>true if the objects are considered equal, false if they are not.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextPara.Equals(TextObjectModel.TextPara)">
+            <summary>
+Tests if this <see cref="T:TextObjectModel.TextPara" /> is considered equal to another.
+</summary>
+            <param name="other">The <see cref="T:TextObjectModel.TextPara" /> to compare to this object.</param>
+            <returns>true if the objects are considered equal, false if they are not.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextPara.CopyFrom(TextObjectModel.TextPara)">
+            <summary>
+Sets the paragraph formatting by copying another paragraph object. 
+</summary>
+            <param name="other">The paragraph object to apply to this paragraph object.</param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="other" /> is null.
+</exception>
+        </member>
+        <member name="M:TextObjectModel.TextPara.Reset">
+            <summary>
+Resets the paragraph formatting to the default values. 
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextPara.SetIndents(System.Single,System.Single,System.Single)">
+            <summary>
+Sets the first-line indent, the left indent, and the right indent for a paragraph. 
+</summary>
+            <param name="first">Indent of the first line in a paragraph, relative to the left indent. The value is in floating-point points and can be positive or negative.</param>
+            <param name="left">Left indent of all lines except the first line in a paragraph, relative to left margin. The value is in floating-point points and can be positive or negative.</param>
+            <param name="right">Right indent of all lines in paragraph, relative to the right margin. The value is in floating-point points and can be positive or negative. This value is optional.</param>
+        </member>
+        <member name="M:TextObjectModel.TextPara.GetTab(System.Int32)">
+            <summary>
+Retrieves tab displacement for the specified tab.
+</summary>
+            <param name="index">Index of tab for which to retrieve info.</param>
+            <returns>The tab displacement, in floating-point points.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextPara.GetTab(TextObjectModel.TabRelativePosition,System.Single)">
+            <summary>
+Retrieves tab displacement for the specified tab.
+</summary>
+            <param name="position">Indicates which tab to retrieve relative to <paramref name="relativeTo" />.</param>
+            <param name="relativeTo">The tab displacement, in floating-point points.</param>
+            <returns>The tab displacement, in floating-point points.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextPara.DeleteTab(System.Single)">
+            <summary>
+Deletes a tab at a specified displacement.
+</summary>
+            <param name="position">Displacement, in floating-point points, at which a tab should be deleted.</param>
+        </member>
+        <member name="M:TextObjectModel.TextPara.ClearAllTabs">
+            <summary>
+Clears all tabs, reverting to equally spaced tabs with the default tab spacing.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextPara.AddTab(System.Single)">
+            <summary>
+Adds a tab at the displacement <paramref name="position" />.
+</summary>
+            <param name="position">New tab displacement, in floating-point points.</param>
+        </member>
+        <member name="M:TextObjectModel.TextPara.Clone">
+            <summary>
+Creates a duplicate of the specified paragraph format object.
+</summary>
+            <returns>The duplicate text paragraph object.</returns>
+        </member>
+        <member name="P:TextObjectModel.TextPara.TabCount">
+            <summary>
+Retrieves the tab count.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.Style">
+            <summary>
+Gets or sets the style handle to the paragraphs in the specified range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.SpaceBefore">
+            <summary>
+Gets or sets the amount of vertical space above a paragraph. 
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.SpaceAfter">
+            <summary>
+Gets or sets the amount of vertical space below a paragraph. 
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.RightIndent">
+            <summary>
+Gets or sets the size of the right margin indent of a paragraph. 
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListBulletChar">
+            <summary>
+Gets or sets the Unicode character (&gt;32) to use for bullets.
+</summary>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="value" /> has a character code of 32 or lower.
+</exception>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListNumberingFormat">
+            <summary>
+Gets or sets the format to use with a numbered list.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListType">
+            <summary>
+Gets or sets the kind of numbering to use with paragraphs.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListTab">
+            <summary>
+Retrieves the list tab setting, which is the distance 
+between the first-line indent and the text on the first 
+line. The numbered or bulleted text is left-justified, 
+centered, or right-justified at the first-line indent value.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListStart">
+            <summary>
+Gets or sets the starting value or code of a list numbering sequence.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListLevelIndex">
+            <summary>
+Gets or sets the list level index used with paragraphs.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.ListAlignment">
+            <summary>
+Gets or sets the kind of alignment to use for bulleted and numbered lists.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.LeftIndent">
+            <summary>
+Gets the distance used to indent all lines except the 
+first line of a paragraph. The distance is relative to the 
+left margin.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.Hyphenation">
+            <summary>
+Gets or sets the current paragraph alignment value.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.FirstLineIndent">
+            <summary>
+Gets the amount used to indent the first line of a paragraph 
+relative to the left indent. The left indent is the indent 
+for all lines of the paragraph except the first line.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.CanChange">
+            <summary>
+Determines whether the paragraph formatting can be changed.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextPara.Alignment">
+            <summary>
+Gets or sets the current paragraph alignment value.
+</summary>
+        </member>
+        <member name="T:TextObjectModel.TextPara">
+            <summary>
+Provides access to the paragraph format for a text range.
+</summary>
+            <remarks>
+                <para>
+Managed wrapper class for the COM interface ITextPara. 
+<seealso href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb774056%28v=vs.85%29.aspx">ITextPara interface</seealso></para>
+                <para>
+Most properties of this class are implemented using nullable types. 
+If a property returns null, its value is undefined. Properties may be 
+undefined if the range spans several paragraph formats.
+</para>
+            </remarks>
+        </member>
+        <member name="P:TextObjectModel.TextFont.ComObject">
+            <summary>
+Gets a pointer to the underlying COM object.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextFont.#ctor(ITextFont*)">
+            <summary>
+Constructor.
+</summary>
+            <param name="font">The ITextFont to wrap.</param>
+        </member>
+        <member name="M:TextObjectModel.TextFont.GetHashCode">
+            <summary>
+Calculates a hash code for this object.
+</summary>
+            <returns>A hash code for this object.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextFont.Equals(System.Object)">
+            <summary>	
+Tests if this object is considered equal to another.
+</summary>
+            <param name="other">The object to compare to this object.</param>
+            <returns>true if the objects are considered equal, false if they are not.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextFont.Equals(TextObjectModel.TextFont)">
+            <summary>
+Tests if this <see cref="T:TextObjectModel.TextFont" /> is considered equal to another.
+</summary>
+            <param name="other">The <see cref="T:TextObjectModel.TextFont" /> to compare to this object.</param>
+            <returns>true if the objects are considered equal, false if they are not.</returns>
+        </member>
+        <member name="M:TextObjectModel.TextFont.CopyFrom(TextObjectModel.TextFont)">
+            <summary>
+Sets the character formatting by copying another text font object. 
+</summary>
+            <param name="other">The text font object to apply to this font object.</param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="other" /> is null.
+</exception>
+            <example>
+The following example demonstrates how to copy character formatting 
+from one range to another: 
+<code source="..\Examples\TextFont.cs" region="CopyFrom" language="cs" /></example>
+        </member>
+        <member name="M:TextObjectModel.TextFont.Reset">
+            <summary>
+Resets the character formatting to the default character format.
+</summary>
+        </member>
+        <member name="M:TextObjectModel.TextFont.Clone">
+            <summary>
+Gets a duplicate of this text font object.
+</summary>
+            <returns>The duplicate text font object.</returns>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Weight">
+            <summary>
+Gets or sets the font weight for the characters in a range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.UnderlineColor">
+            <summary>
+Gets or sets the underline color for the characters in a range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.UnderlineStyle">
+            <summary>
+Gets or sets the type of underlining for the characters in a range.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Superscript">
+            <summary>
+Gets or sets whether characters are displayed as superscript.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Subscript">
+            <summary>
+Gets or sets whether characters are displayed as subscript.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Style">
+            <summary>
+Gets or sets the character style handle of the characters in a range.
+</summary>
+            <remarks>
+                <para>
+The Text Object Model (TOM) version 1.0 does not specify the meanings of the style handles. 
+The meanings depend on other facilities of the text system that implements TOM.
+</para>
+                <para>
+This implementation uses the low byte to store information about colored underlining. 
+The higher 3 bytes are preserved and can be used for your own purposes.
+</para>
+            </remarks>
+        </member>
+        <member name="P:TextObjectModel.TextFont.StrikeThrough">
+            <summary>
+Gets or sets whether characters are displayed with a horizontal line through the center.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.SmallCaps">
+            <summary>
+Gets or sets whether characters are in small capital letters.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Size">
+            <summary>	
+Gets or sets the font size, in points.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Shadow">
+            <summary>
+Gets or sets whether characters are displayed as shadowed characters.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Protected">
+            <summary>
+Gets or sets whether characters are protected against attempts to modify them.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Position">
+            <summary>	
+Gets or sets the amount that characters are offset vertically relative to the baseline.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Outline">
+            <summary>	
+Gets or sets whether characters are displayed as outlined characters.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Name">
+            <summary>	
+Gets or sets the font name.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.LanguageID">
+            <summary>	
+Gets or sets the language ID or language code identifier (LCID).
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Kerning">
+            <summary>	
+Gets or sets the minimum font size at which kerning occurs.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Italic">
+            <summary>	
+Gets or sets whether characters are in italics.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Hidden">
+            <summary>	
+Gets or sets whether characters are hidden.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.ForeColor">
+            <summary>
+Gets or sets the foreground (text) color.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Emboss">
+            <summary>
+Gets or sets whether the characters are embossed.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.Bold">
+            <summary>
+Gets or sets whether the characters are bold.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.BackColor">
+            <summary>
+Gets or sets the text background (highlight) color.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.AllCaps">
+            <summary>
+Gets whether the characters are all uppercase.
+</summary>
+        </member>
+        <member name="P:TextObjectModel.TextFont.CanChange">
+            <summary>
+Determines whether the font can be changed. 
+</summary>
+        </member>
+        <member name="T:TextObjectModel.TextFont">
+            <summary>
+Provides access to the character format in a text range.
+</summary>
+            <remarks>
+                <para>
+Managed wrapper class for the COM interface ITextFont. 
+<seealso href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb774054(v=vs.85).aspx">ITextFont interface</seealso></para>
+                <para>
+Most properties of this class are implemented using nullable types. 
+If a property returns null, its value is undefined. Properties may be 
+undefined if the range spans several character formats.
+</para>
+            </remarks>
+        </member>
+        <member name="T:TextObjectModel.RangeInsertMode">
+            <summary>
+Options for inserting text into a range.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeInsertMode.Intersect">
+            <summary>Move the start and end positions of the range to those of the inserted text.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeInsertMode.Expand">
+            <summary>Expand the range to include the inserted text.</summary>
+        </member>
+        <member name="T:TextObjectModel.RangeAppendMode">
+            <summary>
+Options for appending text to a range.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeAppendMode.Preserve">
+            <summary>Preserve the original character positions of the range.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeAppendMode.Expand">
+            <summary>Expand the range to include the new text.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeAppendMode.Collapse">
+            <summary>Collapse the range to its new end.</summary>
+        </member>
+        <member name="T:TextObjectModel.TabRelativePosition">
+            <summary>
+Relative tab positions.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TabRelativePosition.Here">
+            <summary>Gets the tab at the specified position</summary>
+        </member>
+        <member name="F:TextObjectModel.TabRelativePosition.Next">
+            <summary>Gets the tab following the specified position.</summary>
+        </member>
+        <member name="F:TextObjectModel.TabRelativePosition.Back">
+            <summary>Gets the tab previous to the specified position.</summary>
+        </member>
+        <member name="T:TextObjectModel.ListNumberingFormat">
+            <summary>
+Other types of formatting for a numbered list.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.ListNumberingFormat.Undefined">
+            <summary>Undefined.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListNumberingFormat.Plain">
+            <summary>Uses the number alone.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListNumberingFormat.Period">
+            <summary>Follows the number with a period.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListNumberingFormat.Parentheses">
+            <summary>Encloses the number in parentheses, as in: (1).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListNumberingFormat.Normal">
+            <summary>Uses the default format for list numbering.</summary>
+        </member>
+        <member name="T:TextObjectModel.ListType">
+            <summary>
+Built-in list paragraph styles supported by the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.Undefined">
+            <summary>Undefined.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.HindiNum">
+            <summary>Hindi numbers.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.HindiAlpha1">
+            <summary>Hindi consonants.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.HindiAlpha">
+            <summary>Hindi vowels.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.ThaiNum">
+            <summary>Thai numbers.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.ThaiAlpha">
+            <summary>Thai alphabetic.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.Hebrew">
+            <summary>Hebrew alphabet.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.Arabic2">
+            <summary>Arabic abjadi.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.Arabic1">
+            <summary>Arabic alphabetic.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.JpnKor">
+            <summary>Korean.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.JpnChS">
+            <summary>Japanese.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.ChT">
+            <summary>Traditional Chinese</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.ChS">
+            <summary>Simplified Chinese.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.ArabicWide">
+            <summary>Full-width ASCII (0, 1, 2, 3, …).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.WhiteCircleWingding">
+            <summary>List is ordered with Wingdings white circled digits.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.BlackCircleWingding">
+            <summary>List is ordered with Wingdings black circled digits.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.Circle">
+            <summary>List is ordered with Unicode circled numbers.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.AsSequence">
+            <summary>The value returned by ListStart is treated as the first code in a Unicode sequence.</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.AsUCRoman">
+            <summary>List is ordered with uppercase Roman letters (I, II, III, ...).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.AsLCRoman">
+            <summary>List is ordered with lowercase Roman letters (i, ii, iii, ...).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.AsUCLetter">
+            <summary>List is ordered with uppercase Arabic letters (A, B, C, ...).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.AsLCLetter">
+            <summary>List is ordered with lowercase letters (a, b, c, ...).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.AsArabic">
+            <summary>List is numbered with Arabic numerals (0, 1, 2, ...).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.Bullet">
+            <summary>List uses bullets (0x2022).</summary>
+        </member>
+        <member name="F:TextObjectModel.ListType.None">
+            <summary>Not a list paragraph.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextAlignment">
+            <summary>
+How text is aligned in a paragraph or cell.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextAlignment.Undefined">
+            <summary>Text alignment is undefined.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextAlignment.Justify">
+            <summary>
+Text starts at the left margin and, if the line extends 
+beyond the right margin, all the spaces in the line are 
+adjusted to be even.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextAlignment.Right">
+            <summary>Text aligns with the right margin.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextAlignment.Center">
+            <summary>Text is centered between the margins.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextAlignment.Left">
+            <summary>Text aligns with the left margin.</summary>
+        </member>
+        <member name="T:TextObjectModel.FontWeight">
+            <summary>
+Font weights supported by the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.Undefined">
+            <summary>Undefined.</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.Heavy">
+            <summary>Heavy (900).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.ExtraBold">
+            <summary>Extra bold (800).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.Bold">
+            <summary>Bold (700).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.SemiBold">
+            <summary>Semibold (600).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.Medium">
+            <summary>Medium (500).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.Normal">
+            <summary>Normal (400).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.Light">
+            <summary>Light (300).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.ExtraLight">
+            <summary>Extra light (200).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.Thin">
+            <summary>Thin (100).</summary>
+        </member>
+        <member name="F:TextObjectModel.FontWeight.NotSet">
+            <summary>Not set / don't care.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextUnderlineColor">
+            <summary>
+The underline colors supported by the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Gray">
+            <summary>Gray.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.DarkGray">
+            <summary>Dark gray.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.OliveGreen">
+            <summary>Olive green.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Brown">
+            <summary>Brown.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.DarkMagenta">
+            <summary>Dark magenta.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Green">
+            <summary>Green.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.DarkCyan">
+            <summary>Dark cyan.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.DarkBlue">
+            <summary>Dark blue.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.White">
+            <summary>White.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Yellow">
+            <summary>Yellow.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Red">
+            <summary>Red.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Magenta">
+            <summary>Magenta.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.LimeGreen">
+            <summary>Lime green.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Cyan">
+            <summary>Cyan.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Blue">
+            <summary>Blue.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineColor.Black">
+            <summary>Black/automatic.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextUnderlineStyle">
+            <summary>
+Types of underlining supported by the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Hair">
+            <summary>Hair underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Thick">
+            <summary>Thick underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Wave">
+            <summary>Wave underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.DashDotDot">
+            <summary>Dash dot dot underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.DashDot">
+            <summary>Dash dot underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Dash">
+            <summary>Dash underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Dotted">
+            <summary>Dotted underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Double">
+            <summary>Double underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Words">
+            <summary>Underline words only.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.Single">
+            <summary>Single underline.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnderlineStyle.None">
+            <summary>No underlining.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextSelectionType">
+            <summary>
+The type of a selection.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.Shape">
+            <summary>Shape.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.InlineShape">
+            <summary>Picture.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.Block">
+            <summary>Block selection.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.Row">
+            <summary>Table rows.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.Column">
+            <summary>Table column.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.Frame">
+            <summary>Frame.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.Normal">
+            <summary>Single nondegenerate range.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.InsertionPoint">
+            <summary>Insertion point.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionType.None">
+            <summary>No selection and no insertion point.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextSelectionFlags">
+            <summary>
+Flags indicating the attributes of a selection.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionFlags.SelReplace">
+            <summary>Typing and pasting replaces selection.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionFlags.SelActive">
+            <summary>Selection is active.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionFlags.SelOvertype">
+            <summary>Insert/Overtype mode is set to overtype. </summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionFlags.SelAtEOL">
+            <summary>
+For degenerate selections, the ambiguous character position 
+corresponding to both the beginning of a line and the end 
+of the preceding line should have the caret displayed at 
+the end of the preceding line.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionFlags.SelStartActive">
+            <summary>Start end is active.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSelectionFlags.None">
+            <summary>None.</summary>
+        </member>
+        <member name="T:TextObjectModel.RangePointFlags">
+            <summary>
+Flags indicating how to retrieve the position for a range.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.RangePointFlags.Transform">
+            <summary>Transform coordinates using a world transform (XFORM) supplied by the host application.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangePointFlags.ObjectArg">
+            <summary>Get a point inside an inline object argument; for example, inside the numerator of a fraction.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangePointFlags.ClientCoord">
+            <summary>Use client coordinates instead of screen coordinates.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangePointFlags.AllowOffClient">
+            <summary>Allow points outside of the client area.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangePointFlags.None">
+            <summary>Default.</summary>
+        </member>
+        <member name="T:TextObjectModel.RangeMatchType">
+            <summary>
+Flags governing comparisons in a text range.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeMatchType.MatchPattern">
+            <summary>Matches regular expressions.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeMatchType.MatchCase">
+            <summary>Matches case.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeMatchType.MatchWord">
+            <summary>Matches whole words.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeMatchType.None">
+            <summary>Default.</summary>
+        </member>
+        <member name="T:TextObjectModel.RangeShiftType">
+            <summary>
+How the start or end of a range can be shifted.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeShiftType.Extend">
+            <summary>Moves to the end of the overlapping unit.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangeShiftType.Move">
+            <summary>Collapses a nondegenerate range by moving the insertion point.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextUnit">
+            <summary>
+Types of units within the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Object">
+            <summary>Embedded object.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Table">
+            <summary>Table.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.ParaFormat">
+            <summary>Run of constant paragraph formatting.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.CharFormat">
+            <summary>Run of constant character formatting.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Cell">
+            <summary>Table cell.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Window">
+            <summary>Upper-left or lower-right corner of the window.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Row">
+            <summary>Table row.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Column">
+            <summary>Table column.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Section">
+            <summary>Section.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Screen">
+            <summary>Screen (as for PAGE UP/PAGE DOWN).</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Story">
+            <summary>Story.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Line">
+            <summary>Line (on display).</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Paragraph">
+            <summary>Paragraph.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Sentence">
+            <summary>Sentence.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Word">
+            <summary>Word.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextUnit.Character">
+            <summary>Character.</summary>
+        </member>
+        <member name="T:TextObjectModel.RangePosition">
+            <summary>
+The endpoints of a range in the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.RangePosition.End">
+            <summary>End of the range.</summary>
+        </member>
+        <member name="F:TextObjectModel.RangePosition.Start">
+            <summary>Start of the range.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextCasing">
+            <summary>
+Case changes supported by the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextCasing.ToggleCase">
+            <summary>Toggles the case of each letter.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextCasing.SentenceCase">
+            <summary>Capitalizes the first letter of each sentence.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextCasing.TitleCase">
+            <summary>Capitalizes the first letter of each word.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextCasing.UpperCase">
+            <summary>Sets all text to uppercase. </summary>
+        </member>
+        <member name="F:TextObjectModel.TextCasing.LowerCase">
+            <summary>Sets all text to lowercase.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextSaveFlags">
+            <summary>
+Additional options for saving a document in the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSaveFlags.ShareDenyWrite">
+            <summary>Other programs cannot write.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSaveFlags.ShareDenyRead">
+            <summary>Other programs cannot read.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextSaveFlags.None">
+            <summary>No additional options.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextOpenFlags">
+            <summary>
+Additional options for opening a document in the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenFlags.PasteFile">
+            <summary>Replace the selection with a file.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenFlags.ShareDenyWrite">
+            <summary>Other programs cannot write.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenFlags.ShareDenyRead">
+            <summary>Other programs cannot read.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenFlags.ReadOnly">
+            <summary>Read only.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenFlags.None">
+            <summary>No additional options.</summary>
+        </member>
+        <member name="T:TextObjectModel.TextOpenSave">
+            <summary>
+Mutually exclusive options for opening/saving a document in the Text Object Model.
+</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.WordDocument">
+            <summary>Open as Word document.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.HTML">
+            <summary>Open as HTML.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.Text">
+            <summary>Open as text ANSI or Unicode.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.RTF">
+            <summary>Open as RTF.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.TruncateExisting">
+            <summary>Open an existing file, but truncate it to zero length.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.OpenAlways">
+            <summary>Open an existing file. Create a new file if the file does not exist.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.OpenExisting">
+            <summary>Open an existing file. Fail if the file does not exist.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.CreateAlways">
+            <summary>Create a new file. Destroy the existing file if it exists.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.CreateNew">
+            <summary>Create a new file. Fail if the file already exists.</summary>
+        </member>
+        <member name="F:TextObjectModel.TextOpenSave.Default">
+            <summary>
+Gives read/write access and read/write sharing, open always, and 
+automatic recognition of the file format (unrecognized file formats 
+are treated as text).
+</summary>
+        </member>
+    </members>
+</doc>
