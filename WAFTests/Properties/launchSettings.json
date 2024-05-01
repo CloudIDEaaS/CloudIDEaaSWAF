@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "WebSecurity.StartupTests":
+    {
+        "commandName": "Project",
+        "commandLineArgs": "/RunStartupTests:true /NoHeadlessBrowser:true /TestToRun:WebSecurity.StartupTests.WAFStartupTests.TestKestrelWAFGeoReport"
+    }
+  }
+}

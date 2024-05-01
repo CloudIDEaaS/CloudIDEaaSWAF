@@ -1,0 +1,124 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateProgramFile>false</GenerateProgramFile>
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+        <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+        <Company>CloudIDEaaS, Inc</Company>
+        <Copyright>Copyright © 2020</Copyright>
+        <UserSecretsId>87648c2a-3202-4665-887b-64361f2dd866</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector" Version="6.0.0" />
+        <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.11.30" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.4" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+        <PackageReference Include="Selenium.WebDriver" Version="4.18.1" />
+        <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="122.0.6261.11100" />
+        <PackageReference Include="Serilog.Enrichers.AspNetCore" Version="1.0.0" />
+        <PackageReference Include="Serilog.Enrichers.AspNetCore.HttpContext" Version="1.0.1" />
+        <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.0.3" />
+        <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="2.3.0" />
+        <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+        <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+        <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+        <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Include="Serilog.Formatting.Compact" Version="2.0.0" />
+        <PackageReference Include="Serilog.Formatting.Elasticsearch" Version="9.0.3" />
+        <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
+        <PackageReference Include="Serilog.Sinks.AzCosmosDB" Version="3.1.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
+        <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="9.0.3" />
+        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+        <PackageReference Include="xunit" Version="2.5.3" />
+        <PackageReference Include="xunit.runner.console" Version="2.7.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="xunit.runner.reporters.netcoreapp10">
+            <HintPath>..\..\..\..\..\Users\kenln\.nuget\packages\xunit.runner.console\2.7.0\tools\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll</HintPath>
+        </Reference>
+        <Reference Include="xunit.runner.utility.netcoreapp10">
+            <HintPath>..\..\..\..\..\Users\kenln\.nuget\packages\xunit.runner.console\2.7.0\tools\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Xunit" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <TargetFiles Include="$(TargetDir)*.*" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="TestHelpers.cs" />
+      <Compile Remove="TestHelpers.Mocks.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Logs\ByExpression\" />
+      <Folder Include="Logs\Debug\" />
+      <Folder Include="Logs\Error\" />
+      <Folder Include="Logs\Fatal\" />
+      <Folder Include="Logs\Info\" />
+      <Folder Include="Logs\WAFReports\" />
+      <Folder Include="Logs\Warning\" />
+      <Folder Include="BinaryRules\" />
+      <Folder Include="Documentation\" />
+      <Folder Include="CommandLine\" />
+      <Folder Include="BinaryIPAddressCities\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RegressionTestParser\RegressionTestParser.csproj" />
+      <ProjectReference Include="..\Utils.Testing\Utils.Testing.csproj" />
+      <ProjectReference Include="..\Utils\Utils.csproj" />
+      <ProjectReference Include="..\WAFWebSample\WAFWebSample.csproj" />
+      <ProjectReference Include="..\WebSecurity\WebSecurity.csproj" />
+    </ItemGroup>
+    
+    <UsingTask TaskName="SetHydraSolutionPathTask" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+
+      <ParameterGroup>
+        <Name ParameterType="System.String" Required="true" />
+        <Value ParameterType="System.String" Required="true" />
+      </ParameterGroup>
+
+      <Task>
+        <Using Namespace="System" />
+        <Code Type="Fragment" Language="cs">
+          <![CDATA[
+            Environment.SetEnvironmentVariable(Name, Value);
+          ]]>
+        </Code>
+      </Task>
+
+    </UsingTask>
+    
+    <Target Name="SetHydraSolutionPath" BeforeTargets="BeforeBuild">
+        <Message Importance="high" Text="Setting HYDRASOLUTIONPATH to $(SolutionDir)" />
+        <SetHydraSolutionPathTask Name="HYDRASOLUTIONPATH" Value="$(SolutionDir)" />
+    </Target>
+
+    <ItemGroup>
+        <TargetFiles Include="$(TargetDir)*.*" />
+    </ItemGroup>
+
+    <Target Name="CopyFiles" AfterTargets="AfterBuild">
+        <Message Importance="high" Text="Copying startup tests to $(SolutionDir)" />
+        <Copy SourceFiles="@(TargetFiles)" DestinationFolder="$(SolutionDir)WAFWebSample\bin\Debug\net8.0-windows\StartupTests" />
+    </Target>
+
+</Project>

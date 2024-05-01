@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="..\WAFTests\CommandLineSwitchesCommands.cs" Link="StartupTests\CommandLineSwitchesCommands.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.4" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\WebSecurity\WebSecurity.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\" />
+      <Folder Include="Providers\" />
+    </ItemGroup>
+
+    <Target Name="CopyWAFRuleset" BeforeTargets="Build">
+        <ItemGroup>
+            <ConfigFile Include="$(SolutionDir)WebSecurity\wafruleset.json" />
+        </ItemGroup>
+        <Message Importance="high" Text="Copying wafruleset.json, path: '@(ConfigFile)'" />
+        <Copy SourceFiles="@(ConfigFile)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+    </Target>
+
+</Project>

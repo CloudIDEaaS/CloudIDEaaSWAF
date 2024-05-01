@@ -1,0 +1,9 @@
+﻿/RunStartupTests:true
+/RunUnitTests:false /RunIntegrationTests:true /DatabaseKind:EFInMemory
+/RunUnitTests:false /RunIntegrationTests /DatabaseKind:EFInMemory /LoadLoggingTraceListener
+/RunUnitTests /RunIntegrationTests:false /DatabaseKind:EFInMemory /TestToRun:WebSecurity.StartupTests.SessionUnitTests.TestSocketMock
+/RunUnitTests /RunIntegrationTests:false /DatabaseKind:EFInMemory /TestToRun:WebSecurity.StartupTests.SessionUnitTests.TestLoggingTraceListenerRegex
+/RunUnitTests:false /RunIntegrationTests /DatabaseKind:EFInMemory /TestToRun:WebSecurity.StartupTests.SessionIntegrationTests.TestCreateProjectCommand
+/RunUnitTests:false /RunIntegrationTests /DatabaseKind:EFInMemory /TestToRun:WebSecurity.StartupTests.SessionIntegrationTests.TestThreadAbort
+
+dotnet add package SuperSocket.ProtoBase --version 2.0.0-preview3-03

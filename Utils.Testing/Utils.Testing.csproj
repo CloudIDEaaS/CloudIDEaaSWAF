@@ -1,0 +1,95 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Include="AssemblyRunner.cs" />
+	  <Compile Include="ConditionPoints\ComparableListConditionPoint.cs" />
+	  <Compile Include="ConditionPoints\ConditionActionAttribute.cs" />
+	  <Compile Include="ConditionPoints\ConditionItem.cs" />
+	  <Compile Include="ConditionPoints\ConditionPointBase.cs" />
+	  <Compile Include="ConditionPoints\ConditionPointDependency.cs" />
+	  <Compile Include="ConditionPoints\ConditionPointKind.cs" />
+	  <Compile Include="ConditionPoints\ConditionPointsAttribute.cs" />
+	  <Compile Include="ConditionPoints\CreateOnDemandEventHandler.cs" />
+	  <Compile Include="ConditionPoints\EnumListConditionPoint.cs" />
+	  <Compile Include="ConditionPoints\ExpectedResponseAttribute.cs" />
+	  <Compile Include="ConditionPoints\Extensions.cs" />
+	  <Compile Include="ConditionPoints\FanListSetting.cs" />
+	  <Compile Include="ConditionPoints\IComparableListConditionPoint.cs" />
+	  <Compile Include="ConditionPoints\IConditionItem.cs" />
+	  <Compile Include="ConditionPoints\IConditionPoint.cs" />
+	  <Compile Include="ConditionPoints\IEnumListConditionPoint.cs" />
+	  <Compile Include="ConditionPoints\IListConditionPoint.cs" />
+	  <Compile Include="ConditionPoints\InsertBetweenAttribute.cs" />
+	  <Compile Include="ConditionPoints\IOnDemandConditionItem.cs" />
+	  <Compile Include="ConditionPoints\IOnDemandConditionList.cs" />
+	  <Compile Include="ConditionPoints\ISessionStateObject.cs" />
+	  <Compile Include="ConditionPoints\IStepHandler.cs" />
+	  <Compile Include="ConditionPoints\ItemNameAttribute.cs" />
+	  <Compile Include="ConditionPoints\NextAttribute.cs" />
+	  <Compile Include="ConditionPoints\OnDemandConditionItem.cs" />
+	  <Compile Include="ConditionPoints\OnDemandConditionList.cs" />
+	  <Compile Include="ConditionPoints\OrderAttribute.cs" />
+	  <Compile Include="ConditionPoints\RandomizationCountFromAttribute.cs" />
+	  <Compile Include="ConditionPoints\StepHandlerAttribute.cs" />
+	  <Compile Include="ConditionPoints\TerminationWeightAttribute.cs" />
+	  <Compile Include="ConditionPoints\WeightAttribute.cs" />
+	  <Compile Include="ConsoleLogger.cs" />
+	  <Compile Include="DatabaseKind.cs" />
+	  <Compile Include="DiagnosticMessageSink.cs" />
+	  <Compile Include="DotNetRunner.cs" />
+	  <Compile Include="FixtureClosure.cs" />
+	  <Compile Include="HttpEventMessageHandler.cs" />
+	  <Compile Include="HttpTestServerMessageHandler.cs" />
+	  <Compile Include="IIntegrationTestFixtureBase.cs" />
+	  <Compile Include="IIntegrationTestFixtureCoordinator.cs" />
+	  <Compile Include="IntegrationTestFixtureBase.cs" />
+	  <Compile Include="IntegrationTestFixtureCoordinator.cs" />
+	  <Compile Include="MockExtensions.cs" />
+	  <Compile Include="PromiseExtensions.cs" />
+	  <Compile Include="SingleThreadDbCommand.cs" />
+	  <Compile Include="SingleThreadDbConnection.cs" />
+	  <Compile Include="SingleThreadDbTransaction.cs" />
+	  <Compile Include="TestExtensions.cs" />
+	  <Compile Include="TestingCommandLineParseResult.cs" />
+	  <Compile Include="TestingCommandLineSwitchesCommands.cs" />
+	  <Compile Include="TestingDnsProvider.cs" />
+	  <Compile Include="TestingDnsProviderFactory.cs" />
+	  <Compile Include="TestingRunspace.cs" />
+	  <Compile Include="TestingRunspaceFactory.cs" />
+	  <Compile Include="TestingSocket.cs" />
+	  <Compile Include="TestingSocketFactory.cs" />
+	  <Compile Include="TestingThreadedService.cs" />
+	  <Compile Include="TestKind.cs" />
+	  <Compile Include="TestKindAttribute.cs" />
+	  <Compile Include="TestsBase.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.2" />
+	  <PackageReference Include="System.Management.Automation" Version="7.4.1" />
+	  <PackageReference Include="xunit" Version="2.5.3" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Utils\Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="xunit.runner.reporters.netcoreapp10">
+      <HintPath>..\..\..\Users\kenln\.nuget\packages\xunit.runner.console\2.7.0\tools\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.runner.utility.netcoreapp10">
+      <HintPath>..\..\..\Users\kenln\.nuget\packages\xunit.runner.console\2.7.0\tools\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

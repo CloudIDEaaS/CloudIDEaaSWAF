@@ -1,0 +1,1 @@
+/RunStartupTests:true /NoHeadlessBrowser:true /TestToRun:WebSecurity.StartupTests.HydraStartupTests.TestKestrelWAFGeoReport
