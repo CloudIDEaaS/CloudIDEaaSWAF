@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -86,6 +87,7 @@ public class WAFMiddleware
         string? wafCityProvinceCeilingLimitsConfigValue;
         string? wafGeoIterationCycleMaxConfigValue;
         string dateTimeGranularity;
+        var assemblyFolder = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 
         this.next = next;
         this.logger = logger;
@@ -243,6 +245,11 @@ public class WAFMiddleware
 
             reportRolloverGranularityTimeSpan = DateTimeExtensions.ToDateTimeSpan(dateTimeGranularity);
             reportsPath = configuration["WAFReportsPath"];
+
+            if (!Path.IsPathRooted(reportsPath))
+            {
+                reportsPath = Path.GetFullPath(Path.Combine(assemblyFolder, reportsPath));
+            }
 
             if (wafCreateContextSpecificReportConfigValue != null)
             {
