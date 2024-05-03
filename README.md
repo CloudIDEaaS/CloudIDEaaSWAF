@@ -110,5 +110,5 @@ He is the originator of this product. Visit his page for a simple, bare-bones WA
 https://github.com/mguinness/KestrelWAF
 
 ### Visit http://www.cloudideaas.com/WAFProtection
-### Contact: consulting@cloudideaas.com
+### Contact: support@cloudideaas.com
 
