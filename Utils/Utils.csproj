@@ -120,9 +120,9 @@
         <PackageReference Include="sautinsoft.htmltortf">
             <Version>8.1.6.7</Version>
         </PackageReference>
-        <PackageReference Include="Serilog" Version="3.1.1" />
+        <PackageReference Include="Serilog" Version="4.0.0" />
         <PackageReference Include="Serilog.Expressions" Version="4.0.0" />
-        <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+        <PackageRefSerilog" Version="4.0.0.Sinks.RollingFile" Version="3.3.0" />
         <PackageReference Include="SuperSocket.ClientEngine" Version="0.10.0" />
         <PackageReference Include="SuperSocket.ProtoBase" Version="1.7.0.17" />
         <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
